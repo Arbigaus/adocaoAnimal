@@ -1,24 +1,27 @@
 //
-//  FeedView.swift
+//  petView.swift
 //  adocaoAnimal
 //
-//  Created by Gerson Arbrugaus on 03/04/19.
+//  Created by Gerson Arbrugaus on 04/04/19.
 //  Copyright © 2019 Gerson Arbigaus. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
-import Lottie
 
-class FeedView: UIViewController {
+protocol petViewDelegate: class {
     
-    var viewModel: FeedViewModel!
+}
+
+class petView: UIViewController {
     
-    weak var delegate: AppActionable?
+    var viewModel: petViewModel!
+    
+    weak var delegate: petViewDelegate?
 
     init() {
-        super.init(nibName: String(describing: FeedView.self), bundle: nil)
+        super.init(nibName: String(describing: petView.self), bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,19 +33,14 @@ class FeedView: UIViewController {
         self.configureViews()
         self.setupViewModel()
         self.setupBindings()
-        
-    }
-    
-    @IBAction func goPet(_ sender: Any) {
-        self.delegate?.handle(.showPetDetails)
     }
     
 }
 
-extension FeedView {
+extension petView {
     
     func setupViewModel() {
-        self.viewModel = FeedViewModel(
+        self.viewModel = petViewModel(
            
         )
     }
