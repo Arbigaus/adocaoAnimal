@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		086374C54EBF040B36DF3B19 /* Pods_adocaoAnimalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0C90FBDE49AAED683E3E4 /* Pods_adocaoAnimalTests.framework */; };
+		310D6919225780AF0027C669 /* baseline_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D6918225780AF0027C669 /* baseline_filter.png */; };
+		310D6957225823370027C669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 310D6956225823370027C669 /* GoogleService-Info.plist */; };
 		31736BCC225589A700BCFE53 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31736BC9225589A700BCFE53 /* FeedView.swift */; };
 		31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31736BCA225589A700BCFE53 /* FeedViewModel.swift */; };
 		31736BCE225589A700BCFE53 /* FeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31736BCB225589A700BCFE53 /* FeedView.xib */; };
@@ -27,9 +29,6 @@
 		D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */; };
 		D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E22256DEA6009B3561 /* PetDetailsView.xib */; };
 		D77B10E72256E39C009B3561 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E62256E39C009B3561 /* location.json */; };
-		D77B10EA2256E6ED009B3561 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10E92256E6ED009B3561 /* AnimationView.swift */; };
-		D77B10ED2256EFC5009B3561 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = D77B10EC2256EFC5009B3561 /* location.png */; };
-		D77B10EF2256F491009B3561 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = D77B10EE2256F491009B3561 /* filter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		18298206FD12530BC1ED0589 /* Pods-adocaoAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimal.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal.debug.xcconfig"; sourceTree = "<group>"; };
+		310D6918225780AF0027C669 /* baseline_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseline_filter.png; path = "../../../../../../../Downloads/baseline-filter_list-black-18/2x/baseline_filter.png"; sourceTree = "<group>"; };
+		310D6956225823370027C669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31736BC9225589A700BCFE53 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		31736BCA225589A700BCFE53 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		31736BCB225589A700BCFE53 /* FeedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedView.xib; sourceTree = "<group>"; };
@@ -78,9 +79,6 @@
 		D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewModel.swift; sourceTree = "<group>"; };
 		D77B10E22256DEA6009B3561 /* PetDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsView.xib; sourceTree = "<group>"; };
 		D77B10E62256E39C009B3561 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
-		D77B10E92256E6ED009B3561 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
-		D77B10EC2256EFC5009B3561 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = ../../../../location.png; sourceTree = "<group>"; };
-		D77B10EE2256F491009B3561 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../../../../filter.png; sourceTree = "<group>"; };
 		E3E41E50A03220D1A2B05946 /* Pods-adocaoAnimalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimalUITests.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimalUITests/Pods-adocaoAnimalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7C73FB9F59391ED63997799 /* Pods_adocaoAnimal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_adocaoAnimal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5EE50E64792CC41D9AA554 /* Pods-adocaoAnimalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimalTests.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimalTests/Pods-adocaoAnimalTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +157,7 @@
 		317FDD622255849700356327 /* adocaoAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				310D6956225823370027C669 /* GoogleService-Info.plist */,
 				D77B10E82256E6BE009B3561 /* Components */,
 				317FDD6F2255849800356327 /* Info.plist */,
 				D77B10D42256D499009B3561 /* Coordinator */,
@@ -254,7 +253,6 @@
 		D77B10E82256E6BE009B3561 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D77B10E92256E6ED009B3561 /* AnimationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -262,8 +260,7 @@
 		D77B10EB2256EFA8009B3561 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				D77B10EE2256F491009B3561 /* filter.png */,
-				D77B10EC2256EFC5009B3561 /* location.png */,
+				310D6918225780AF0027C669 /* baseline_filter.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -379,11 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
+				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
-				D77B10EF2256F491009B3561 /* filter.png in Resources */,
 				317FDD6B2255849800356327 /* Assets.xcassets in Resources */,
-				D77B10ED2256EFC5009B3561 /* location.png in Resources */,
+				310D6919225780AF0027C669 /* baseline_filter.png in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
 			);
@@ -611,7 +608,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				317FDD662255849700356327 /* ViewController.swift in Sources */,
-				D77B10EA2256E6ED009B3561 /* AnimationView.swift in Sources */,
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,

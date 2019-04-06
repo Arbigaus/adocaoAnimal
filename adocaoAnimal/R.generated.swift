@@ -18,16 +18,22 @@ struct R: Rswift.Validatable {
   
   /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
-    /// Resource file `filter.png`.
-    static let filterPng = Rswift.FileResource(bundle: R.hostingBundle, name: "filter", pathExtension: "png")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `baseline_filter.png`.
+    static let baseline_filterPng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_filter", pathExtension: "png")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
-    /// Resource file `location.png`.
-    static let locationPng = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "png")
     
-    /// `bundle.url(forResource: "filter", withExtension: "png")`
-    static func filterPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.filterPng
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "baseline_filter", withExtension: "png")`
+    static func baseline_filterPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.baseline_filterPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -37,30 +43,17 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
-    /// `bundle.url(forResource: "location", withExtension: "png")`
-    static func locationPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.locationPng
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
-    /// Image `filter`.
-    static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "filter")
-    /// Image `location`.
-    static let location = Rswift.ImageResource(bundle: R.hostingBundle, name: "location")
+    /// Image `baseline_filter`.
+    static let baseline_filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_filter")
     
-    /// `UIImage(named: "filter", bundle: ..., traitCollection: ...)`
-    static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "location", bundle: ..., traitCollection: ...)`
-    static func location(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.location, compatibleWith: traitCollection)
+    /// `UIImage(named: "baseline_filter", bundle: ..., traitCollection: ...)`
+    static func baseline_filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.baseline_filter, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -149,8 +142,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "filter.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'filter.png' is used in nib 'FeedView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "location.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'location.png' is used in nib 'FeedView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "baseline_filter.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'baseline_filter.png' is used in nib 'FeedView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

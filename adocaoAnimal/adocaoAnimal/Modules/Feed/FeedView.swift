@@ -16,7 +16,9 @@ class FeedView: UIViewController {
     var viewModel: FeedViewModel!
     
     weak var delegate: AppActionable?
-
+    
+    @IBOutlet var locationAnimationView: AnimationView!
+    
     init() {
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
     }
@@ -31,10 +33,18 @@ class FeedView: UIViewController {
         self.setupViewModel()
         self.setupBindings()
         
+        startAnimationView()
+        
     }
     
-    @IBAction func goPet(_ sender: Any) {
-        self.delegate?.handle(.showPetDetails)
+    func startAnimationView() {
+        locationAnimationView = AnimationView()
+        /// Some time later
+        let locationAnimation = Animation.named("location")
+        
+        locationAnimationView.animation = locationAnimation
+        
+        locationAnimationView.play()
     }
     
 }

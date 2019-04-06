@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //setup crashlytics if needed
         
         // Start AppCoordinator
+        FirebaseApp.configure()
         let currentWindow = UIWindow(frame: UIScreen.main.bounds)
         self.appCoordinator = AppCoordinator(window: currentWindow)
         self.appCoordinator?.start()
