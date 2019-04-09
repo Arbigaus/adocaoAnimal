@@ -10,6 +10,10 @@
 		086374C54EBF040B36DF3B19 /* Pods_adocaoAnimalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0C90FBDE49AAED683E3E4 /* Pods_adocaoAnimalTests.framework */; };
 		310D6919225780AF0027C669 /* baseline_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D6918225780AF0027C669 /* baseline_filter.png */; };
 		310D6957225823370027C669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 310D6956225823370027C669 /* GoogleService-Info.plist */; };
+		312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */ = {isa = PBXBuildFile; fileRef = 312B7468225C0CE20064B6B9 /* baseline_tune.png */; };
+		312B746C225C0E050064B6B9 /* Filter2.json in Resources */ = {isa = PBXBuildFile; fileRef = 312B746A225C0E040064B6B9 /* Filter2.json */; };
+		312B746D225C0E050064B6B9 /* Filter1.json in Resources */ = {isa = PBXBuildFile; fileRef = 312B746B225C0E040064B6B9 /* Filter1.json */; };
+		312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 312B746E225C20430064B6B9 /* settings_sliders-512.png */; };
 		31736BCC225589A700BCFE53 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31736BC9225589A700BCFE53 /* FeedView.swift */; };
 		31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31736BCA225589A700BCFE53 /* FeedViewModel.swift */; };
 		31736BCE225589A700BCFE53 /* FeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31736BCB225589A700BCFE53 /* FeedView.xib */; };
@@ -52,7 +56,11 @@
 		18298206FD12530BC1ED0589 /* Pods-adocaoAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimal.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal.debug.xcconfig"; sourceTree = "<group>"; };
 		310D6918225780AF0027C669 /* baseline_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseline_filter.png; path = "../../../../../../../Downloads/baseline-filter_list-black-18/2x/baseline_filter.png"; sourceTree = "<group>"; };
 		310D6956225823370027C669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		31736BC9225589A700BCFE53 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		312B7468225C0CE20064B6B9 /* baseline_tune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseline_tune.png; sourceTree = "<group>"; };
+		312B746A225C0E040064B6B9 /* Filter2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Filter2.json; sourceTree = "<group>"; };
+		312B746B225C0E040064B6B9 /* Filter1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Filter1.json; sourceTree = "<group>"; };
+		312B746E225C20430064B6B9 /* settings_sliders-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_sliders-512.png"; sourceTree = "<group>"; };
+		31736BC9225589A700BCFE53 /* FeedView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		31736BCA225589A700BCFE53 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		31736BCB225589A700BCFE53 /* FeedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedView.xib; sourceTree = "<group>"; };
 		317FDD602255849700356327 /* adocaoAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adocaoAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +221,8 @@
 		D77B10D02256D242009B3561 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				312B746B225C0E040064B6B9 /* Filter1.json */,
+				312B746A225C0E040064B6B9 /* Filter2.json */,
 				D77B10EB2256EFA8009B3561 /* assets */,
 				D77B10E62256E39C009B3561 /* location.json */,
 				D77B10D12256D2B0009B3561 /* R.generated.swift */,
@@ -260,6 +270,8 @@
 		D77B10EB2256EFA8009B3561 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				312B746E225C20430064B6B9 /* settings_sliders-512.png */,
+				312B7468225C0CE20064B6B9 /* baseline_tune.png */,
 				310D6918225780AF0027C669 /* baseline_filter.png */,
 			);
 			path = assets;
@@ -376,6 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
+				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
+				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
+				312B746C225C0E050064B6B9 /* Filter2.json in Resources */,
+				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,

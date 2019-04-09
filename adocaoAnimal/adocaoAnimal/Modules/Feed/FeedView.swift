@@ -38,13 +38,13 @@ class FeedView: UIViewController {
     }
     
     func startAnimationView() {
-        locationAnimationView = AnimationView()
-        /// Some time later
+        
         let locationAnimation = Animation.named("location")
         
+        locationAnimationView.loopMode = .loop
         locationAnimationView.animation = locationAnimation
-        
         locationAnimationView.play()
+        
     }
     
 }

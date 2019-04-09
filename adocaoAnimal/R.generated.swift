@@ -16,14 +16,34 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 3 files.
+  /// This `R.file` struct is generated, and contains static references to 7 files.
   struct file {
+    /// Resource file `Filter1.json`.
+    static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
+    /// Resource file `Filter2.json`.
+    static let filter2Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter2", pathExtension: "json")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `baseline_filter.png`.
     static let baseline_filterPng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_filter", pathExtension: "png")
+    /// Resource file `baseline_tune.png`.
+    static let baseline_tunePng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_tune", pathExtension: "png")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
+    /// Resource file `settings_sliders-512.png`.
+    static let settings_sliders512Png = Rswift.FileResource(bundle: R.hostingBundle, name: "settings_sliders-512", pathExtension: "png")
+    
+    /// `bundle.url(forResource: "Filter1", withExtension: "json")`
+    static func filter1Json(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.filter1Json
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Filter2", withExtension: "json")`
+    static func filter2Json(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.filter2Json
+      return fileResource.bundle.url(forResource: fileResource)
+    }
     
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -37,23 +57,49 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "baseline_tune", withExtension: "png")`
+    static func baseline_tunePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.baseline_tunePng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     /// `bundle.url(forResource: "location", withExtension: "json")`
     static func locationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.locationJson
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "settings_sliders-512", withExtension: "png")`
+    static func settings_sliders512Png(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.settings_sliders512Png
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `baseline_filter`.
     static let baseline_filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_filter")
+    /// Image `baseline_tune`.
+    static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
+    /// Image `settings_sliders-512`.
+    static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
     
     /// `UIImage(named: "baseline_filter", bundle: ..., traitCollection: ...)`
     static func baseline_filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.baseline_filter, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "baseline_tune", bundle: ..., traitCollection: ...)`
+    static func baseline_tune(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.baseline_tune, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "settings_sliders-512", bundle: ..., traitCollection: ...)`
+    static func settings_sliders512(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.settings_sliders512, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -142,7 +188,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "baseline_filter.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'baseline_filter.png' is used in nib 'FeedView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "settings_sliders-512.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'settings_sliders-512.png' is used in nib 'FeedView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
