@@ -24,6 +24,11 @@
 		317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD6C2255849800356327 /* LaunchScreen.storyboard */; };
 		317FDD792255849800356327 /* adocaoAnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD782255849800356327 /* adocaoAnimalTests.swift */; };
 		317FDD842255849800356327 /* adocaoAnimalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD832255849800356327 /* adocaoAnimalUITests.swift */; };
+		31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */; };
+		31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */; };
+		31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6D225EB5C600AD07BF /* dog1.png */; };
+		31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C6F225EB85700AD07BF /* HomeFilterCollectionViewCell.swift */; };
+		31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C70225EB85700AD07BF /* HomeFilterCollectionViewCell.xib */; };
 		46C36C4D47A3200309DBB078 /* Pods_adocaoAnimal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C73FB9F59391ED63997799 /* Pods_adocaoAnimal.framework */; };
 		632016489A190595E06B8EEF /* Pods_adocaoAnimalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC941B8DFA311B4BD3CE2AC2 /* Pods_adocaoAnimalUITests.framework */; };
 		D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D12256D2B0009B3561 /* R.generated.swift */; };
@@ -76,6 +81,11 @@
 		317FDD7F2255849800356327 /* adocaoAnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adocaoAnimalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317FDD832255849800356327 /* adocaoAnimalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adocaoAnimalUITests.swift; sourceTree = "<group>"; };
 		317FDD852255849800356327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
+		31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
+		31FC8C6D225EB5C600AD07BF /* dog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog1.png; sourceTree = "<group>"; };
+		31FC8C6F225EB85700AD07BF /* HomeFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		31FC8C70225EB85700AD07BF /* HomeFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		450060FEF2DC9E2875DC2315 /* Pods-adocaoAnimalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimalUITests.release.xcconfig"; path = "Target Support Files/Pods-adocaoAnimalUITests/Pods-adocaoAnimalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BA1D534F592A17B641BF6544 /* Pods-adocaoAnimalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimalTests.release.xcconfig"; path = "Target Support Files/Pods-adocaoAnimalTests/Pods-adocaoAnimalTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB5A441A81AC28F9BF4FB0C7 /* Pods-adocaoAnimal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimal.release.xcconfig"; path = "Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,11 +175,11 @@
 		317FDD622255849700356327 /* adocaoAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				31FC8C66225EB45C00AD07BF /* Cells */,
 				310D6956225823370027C669 /* GoogleService-Info.plist */,
 				D77B10E82256E6BE009B3561 /* Components */,
 				317FDD6F2255849800356327 /* Info.plist */,
 				D77B10D42256D499009B3561 /* Coordinator */,
-				D77B10D32256D3DF009B3561 /* Cells */,
 				D77B10D02256D242009B3561 /* Base */,
 				31736BC52255891D00BCFE53 /* Modules */,
 				317FDD652255849700356327 /* ViewController.swift */,
@@ -193,6 +203,17 @@
 				317FDD852255849800356327 /* Info.plist */,
 			);
 			path = adocaoAnimalUITests;
+			sourceTree = "<group>";
+		};
+		31FC8C66225EB45C00AD07BF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */,
+				31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */,
+				31FC8C6F225EB85700AD07BF /* HomeFilterCollectionViewCell.swift */,
+				31FC8C70225EB85700AD07BF /* HomeFilterCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		75FC4F8207524DEB2630D8EA /* Frameworks */ = {
@@ -234,13 +255,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D77B10D32256D3DF009B3561 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		D77B10D42256D499009B3561 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +284,7 @@
 		D77B10EB2256EFA8009B3561 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				31FC8C6D225EB5C600AD07BF /* dog1.png */,
 				312B746E225C20430064B6B9 /* settings_sliders-512.png */,
 				312B7468225C0CE20064B6B9 /* baseline_tune.png */,
 				310D6918225780AF0027C669 /* baseline_filter.png */,
@@ -388,9 +403,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
+				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
 				312B746C225C0E050064B6B9 /* Filter2.json in Resources */,
+				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */,
@@ -398,6 +415,7 @@
 				317FDD6B2255849800356327 /* Assets.xcassets in Resources */,
 				310D6919225780AF0027C669 /* baseline_filter.png in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
+				31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +644,8 @@
 				317FDD662255849700356327 /* ViewController.swift in Sources */,
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
+				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
+				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,
 				D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */,
 				D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */,

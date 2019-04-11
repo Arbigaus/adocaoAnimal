@@ -19,7 +19,11 @@ class FeedView: UIViewController {
     
     @IBOutlet var locationAnimationView: AnimationView!
     
-    init() {
+    @IBOutlet weak var petsTableView: UITableView!
+    @IBOutlet weak var filterCollectionView: UICollectionView!
+    
+    init(viewModel: FeedViewModel = .init()) {
+        self.viewModel = viewModel
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
     }
     
@@ -30,11 +34,34 @@ class FeedView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureViews()
-        self.setupViewModel()
         self.setupBindings()
-        
+    }
+    
+    
+    
+}
+
+extension FeedView {
+    
+    func configureViews() {
         startAnimationView()
         
+        petsTableView.register(R.nib.petTableViewCell)
+        filterCollectionView.register(R.nib.homeFilterCollectionViewCell)
+    }
+    
+    func setupBindings() {
+        let items = Observable.just(
+            (0..<20).map { "\($0)" }
+        )
+        
+        items
+            .bind(to: petsTableView.rx
+                .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
+                       cellType: PetTableViewCell.self)) { (row, element, cell) in
+                        cell
+                        
+        }
     }
     
     func startAnimationView() {
@@ -45,23 +72,5 @@ class FeedView: UIViewController {
         locationAnimationView.animation = locationAnimation
         locationAnimationView.play()
         
-    }
-    
-}
-
-extension FeedView {
-    
-    func setupViewModel() {
-        self.viewModel = FeedViewModel(
-           
-        )
-    }
-    
-    func configureViews() {
-        
-    }
-    
-    func setupBindings() {
-
     }
 }
