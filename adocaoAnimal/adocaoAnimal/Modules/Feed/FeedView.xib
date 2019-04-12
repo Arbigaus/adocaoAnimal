@@ -96,7 +96,7 @@
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-5m-3cD">
                             <rect key="frame" x="98" y="8" width="308" height="80"/>
-                            <color key="backgroundColor" red="1" green="0.24728529260000001" blue="0.38504720440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="UIY-uO-sHu"/>
                             </constraints>

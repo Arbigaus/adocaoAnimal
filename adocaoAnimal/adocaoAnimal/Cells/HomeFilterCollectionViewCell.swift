@@ -10,9 +10,11 @@ import UIKit
 
 class HomeFilterCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var homeFilterViewCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        homeFilterViewCell.layer.cornerRadius = 10
     }
 
 }

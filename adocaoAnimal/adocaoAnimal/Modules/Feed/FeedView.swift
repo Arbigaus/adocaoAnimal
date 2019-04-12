@@ -51,17 +51,29 @@ extension FeedView {
     }
     
     func setupBindings() {
-        let items = Observable.just(
+        let itemsTableView = Observable.just(
             (0..<20).map { "\($0)" }
         )
         
-        items
+        let itemsCollecView = Observable.just(
+            (0..<2).map { "\($0)" }
+        )
+        
+        itemsTableView
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { (row, element, cell) in
                         cell
                         
         }
+        
+        itemsCollecView
+            .bind(to: filterCollectionView.rx
+                .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
+                       cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
+                        cell
+        }
+        
     }
     
     func startAnimationView() {

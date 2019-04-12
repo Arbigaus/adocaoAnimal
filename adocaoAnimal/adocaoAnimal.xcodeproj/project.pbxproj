@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		086374C54EBF040B36DF3B19 /* Pods_adocaoAnimalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0C90FBDE49AAED683E3E4 /* Pods_adocaoAnimalTests.framework */; };
-		310D6919225780AF0027C669 /* baseline_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D6918225780AF0027C669 /* baseline_filter.png */; };
 		310D6957225823370027C669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 310D6956225823370027C669 /* GoogleService-Info.plist */; };
 		312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */ = {isa = PBXBuildFile; fileRef = 312B7468225C0CE20064B6B9 /* baseline_tune.png */; };
 		312B746C225C0E050064B6B9 /* Filter2.json in Resources */ = {isa = PBXBuildFile; fileRef = 312B746A225C0E040064B6B9 /* Filter2.json */; };
@@ -21,7 +20,6 @@
 		317FDD662255849700356327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD652255849700356327 /* ViewController.swift */; };
 		317FDD692255849700356327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD672255849700356327 /* Main.storyboard */; };
 		317FDD6B2255849800356327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD6A2255849800356327 /* Assets.xcassets */; };
-		317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD6C2255849800356327 /* LaunchScreen.storyboard */; };
 		317FDD792255849800356327 /* adocaoAnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD782255849800356327 /* adocaoAnimalTests.swift */; };
 		317FDD842255849800356327 /* adocaoAnimalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD832255849800356327 /* adocaoAnimalUITests.swift */; };
 		31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */; };
@@ -59,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		18298206FD12530BC1ED0589 /* Pods-adocaoAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimal.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal.debug.xcconfig"; sourceTree = "<group>"; };
-		310D6918225780AF0027C669 /* baseline_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseline_filter.png; path = "../../../../../../../Downloads/baseline-filter_list-black-18/2x/baseline_filter.png"; sourceTree = "<group>"; };
 		310D6956225823370027C669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		312B7468225C0CE20064B6B9 /* baseline_tune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseline_tune.png; sourceTree = "<group>"; };
 		312B746A225C0E040064B6B9 /* Filter2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Filter2.json; sourceTree = "<group>"; };
@@ -73,7 +70,6 @@
 		317FDD652255849700356327 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		317FDD682255849700356327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		317FDD6A2255849800356327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		317FDD6D2255849800356327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317FDD6F2255849800356327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317FDD742255849800356327 /* adocaoAnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adocaoAnimalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317FDD782255849800356327 /* adocaoAnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adocaoAnimalTests.swift; sourceTree = "<group>"; };
@@ -249,7 +245,6 @@
 				D77B10D12256D2B0009B3561 /* R.generated.swift */,
 				317FDD632255849700356327 /* AppDelegate.swift */,
 				317FDD6A2255849800356327 /* Assets.xcassets */,
-				317FDD6C2255849800356327 /* LaunchScreen.storyboard */,
 				317FDD672255849700356327 /* Main.storyboard */,
 			);
 			path = Base;
@@ -287,7 +282,6 @@
 				31FC8C6D225EB5C600AD07BF /* dog1.png */,
 				312B746E225C20430064B6B9 /* settings_sliders-512.png */,
 				312B7468225C0CE20064B6B9 /* baseline_tune.png */,
-				310D6918225780AF0027C669 /* baseline_filter.png */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -410,10 +404,8 @@
 				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
-				317FDD6E2255849800356327 /* LaunchScreen.storyboard in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
 				317FDD6B2255849800356327 /* Assets.xcassets in Resources */,
-				310D6919225780AF0027C669 /* baseline_filter.png in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
 				31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
@@ -693,14 +685,6 @@
 				317FDD682255849700356327 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		317FDD6C2255849800356327 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				317FDD6D2255849800356327 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

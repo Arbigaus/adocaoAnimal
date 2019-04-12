@@ -46,6 +46,9 @@
                 <constraint firstAttribute="bottom" secondItem="8VE-9j-otk" secondAttribute="bottom" id="sbm-mU-sqv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="HomeFilterViewCell" destination="wUD-RO-EUi" id="Zxh-af-aib"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

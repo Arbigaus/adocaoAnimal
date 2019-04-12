@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 8 files.
+  /// This `R.file` struct is generated, and contains static references to 7 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -24,8 +24,6 @@ struct R: Rswift.Validatable {
     static let filter2Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter2", pathExtension: "json")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `baseline_filter.png`.
-    static let baseline_filterPng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_filter", pathExtension: "png")
     /// Resource file `baseline_tune.png`.
     static let baseline_tunePng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_tune", pathExtension: "png")
     /// Resource file `dog1.png`.
@@ -50,12 +48,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    /// `bundle.url(forResource: "baseline_filter", withExtension: "png")`
-    static func baseline_filterPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.baseline_filterPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -86,21 +78,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
-    /// Image `baseline_filter`.
-    static let baseline_filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_filter")
     /// Image `baseline_tune`.
     static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
     /// Image `dog1`.
     static let dog1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1")
     /// Image `settings_sliders-512`.
     static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
-    
-    /// `UIImage(named: "baseline_filter", bundle: ..., traitCollection: ...)`
-    static func baseline_filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.baseline_filter, compatibleWith: traitCollection)
-    }
     
     /// `UIImage(named: "baseline_tune", bundle: ..., traitCollection: ...)`
     static func baseline_tune(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -184,17 +169,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
     
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
@@ -296,22 +274,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try launchScreen.validate()
       try main.validate()
-    }
-    
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UIViewController
-      
-      let bundle = R.hostingBundle
-      let name = "LaunchScreen"
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-      }
-      
-      fileprivate init() {}
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
