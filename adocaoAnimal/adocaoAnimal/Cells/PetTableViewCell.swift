@@ -10,12 +10,17 @@ import UIKit
 
 class PetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var petImage: UIImageView!
+    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak var petLocationLabel: UILabel!
+    
     override func prepareForReuse() {
         
     }
     
-    func bind () {
-        
+    func bind (_ pet : [ String : String ]) {
+        petImage.image = UIImage(named: pet[ "image" ]!)
+        petNameLabel.text = pet["name"]!
     }
     
 }

@@ -13,7 +13,6 @@ enum AppAction {
     
     case showPetDetails
     
-    
 }
 
 protocol AppActionable: class {

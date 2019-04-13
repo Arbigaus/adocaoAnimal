@@ -51,27 +51,36 @@ extension FeedView {
     }
     
     func setupBindings() {
+        
+        let pets = [ ["name" : "Darth Vader", "image" : "dog1.png"], ["name" : "Princesa Leia", "image" : "dog2.png"], ["name" : "Yoda", "image" : "dog1.png" ] ]
         let itemsTableView = Observable.just(
-            (0..<20).map { "\($0)" }
+            pets.map { $0 }
         )
         
+        let filters = [ "Cachorros", "Gatos", "Coelhos", "Outros" ]
+        
         let itemsCollecView = Observable.just(
-            (0..<2).map { "\($0)" }
+            filters.map { "\($0)" }
         )
         
         itemsTableView
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
-                       cellType: PetTableViewCell.self)) { (row, element, cell) in
-                        cell
-                        
+                       cellType: PetTableViewCell.self)) { (row, pet, cell) in
+                        cell.bind(pet)
         }
+        
+        self.petsTableView.rx
+            .modelSelected(PetDetailsView.self)
+            .subscribe( { (pet) in
+                self.delegate?.handle(.showPetDetails)
+            })
         
         itemsCollecView
             .bind(to: filterCollectionView.rx
                 .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
-                        cell
+                        cell .homeFilterLabel.text = element
         }
         
     }

@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 7 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -28,6 +28,8 @@ struct R: Rswift.Validatable {
     static let baseline_tunePng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_tune", pathExtension: "png")
     /// Resource file `dog1.png`.
     static let dog1Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog1", pathExtension: "png")
+    /// Resource file `dog2.png`.
+    static let dog2Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog2", pathExtension: "png")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
     /// Resource file `settings_sliders-512.png`.
@@ -63,6 +65,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "dog2", withExtension: "png")`
+    static func dog2Png(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dog2Png
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     /// `bundle.url(forResource: "location", withExtension: "json")`
     static func locationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.locationJson
@@ -78,12 +86,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `baseline_tune`.
     static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
     /// Image `dog1`.
     static let dog1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1")
+    /// Image `dog2`.
+    static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
     /// Image `settings_sliders-512`.
     static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
     
@@ -95,6 +105,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "dog1", bundle: ..., traitCollection: ...)`
     static func dog1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.dog1, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "dog2", bundle: ..., traitCollection: ...)`
+    static func dog2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dog2, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "settings_sliders-512", bundle: ..., traitCollection: ...)`
