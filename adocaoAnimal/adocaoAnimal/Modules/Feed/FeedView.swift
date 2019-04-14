@@ -14,6 +14,7 @@ import Lottie
 class FeedView: UIViewController {
     
     var viewModel: FeedViewModel!
+    var petsList = [ Pet ]()
     
     weak var delegate: AppActionable?
     
@@ -25,6 +26,14 @@ class FeedView: UIViewController {
     init(viewModel: FeedViewModel = .init()) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
+        
+        let petVader = Pet(name: "Darth Vader", size: .smal, image: "dog1.png", owner: "Adriele", address: "Rua ali", neighborhood: "CIC - 5,4km")
+        let petLeia = Pet(name: "Princesa Leia", size: .medium, image: "dog2.png", owner: "Gerson", address: "Rua de lá", neighborhood: "Pinheirinho - 2,3km")
+        let petYoda = Pet(name: "Yoda", size: .smal, image: "dog2.png", owner: "Skywalker", address: "Rua de cima", neighborhood: "Novo Mundo - 10km")
+        
+        petsList.append(petVader)
+        petsList.append(petLeia)
+        petsList.append(petYoda)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,9 +61,8 @@ extension FeedView {
     
     func setupBindings() {
         
-        let pets = [ ["name" : "Darth Vader", "image" : "dog1.png"], ["name" : "Princesa Leia", "image" : "dog2.png"], ["name" : "Yoda", "image" : "dog1.png" ] ]
         let itemsTableView = Observable.just(
-            pets.map { $0 }
+            petsList.map { $0 }
         )
         
         let filters = [ "Cachorros", "Gatos", "Coelhos", "Outros" ]
@@ -66,14 +74,16 @@ extension FeedView {
         itemsTableView
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
-                       cellType: PetTableViewCell.self)) { (row, pet, cell) in
+                       cellType: PetTableViewCell.self)) { [unowned self] _ , pet, cell in
                         cell.bind(pet)
         }
         
         self.petsTableView.rx
-            .modelSelected(PetDetailsView.self)
-            .subscribe( { (pet) in
-                self.delegate?.handle(.showPetDetails)
+            .modelSelected(Pet.self)
+            .subscribe(onNext: { (pet) in
+                self.delegate?.handle(.showPetDetails(pet))
+            }, onError: { (error) in
+                print(error)
             })
         
         itemsCollecView

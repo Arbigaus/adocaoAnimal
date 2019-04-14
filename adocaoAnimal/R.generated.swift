@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 8 files.
+  /// This `R.file` struct is generated, and contains static references to 9 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -32,6 +32,8 @@ struct R: Rswift.Validatable {
     static let dog2Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog2", pathExtension: "png")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
+    /// Resource file `perfil.png`.
+    static let perfilPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "png")
     /// Resource file `settings_sliders-512.png`.
     static let settings_sliders512Png = Rswift.FileResource(bundle: R.hostingBundle, name: "settings_sliders-512", pathExtension: "png")
     
@@ -77,6 +79,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "perfil", withExtension: "png")`
+    static func perfilPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.perfilPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     /// `bundle.url(forResource: "settings_sliders-512", withExtension: "png")`
     static func settings_sliders512Png(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.settings_sliders512Png
@@ -86,7 +94,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `baseline_tune`.
     static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
@@ -94,6 +102,8 @@ struct R: Rswift.Validatable {
     static let dog1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1")
     /// Image `dog2`.
     static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
+    /// Image `perfil`.
+    static let perfil = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil")
     /// Image `settings_sliders-512`.
     static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
     
@@ -110,6 +120,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "dog2", bundle: ..., traitCollection: ...)`
     static func dog2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.dog2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "perfil", bundle: ..., traitCollection: ...)`
+    static func perfil(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.perfil, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "settings_sliders-512", bundle: ..., traitCollection: ...)`
@@ -219,6 +234,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _FeedView.validate()
+      try _PetDetailsView.validate()
       try _PetTableViewCell.validate()
     }
     
@@ -253,12 +269,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _PetDetailsView: Rswift.NibResourceType {
+    struct _PetDetailsView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "PetDetailsView"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "dog2.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog2.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "perfil.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

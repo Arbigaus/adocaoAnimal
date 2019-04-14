@@ -17,11 +17,14 @@ protocol PetDetailsViewDelegate: class {
 class PetDetailsView: UIViewController {
     
     var viewModel: PetDetailsViewModel!
-    
     weak var delegate: AppActionable?
+    
+    var pet: Pet?
 
-    init() {
+    init(pet: Pet) {
+        self.pet = pet
         super.init(nibName: String(describing: PetDetailsView.self), bundle: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

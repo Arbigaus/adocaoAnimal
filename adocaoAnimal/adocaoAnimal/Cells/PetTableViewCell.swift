@@ -18,9 +18,10 @@ class PetTableViewCell: UITableViewCell {
         
     }
     
-    func bind (_ pet : [ String : String ]) {
-        petImage.image = UIImage(named: pet[ "image" ]!)
-        petNameLabel.text = pet["name"]!
+    func bind (_ pet : Pet) {
+        petImage.image = UIImage(named: pet.image)
+        petNameLabel.text = pet.name
+        petLocationLabel.text = pet.address
     }
     
 }

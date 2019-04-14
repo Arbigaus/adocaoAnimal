@@ -11,7 +11,7 @@ import UIKit
 
 enum AppAction {
     
-    case showPetDetails
+    case showPetDetails(_ pet: Pet)
     
 }
 
@@ -53,8 +53,8 @@ class AppCoordinator: Coordinator {
         self.currentView = navigationController
     }
     
-    fileprivate func showPetDetail(){
-        let view = PetDetailsView()
+    fileprivate func showPetDetail(_ pet : Pet){
+        let view = PetDetailsView(pet: pet)
         view.delegate = self
         self.navigationController.pushViewController(view, animated: true)
     }
@@ -67,8 +67,8 @@ extension AppCoordinator: AppActionable {
         
         switch action {
             
-        case .showPetDetails :
-            showPetDetail()
+        case .showPetDetails(let pet) :
+            showPetDetail(pet)
             
         }
     }
