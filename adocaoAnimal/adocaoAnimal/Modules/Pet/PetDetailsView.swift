@@ -26,13 +26,13 @@ class PetDetailsView: UIViewController {
     @IBOutlet weak var petDetailsCollection: UICollectionView!
     
     @IBOutlet weak var adoptButtom: UIButton!
-    @IBOutlet var backButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var viewModel: PetDetailsViewModel!
     weak var delegate: AppActionable?
     
     var pet: Pet
-
+    let disposeBag = DisposeBag()
     init(pet: Pet) {
         self.pet = pet
         
@@ -80,12 +80,6 @@ extension PetDetailsView {
     
     func setupBindings() {
         
-        backButton.rx
-            .tap.subscribe { [unowned self] in
-                self.delegate?.handle(.back)        }
-        
-        // PetDetailCollectionViewCell
-        
         let details = [ "1 Ano", "2,5 kg", "Branco", "Fêmea" ]
         
         let itemsCollecView = Observable.just(
@@ -100,5 +94,17 @@ extension PetDetailsView {
                 
         }
         
+
+//        backButton.rx
+//            .tap.subscribe { [unowned self] in
+//                self.delegate?.handle(.back)
+//            }
+        
+        backButton.rx.tap.bind{[unowned self] _ in
+            self.delegate?.handle(.back)
+            }.disposed(by: disposeBag)
+
     }
+    
+    
 }
