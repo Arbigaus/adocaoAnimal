@@ -22,6 +22,8 @@
 		317FDD6B2255849800356327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD6A2255849800356327 /* Assets.xcassets */; };
 		317FDD792255849800356327 /* adocaoAnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD782255849800356327 /* adocaoAnimalTests.swift */; };
 		317FDD842255849800356327 /* adocaoAnimalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD832255849800356327 /* adocaoAnimalUITests.swift */; };
+		319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C3601226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift */; };
+		319C3604226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319C3602226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib */; };
 		31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */; };
 		31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */; };
 		31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6D225EB5C600AD07BF /* dog1.png */; };
@@ -80,6 +82,8 @@
 		317FDD7F2255849800356327 /* adocaoAnimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adocaoAnimalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317FDD832255849800356327 /* adocaoAnimalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adocaoAnimalUITests.swift; sourceTree = "<group>"; };
 		317FDD852255849800356327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319C3601226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		319C3602226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
 		31FC8C6D225EB5C600AD07BF /* dog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog1.png; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */,
 				31FC8C6F225EB85700AD07BF /* HomeFilterCollectionViewCell.swift */,
 				31FC8C70225EB85700AD07BF /* HomeFilterCollectionViewCell.xib */,
+				319C3601226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift */,
+				319C3602226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
 				317FDD6B2255849800356327 /* Assets.xcassets in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
+				319C3604226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib in Resources */,
 				31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
 				316A6180226151A10009BE3F /* dog2.png in Resources */,
@@ -654,6 +661,7 @@
 			files = (
 				D70235E62263BCF2007740D1 /* PetList.swift in Sources */,
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
+				319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
 				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,

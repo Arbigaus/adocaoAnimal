@@ -42,9 +42,6 @@
                             <state key="normal" title="&lt;">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
-                            <connections>
-                                <action selector="backButtom:" destination="-1" eventType="touchUpInside" id="3Fc-2r-fjQ"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.40223287299999999" blue="0.4420172396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -95,11 +92,11 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reb-Ef-9cl" userLabel="DescritionView">
                                     <rect key="frame" x="0.0" y="120" width="375" height="100"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c6w-IC-i06">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c6w-IC-i06">
+                                            <rect key="frame" x="40" y="0.0" width="335" height="100"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wgp-gx-at8">
-                                                <size key="itemSize" width="50" height="50"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="35" minimumInteritemSpacing="50" id="Wgp-gx-at8">
+                                                <size key="itemSize" width="80" height="80"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -108,7 +105,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="c6w-IC-i06" firstAttribute="leading" secondItem="reb-Ef-9cl" secondAttribute="leading" id="Eu7-jh-Udb"/>
+                                        <constraint firstItem="c6w-IC-i06" firstAttribute="leading" secondItem="reb-Ef-9cl" secondAttribute="leading" constant="40" id="Eu7-jh-Udb"/>
                                         <constraint firstAttribute="trailing" secondItem="c6w-IC-i06" secondAttribute="trailing" id="Wsm-qo-RmY"/>
                                         <constraint firstAttribute="bottom" secondItem="c6w-IC-i06" secondAttribute="bottom" id="gHL-WZ-jJQ"/>
                                         <constraint firstItem="c6w-IC-i06" firstAttribute="top" secondItem="reb-Ef-9cl" secondAttribute="top" id="l5p-wL-JOO"/>

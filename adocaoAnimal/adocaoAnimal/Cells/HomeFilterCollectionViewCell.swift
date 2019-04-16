@@ -18,7 +18,7 @@ class HomeFilterCollectionViewCell: UICollectionViewCell {
         // Initialization code
         homeFilterViewCell.layer.cornerRadius = 25
         homeFilterViewCell.layer.borderWidth = 6
-//        homeFilterViewCell.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 0.8).cgColor
+
         homeFilterViewCell.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
     }
 

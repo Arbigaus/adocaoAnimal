@@ -35,6 +35,7 @@ class PetDetailsView: UIViewController {
 
     init(pet: Pet) {
         self.pet = pet
+        
         super.init(nibName: String(describing: PetDetailsView.self), bundle: nil)
         
     }
@@ -54,7 +55,9 @@ class PetDetailsView: UIViewController {
         self.ownerName?.text = self.pet.owner
         
         self.ownerImage.layer.cornerRadius = 25
-        self.adoptButtom.layer.cornerRadius = 15
+        
+        self.adoptButtom.layer.cornerRadius = 25
+        self.adoptButtom.layer.borderWidth = 6
         
         self.adoptButtom.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
         
@@ -72,12 +75,30 @@ extension PetDetailsView {
     }
     
     func configureViews() {
-        
+        petDetailsCollection.register(R.nib.petDetailInfoCollectionViewCell)
     }
     
     func setupBindings() {
+        
         backButton.rx
             .tap.subscribe { [unowned self] in
                 self.delegate?.handle(.back)        }
+        
+        // PetDetailCollectionViewCell
+        
+        let details = [ "1 Ano", "2,5 kg", "Branco", "Fêmea" ]
+        
+        let itemsCollecView = Observable.just(
+            details.map { "\($0)" }
+        )
+        
+        itemsCollecView
+            .bind(to: petDetailsCollection.rx
+                .items(cellIdentifier: R.reuseIdentifier.petDetailCollectionViewCell.identifier,
+                       cellType: PetDetailInfoCollectionViewCell.self)) { (row, element, cell) in
+                        cell .titleLabel.text = element
+                
+        }
+        
     }
 }
