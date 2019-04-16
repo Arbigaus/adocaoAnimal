@@ -15,6 +15,11 @@ protocol PetDetailsViewDelegate: class {
 }
 
 class PetDetailsView: UIViewController {
+    var viewModel: PetDetailsViewModel!
+    weak var delegate: AppActionable?
+    
+    var pet: Pet
+    let disposeBag = DisposeBag()
     
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var ownerImage: UIImageView!
@@ -28,11 +33,6 @@ class PetDetailsView: UIViewController {
     @IBOutlet weak var adoptButtom: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    var viewModel: PetDetailsViewModel!
-    weak var delegate: AppActionable?
-    
-    var pet: Pet
-    let disposeBag = DisposeBag()
     init(pet: Pet) {
         self.pet = pet
         
@@ -92,13 +92,7 @@ extension PetDetailsView {
                        cellType: PetDetailInfoCollectionViewCell.self)) { (row, element, cell) in
                         cell .titleLabel.text = element
                 
-        }
-        
-
-//        backButton.rx
-//            .tap.subscribe { [unowned self] in
-//                self.delegate?.handle(.back)
-//            }
+        }.disposed(by: disposeBag)
         
         backButton.rx.tap.bind{[unowned self] _ in
             self.delegate?.handle(.back)

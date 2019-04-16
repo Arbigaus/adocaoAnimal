@@ -12,6 +12,7 @@ import RxCocoa
 import Lottie
 
 class FeedView: UIViewController {
+    let disposeBag = DisposeBag()
     
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
@@ -76,7 +77,7 @@ extension FeedView {
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { [unowned self] _ , pet, cell in
                         cell.bind(pet)
-        }
+        }.disposed(by: disposeBag)
         
         self.petsTableView.rx
             .modelSelected(Pet.self)
@@ -84,14 +85,14 @@ extension FeedView {
                 self.delegate?.handle(.showPetDetails(pet))
             }, onError: { (error) in
                 print(error)
-            })
+            }).disposed(by: disposeBag)
         
         itemsCollecView
             .bind(to: filterCollectionView.rx
                 .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
                         cell .homeFilterLabel.text = element
-        }
+        }.disposed(by: disposeBag)
         
     }
     

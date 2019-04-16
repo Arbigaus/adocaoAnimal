@@ -119,25 +119,39 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-Fe-Xtp">
-                    <rect key="frame" x="0.0" y="334" width="375" height="444"/>
+                    <rect key="frame" x="0.0" y="334" width="375" height="394"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMh-EA-BtD">
+                    <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="QhZ-Ux-zir"/>
+                    </constraints>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="n2E-fD-AFZ"/>
+                        <tabBarItem systemItem="more" id="oYP-e0-eVA"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="uMh-EA-BtD" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="20Z-Kx-rFX"/>
                 <constraint firstItem="lQ2-SH-5s6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2sD-sB-3BI"/>
                 <constraint firstItem="dTg-wf-2UT" firstAttribute="top" secondItem="lQ2-SH-5s6" secondAttribute="bottom" id="AcW-lS-9kN"/>
                 <constraint firstItem="oQc-Fe-Xtp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CA8-h0-u60"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dTg-wf-2UT" secondAttribute="trailing" id="Y9R-Mf-Tbc"/>
+                <constraint firstItem="uMh-EA-BtD" firstAttribute="top" secondItem="oQc-Fe-Xtp" secondAttribute="bottom" id="eKt-wh-a2o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lQ2-SH-5s6" secondAttribute="trailing" id="ezz-W2-QGP"/>
                 <constraint firstItem="lQ2-SH-5s6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gZJ-wq-gHu"/>
                 <constraint firstItem="oQc-Fe-Xtp" firstAttribute="top" secondItem="dTg-wf-2UT" secondAttribute="bottom" id="lse-xu-E7r"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oQc-Fe-Xtp" secondAttribute="bottom" id="rbQ-Fa-iB8"/>
+                <constraint firstItem="uMh-EA-BtD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="r4e-vG-1zd"/>
                 <constraint firstItem="dTg-wf-2UT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w3C-Hg-ZN9"/>
+                <constraint firstItem="uMh-EA-BtD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wSi-qg-ETO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oQc-Fe-Xtp" secondAttribute="trailing" id="zqh-BU-Lv4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="40.579710144927539" y="46.875"/>
+            <point key="canvasLocation" x="39.200000000000003" y="46.551724137931039"/>
         </view>
     </objects>
     <resources>
