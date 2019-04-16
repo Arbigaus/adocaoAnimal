@@ -26,13 +26,13 @@ class PetDetailsView: UIViewController {
     @IBOutlet weak var petDetailsCollection: UICollectionView!
     
     @IBOutlet weak var adoptButtom: UIButton!
-    @IBOutlet var backButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var viewModel: PetDetailsViewModel!
     weak var delegate: AppActionable?
     
     var pet: Pet
-
+    let disposeBag = DisposeBag()
     init(pet: Pet) {
         self.pet = pet
         super.init(nibName: String(describing: PetDetailsView.self), bundle: nil)
@@ -76,8 +76,15 @@ extension PetDetailsView {
     }
     
     func setupBindings() {
-        backButton.rx
-            .tap.subscribe { [unowned self] in
-                self.delegate?.handle(.back)        }
+//        backButton.rx
+//            .tap.subscribe { [unowned self] in
+//                self.delegate?.handle(.back)
+//            }
+        
+        backButton.rx.tap.bind{[unowned self] _ in
+            self.delegate?.handle(.back)
+            }.disposed(by: disposeBag)
     }
+    
+    
 }
