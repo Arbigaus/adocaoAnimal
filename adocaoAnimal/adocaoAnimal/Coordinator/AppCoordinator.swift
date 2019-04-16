@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 enum AppAction {
-    
+    case back
+    case showFeed
     case showPetDetails(_ pet: Pet)
     
 }
@@ -59,6 +60,10 @@ class AppCoordinator: Coordinator {
         self.navigationController.pushViewController(view, animated: true)
     }
     
+    fileprivate func back() {
+        self.navigationController.popViewController(animated: true)
+    }
+    
 }
 
 extension AppCoordinator: AppActionable {
@@ -66,6 +71,11 @@ extension AppCoordinator: AppActionable {
     func handle(_ action: AppAction) {
         
         switch action {
+        case .back :
+            back()
+            
+        case .showFeed :
+            showFeed()
             
         case .showPetDetails(let pet) :
             showPetDetail(pet)

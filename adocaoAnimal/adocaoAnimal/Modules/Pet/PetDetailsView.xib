@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetDetailsView" customModule="adocaoAnimal" customModuleProvider="target">
             <connections>
                 <outlet property="adoptButtom" destination="Q7f-7x-BX8" id="6qf-2X-n2g"/>
+                <outlet property="backButton" destination="al9-NE-A9p" id="5OE-Iu-GZs"/>
                 <outlet property="ownerImage" destination="flg-8O-hoh" id="QSf-Wd-I7F"/>
                 <outlet property="ownerName" destination="yqo-4V-yh5" id="6JF-rs-8yX"/>
                 <outlet property="petDescriptionLabel" destination="hf8-DY-1zQ" id="hll-fi-vyD"/>
@@ -31,9 +32,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5o-ND-Wun" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="44" width="375" height="200"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-Oc-h6w">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog1.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-Oc-h6w">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-NE-A9p">
+                            <rect key="frame" x="16" y="25" width="30" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                            <state key="normal" title="&lt;">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="backButtom:" destination="-1" eventType="touchUpInside" id="3Fc-2r-fjQ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.40223287299999999" blue="0.4420172396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -142,11 +154,11 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-Jr-gxy" userLabel="TextView">
                                     <rect key="frame" x="0.0" y="320" width="375" height="160"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xqR-ch-nac">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqR-ch-nac">
+                                            <rect key="frame" x="40" y="0.0" width="335" height="200"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
@@ -154,8 +166,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="xqR-ch-nac" secondAttribute="trailing" id="4Ir-qf-l2t"/>
                                         <constraint firstItem="xqR-ch-nac" firstAttribute="top" secondItem="bQK-Jr-gxy" secondAttribute="top" id="Sez-Ot-3ix"/>
-                                        <constraint firstAttribute="bottom" secondItem="xqR-ch-nac" secondAttribute="bottom" id="dIT-ro-JEy"/>
-                                        <constraint firstItem="xqR-ch-nac" firstAttribute="leading" secondItem="bQK-Jr-gxy" secondAttribute="leading" id="jfm-fA-KKS"/>
+                                        <constraint firstItem="xqR-ch-nac" firstAttribute="leading" secondItem="bQK-Jr-gxy" secondAttribute="leading" constant="40" id="jfm-fA-KKS"/>
                                         <constraint firstAttribute="height" constant="160" id="vPw-xm-zcB"/>
                                     </constraints>
                                 </view>
@@ -229,7 +240,7 @@
         </view>
     </objects>
     <resources>
-        <image name="dog2.png" width="340" height="194"/>
+        <image name="dog1.png" width="326" height="194"/>
         <image name="perfil.png" width="215" height="234"/>
     </resources>
 </document>

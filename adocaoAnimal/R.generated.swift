@@ -278,7 +278,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "dog2.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog2.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "dog1.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "perfil.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
