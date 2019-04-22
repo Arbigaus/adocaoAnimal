@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 9 files.
+  /// This `R.file` struct is generated, and contains static references to 10 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -30,6 +30,8 @@ struct R: Rswift.Validatable {
     static let dog1Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog1", pathExtension: "png")
     /// Resource file `dog2.png`.
     static let dog2Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog2", pathExtension: "png")
+    /// Resource file `heart.json`.
+    static let heartJson = Rswift.FileResource(bundle: R.hostingBundle, name: "heart", pathExtension: "json")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
     /// Resource file `perfil.png`.
@@ -70,6 +72,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "dog2", withExtension: "png")`
     static func dog2Png(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.dog2Png
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "heart", withExtension: "json")`
+    static func heartJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.heartJson
       return fileResource.bundle.url(forResource: fileResource)
     }
     

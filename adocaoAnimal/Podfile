@@ -7,6 +7,7 @@ target 'adocaoAnimal' do
 
   # Pods for Adoção Animal
   pod 'Firebase/Core'
+  pod "ESTabBarController-swift"
   pod 'ChatSDK'
   pod 'ChatSDKFirebase/Adapter'
   pod 'ChatSDKFirebase/FileStorage'
