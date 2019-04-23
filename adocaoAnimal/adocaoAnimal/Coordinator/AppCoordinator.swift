@@ -12,6 +12,7 @@ import UIKit
 enum AppAction {
     case back
     case showFeed
+    case showLogin
     case showPetDetails(_ pet: Pet)
     
 }
@@ -43,7 +44,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showFeed()
+        showLogin()
         
     }
     
@@ -52,6 +53,15 @@ class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([homeView], animated: false)
         homeView.delegate = self
         self.currentView = navigationController
+    }
+    
+    fileprivate func showLogin() {
+        let view = LoginView()
+        self.navigationController.setViewControllers([view], animated: true)
+        view.delegate = self
+        self.currentView = navigationController
+        
+        
     }
     
     fileprivate func showPetDetail(_ pet : Pet){
@@ -63,7 +73,6 @@ class AppCoordinator: Coordinator {
     fileprivate func back() {
         self.navigationController.popViewController(animated: true)
     }
-    
 }
 
 extension AppCoordinator: AppActionable {
@@ -80,7 +89,10 @@ extension AppCoordinator: AppActionable {
         case .showPetDetails(let pet) :
             showPetDetail(pet)
             
+        case .showLogin :
+            showLogin()            
         }
+        
     }
     
 }

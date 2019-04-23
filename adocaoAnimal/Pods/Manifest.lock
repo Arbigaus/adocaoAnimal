@@ -232,6 +232,7 @@ DEPENDENCIES:
   - ChatSDKFirebase/SocialLogin
   - ESTabBarController-swift
   - Firebase/Core
+  - GoogleSignIn
   - lottie-ios
   - R.swift
   - RxCocoa
@@ -342,6 +343,6 @@ SPEC CHECKSUMS:
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   VENTokenField: 5a19b838fb97f040e3d4c93f584b4adeaf3fc1ee
 
-PODFILE CHECKSUM: 751133702af03b6b9c12cfce9dfd61d98252555a
+PODFILE CHECKSUM: 832a1834a4a5ecd543954dde547c87b9d0c8fa09
 
 COCOAPODS: 1.6.1

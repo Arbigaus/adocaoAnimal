@@ -19,11 +19,17 @@
 		31736BCE225589A700BCFE53 /* FeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31736BCB225589A700BCFE53 /* FeedView.xib */; };
 		317FDD642255849700356327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD632255849700356327 /* AppDelegate.swift */; };
 		317FDD692255849700356327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD672255849700356327 /* Main.storyboard */; };
-		317FDD6B2255849800356327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317FDD6A2255849800356327 /* Assets.xcassets */; };
 		317FDD792255849800356327 /* adocaoAnimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD782255849800356327 /* adocaoAnimalTests.swift */; };
 		317FDD842255849800356327 /* adocaoAnimalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FDD832255849800356327 /* adocaoAnimalUITests.swift */; };
 		319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C3601226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift */; };
 		319C3604226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319C3602226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib */; };
+		31DA95E6226E7D5E007AD5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95E5226E7D5E007AD5E6 /* Assets.xcassets */; };
+		31DA95E8226E7EA7007AD5E6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95E7226E7EA7007AD5E6 /* logo.png */; };
+		31DA95ED226E7F34007AD5E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA95EA226E7F34007AD5E6 /* LoginView.swift */; };
+		31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */; };
+		31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95EC226E7F34007AD5E6 /* LoginView.xib */; };
+		31DA95F1226E83B0007AD5E6 /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95F0226E83B0007AD5E6 /* cat1.jpg */; };
+		31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95F2226E8641007AD5E6 /* dog1.jpg */; };
 		31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */; };
 		31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */; };
 		31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6D225EB5C600AD07BF /* dog1.png */; };
@@ -74,7 +80,6 @@
 		317FDD602255849700356327 /* adocaoAnimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adocaoAnimal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317FDD632255849700356327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317FDD682255849700356327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		317FDD6A2255849800356327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		317FDD6F2255849800356327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317FDD742255849800356327 /* adocaoAnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adocaoAnimalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		317FDD782255849800356327 /* adocaoAnimalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adocaoAnimalTests.swift; sourceTree = "<group>"; };
@@ -84,6 +89,13 @@
 		317FDD852255849800356327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		319C3601226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		319C3602226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		31DA95E5226E7D5E007AD5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31DA95E7226E7EA7007AD5E6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		31DA95EA226E7F34007AD5E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		31DA95EC226E7F34007AD5E6 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		31DA95F0226E83B0007AD5E6 /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat1.jpg; sourceTree = "<group>"; };
+		31DA95F2226E8641007AD5E6 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
 		31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
 		31FC8C6D225EB5C600AD07BF /* dog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog1.png; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				31DA95E9226E7F16007AD5E6 /* Login */,
 				D77B10DF2256DC9F009B3561 /* Pet */,
 				31736BC82255898D00BCFE53 /* Feed */,
 			);
@@ -209,6 +222,16 @@
 			path = adocaoAnimalUITests;
 			sourceTree = "<group>";
 		};
+		31DA95E9226E7F16007AD5E6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				31DA95EA226E7F34007AD5E6 /* LoginView.swift */,
+				31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */,
+				31DA95EC226E7F34007AD5E6 /* LoginView.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		31FC8C66225EB45C00AD07BF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +279,7 @@
 		D77B10D02256D242009B3561 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				31DA95E5226E7D5E007AD5E6 /* Assets.xcassets */,
 				317FDD6F2255849800356327 /* Info.plist */,
 				310D6956225823370027C669 /* GoogleService-Info.plist */,
 				312B746B225C0E040064B6B9 /* Filter1.json */,
@@ -264,7 +288,6 @@
 				D77B10E62256E39C009B3561 /* location.json */,
 				D77B10D12256D2B0009B3561 /* R.generated.swift */,
 				317FDD632255849700356327 /* AppDelegate.swift */,
-				317FDD6A2255849800356327 /* Assets.xcassets */,
 				317FDD672255849700356327 /* Main.storyboard */,
 				D70235E72263CC40007740D1 /* ViewController.swift */,
 			);
@@ -300,6 +323,9 @@
 		D77B10EB2256EFA8009B3561 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				31DA95F2226E8641007AD5E6 /* dog1.jpg */,
+				31DA95F0226E83B0007AD5E6 /* cat1.jpg */,
+				31DA95E7226E7EA7007AD5E6 /* logo.png */,
 				D70235E92263D304007740D1 /* perfil.png */,
 				316A617F226151A10009BE3F /* dog2.png */,
 				31FC8C6D225EB5C600AD07BF /* dog1.png */,
@@ -421,19 +447,23 @@
 			files = (
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
 				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
+				31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */,
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
 				312B746C225C0E050064B6B9 /* Filter2.json in Resources */,
+				31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */,
+				31DA95E8226E7EA7007AD5E6 /* logo.png in Resources */,
+				31DA95F1226E83B0007AD5E6 /* cat1.jpg in Resources */,
 				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
-				317FDD6B2255849800356327 /* Assets.xcassets in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
 				319C3604226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib in Resources */,
 				31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
 				316A6180226151A10009BE3F /* dog2.png in Resources */,
+				31DA95E6226E7D5E007AD5E6 /* Assets.xcassets in Resources */,
 				D70235EA2263D304007740D1 /* perfil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +611,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChatSDKKeepLayout/KeepLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CountryPicker/CountryPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FrameAccessor/FrameAccessor.framework",
@@ -619,6 +650,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeepLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FrameAccessor.framework",
@@ -667,6 +699,8 @@
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,
 				D70235E82263CC40007740D1 /* ViewController.swift in Sources */,
+				31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */,
+				31DA95ED226E7F34007AD5E6 /* LoginView.swift in Sources */,
 				D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */,
 				D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */,
 				31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */,

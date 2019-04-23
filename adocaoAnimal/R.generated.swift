@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 10 files.
+  /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -26,14 +26,18 @@ struct R: Rswift.Validatable {
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `baseline_tune.png`.
     static let baseline_tunePng = Rswift.FileResource(bundle: R.hostingBundle, name: "baseline_tune", pathExtension: "png")
+    /// Resource file `cat1.jpg`.
+    static let cat1Jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "cat1", pathExtension: "jpg")
+    /// Resource file `dog1.jpg`.
+    static let dog1Jpg = Rswift.FileResource(bundle: R.hostingBundle, name: "dog1", pathExtension: "jpg")
     /// Resource file `dog1.png`.
     static let dog1Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog1", pathExtension: "png")
     /// Resource file `dog2.png`.
     static let dog2Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog2", pathExtension: "png")
-    /// Resource file `heart.json`.
-    static let heartJson = Rswift.FileResource(bundle: R.hostingBundle, name: "heart", pathExtension: "json")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
+    /// Resource file `logo.png`.
+    static let logoPng = Rswift.FileResource(bundle: R.hostingBundle, name: "logo", pathExtension: "png")
     /// Resource file `perfil.png`.
     static let perfilPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "png")
     /// Resource file `settings_sliders-512.png`.
@@ -63,6 +67,18 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "cat1", withExtension: "jpg")`
+    static func cat1Jpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.cat1Jpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "dog1", withExtension: "jpg")`
+    static func dog1Jpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dog1Jpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     /// `bundle.url(forResource: "dog1", withExtension: "png")`
     static func dog1Png(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.dog1Png
@@ -75,15 +91,15 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
-    /// `bundle.url(forResource: "heart", withExtension: "json")`
-    static func heartJson(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.heartJson
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
     /// `bundle.url(forResource: "location", withExtension: "json")`
     static func locationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.locationJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "logo", withExtension: "png")`
+    static func logoPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.logoPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -102,14 +118,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `baseline_tune`.
     static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
+    /// Image `cat1.jpg`.
+    static let cat1Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "cat1.jpg")
+    /// Image `dog1.jpg`.
+    static let dog1Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1.jpg")
     /// Image `dog1`.
     static let dog1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1")
     /// Image `dog2`.
     static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
+    /// Image `logo`.
+    static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
     /// Image `perfil`.
     static let perfil = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil")
     /// Image `settings_sliders-512`.
@@ -120,14 +142,29 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.baseline_tune, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "cat1.jpg", bundle: ..., traitCollection: ...)`
+    static func cat1Jpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cat1Jpg, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "dog1", bundle: ..., traitCollection: ...)`
     static func dog1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.dog1, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "dog1.jpg", bundle: ..., traitCollection: ...)`
+    static func dog1Jpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dog1Jpg, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "dog2", bundle: ..., traitCollection: ...)`
     static func dog2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.dog2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
+    static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "perfil", bundle: ..., traitCollection: ...)`
@@ -143,12 +180,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `FeedView`.
     static let feedView = _R.nib._FeedView()
     /// Nib `HomeFilterCollectionViewCell`.
     static let homeFilterCollectionViewCell = _R.nib._HomeFilterCollectionViewCell()
+    /// Nib `LoginView`.
+    static let loginView = _R.nib._LoginView()
     /// Nib `PetDetailInfoCollectionViewCell`.
     static let petDetailInfoCollectionViewCell = _R.nib._PetDetailInfoCollectionViewCell()
     /// Nib `PetDetailsView`.
@@ -166,6 +205,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeFilterCollectionViewCell) instead")
     static func homeFilterCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.homeFilterCollectionViewCell)
+    }
+    
+    /// `UINib(name: "LoginView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loginView) instead")
+    static func loginView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loginView)
     }
     
     /// `UINib(name: "PetDetailInfoCollectionViewCell", in: bundle)`
@@ -192,6 +237,10 @@ struct R: Rswift.Validatable {
     
     static func homeFilterCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeFilterCollectionViewCell? {
       return R.nib.homeFilterCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeFilterCollectionViewCell
+    }
+    
+    static func loginView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.loginView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func petDetailInfoCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PetDetailInfoCollectionViewCell? {
@@ -256,6 +305,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _FeedView.validate()
+      try _LoginView.validate()
       try _PetDetailsView.validate()
       try _PetTableViewCell.validate()
     }
@@ -286,6 +336,23 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeFilterCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeFilterCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _LoginView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "LoginView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "dog1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.jpg' is used in nib 'LoginView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
