@@ -350,7 +350,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "dog1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.jpg' is used in nib 'LoginView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "cat2.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cat2.jpg' is used in nib 'LoginView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

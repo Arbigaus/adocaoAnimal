@@ -29,8 +29,8 @@ class FeedView: UIViewController {
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
         
         let petVader = Pet(name: "Darth Vader", size: .smal, image: "dog1.png", owner: "Adriele", address: "Rua ali", neighborhood: "CIC - 5,4km")
-        let petLeia = Pet(name: "Princesa Leia", size: .medium, image: "dog2.png", owner: "Gerson", address: "Rua de lá", neighborhood: "Pinheirinho - 2,3km")
-        let petYoda = Pet(name: "Yoda", size: .smal, image: "dog2.png", owner: "Skywalker", address: "Rua de cima", neighborhood: "Novo Mundo - 10km")
+        let petLeia = Pet(name: "Princesa Leia", size: .medium, image: "cat1.jpg", owner: "Gerson", address: "Rua de lá", neighborhood: "Pinheirinho - 2,3km")
+        let petYoda = Pet(name: "Yoda", size: .smal, image: "dog1.jpg", owner: "Skywalker", address: "Rua de cima", neighborhood: "Novo Mundo - 10km")
         
         petsList.append(petVader)
         petsList.append(petLeia)

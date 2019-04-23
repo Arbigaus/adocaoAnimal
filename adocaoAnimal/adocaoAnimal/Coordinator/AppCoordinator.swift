@@ -50,7 +50,7 @@ class AppCoordinator: Coordinator {
     
     fileprivate func showFeed(){
         let homeView = FeedView()
-        self.navigationController.setViewControllers([homeView], animated: false)
+        self.navigationController.pushViewController(homeView, animated: false)
         homeView.delegate = self
         self.currentView = navigationController
     }

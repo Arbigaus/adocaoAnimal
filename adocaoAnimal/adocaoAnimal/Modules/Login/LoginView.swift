@@ -10,15 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginView: UIViewController {
-    
+class LoginView: UIViewController {    
     var viewModel: LoginViewModel!
     
     weak var delegate: AppActionable?
+    let disposeBag = DisposeBag()
+    
+    let backgrounds = ["dog1.jpg", "cat1.jpg"]
+    
+    @IBOutlet weak var viewBackground: UIImageView!
     
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var skipLogin: UIButton!
     
     init() {
         super.init(nibName: String(describing: LoginView.self), bundle: nil)
@@ -41,6 +46,11 @@ class LoginView: UIViewController {
         
         googleButton.layer.cornerRadius = 6
         facebookButton.layer.cornerRadius = 6
+        
+        // set background image
+        let sort = Int.random(in: 0...1)
+        viewBackground.image = UIImage(named: backgrounds[sort])
+        
     }
     
 }
@@ -58,6 +68,10 @@ extension LoginView {
     }
     
     func setupBindings() {
-
+        
+        skipLogin.rx.tap.bind{[unowned self] _ in
+            self.delegate?.handle(.showFeed)
+        }.disposed(by: disposeBag)
+        
     }
 }
