@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="D5f-so-osE">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="D5f-so-osE" userLabel="Image Background">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOc-qO-PKl">
@@ -146,7 +146,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.29673619923857864" green="0.29673619923857864" blue="0.29673619923857864" alpha="0.5490421660958904" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="0.5490421660958904" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="1aQ-3C-6Ze" firstAttribute="top" secondItem="STv-kc-iRF" secondAttribute="bottom" constant="100" id="0Q5-Gw-7fq"/>
                         <constraint firstItem="wH4-Xo-vyi" firstAttribute="leading" secondItem="iOc-qO-PKl" secondAttribute="leading" id="7A3-Mz-fdO"/>

@@ -13,6 +13,8 @@ enum AppAction {
     case back
     case showFeed
     case showLogin
+    case showLoginEmail
+    case showCreateAccount
     case showPetDetails(_ pet: Pet)
     
 }
@@ -44,20 +46,20 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showLogin()
+        showFeed()
         
     }
     
     fileprivate func showFeed(){
         let homeView = FeedView()
-        self.navigationController.pushViewController(homeView, animated: false)
+        self.navigationController.setViewControllers([homeView], animated: false)
         homeView.delegate = self
         self.currentView = navigationController
     }
     
     fileprivate func showLogin() {
         let view = LoginView()
-        self.navigationController.setViewControllers([view], animated: true)
+        self.navigationController.pushViewController(view, animated: true)
         view.delegate = self
         self.currentView = navigationController
         
@@ -68,6 +70,21 @@ class AppCoordinator: Coordinator {
         let view = PetDetailsView(pet: pet)
         view.delegate = self
         self.navigationController.pushViewController(view, animated: true)
+        self.currentView = navigationController
+    }
+    
+    fileprivate func showLoginEmail() {
+        let view = LoginEmailView()
+        self.navigationController.pushViewController(view, animated: true)
+        view.delegate = self
+        self.currentView = navigationController
+    }
+    
+    fileprivate func showCreateAccount() {
+        let view = CreateAccountView()
+        self.navigationController.pushViewController(view, animated: true)
+        view.delegate = self
+        self.currentView = navigationController
     }
     
     fileprivate func back() {
@@ -90,9 +107,15 @@ extension AppCoordinator: AppActionable {
             showPetDetail(pet)
             
         case .showLogin :
-            showLogin()            
-        }
-        
+            showLogin()
+            
+        case .showLoginEmail :
+            showLoginEmail()
+            
+        case .showCreateAccount :
+            showCreateAccount()
+            
+        }       
     }
     
 }

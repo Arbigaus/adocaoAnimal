@@ -30,6 +30,13 @@
 		31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */; };
 		31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95EC226E7F34007AD5E6 /* LoginView.xib */; };
 		31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95F2226E8641007AD5E6 /* dog1.jpg */; };
+		31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */; };
+		31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */; };
+		31EF5E3222711DEE007900B9 /* LoginEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */; };
+		31EF5E3822712FE6007900B9 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E3522712FE6007900B9 /* CreateAccountView.swift */; };
+		31EF5E3922712FE6007900B9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E3622712FE6007900B9 /* CreateAccountViewModel.swift */; };
+		31EF5E3A22712FE6007900B9 /* CreateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EF5E3722712FE6007900B9 /* CreateAccountView.xib */; };
+		31EF5E3C2271323A007900B9 /* perfil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31EF5E3B2271323A007900B9 /* perfil.jpg */; };
 		31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */; };
 		31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */; };
 		31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FC8C6D225EB5C600AD07BF /* dog1.png */; };
@@ -39,7 +46,7 @@
 		632016489A190595E06B8EEF /* Pods_adocaoAnimalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC941B8DFA311B4BD3CE2AC2 /* Pods_adocaoAnimalUITests.framework */; };
 		D70235E62263BCF2007740D1 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235E52263BCF2007740D1 /* PetList.swift */; };
 		D70235E82263CC40007740D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235E72263CC40007740D1 /* ViewController.swift */; };
-		D70235EA2263D304007740D1 /* perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = D70235E92263D304007740D1 /* perfil.png */; };
+		D70235EA2263D304007740D1 /* perfilDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D70235E92263D304007740D1 /* perfilDefault.png */; };
 		D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D12256D2B0009B3561 /* R.generated.swift */; };
 		D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D52256D4D0009B3561 /* Coordinator.swift */; };
 		D77B10D82256D52D009B3561 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D72256D52D009B3561 /* AppCoordinator.swift */; };
@@ -96,6 +103,13 @@
 		31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		31DA95EC226E7F34007AD5E6 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		31DA95F2226E8641007AD5E6 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
+		31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewModel.swift; sourceTree = "<group>"; };
+		31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginEmailView.xib; sourceTree = "<group>"; };
+		31EF5E3522712FE6007900B9 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		31EF5E3622712FE6007900B9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		31EF5E3722712FE6007900B9 /* CreateAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountView.xib; sourceTree = "<group>"; };
+		31EF5E3B2271323A007900B9 /* perfil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = perfil.jpg; sourceTree = "<group>"; };
 		31FC8C69225EB48A00AD07BF /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		31FC8C6A225EB48A00AD07BF /* PetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetTableViewCell.xib; sourceTree = "<group>"; };
 		31FC8C6D225EB5C600AD07BF /* dog1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog1.png; sourceTree = "<group>"; };
@@ -107,7 +121,7 @@
 		BCD0C90FBDE49AAED683E3E4 /* Pods_adocaoAnimalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_adocaoAnimalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70235E52263BCF2007740D1 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		D70235E72263CC40007740D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D70235E92263D304007740D1 /* perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perfil.png; sourceTree = "<group>"; };
+		D70235E92263D304007740D1 /* perfilDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perfilDefault.png; sourceTree = "<group>"; };
 		D77B10D12256D2B0009B3561 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D77B10D52256D4D0009B3561 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D77B10D72256D52D009B3561 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -152,21 +166,23 @@
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				31DA95E9226E7F16007AD5E6 /* Login */,
-				D77B10DF2256DC9F009B3561 /* Pet */,
-				31736BC82255898D00BCFE53 /* Feed */,
+				31EF5E3422712FC8007900B9 /* CreateAccountView */,
+				31EF5E2C22711D94007900B9 /* LoginEmailView */,
+				31DA95E9226E7F16007AD5E6 /* LoginView */,
+				D77B10DF2256DC9F009B3561 /* PetView */,
+				31736BC82255898D00BCFE53 /* FeedView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		31736BC82255898D00BCFE53 /* Feed */ = {
+		31736BC82255898D00BCFE53 /* FeedView */ = {
 			isa = PBXGroup;
 			children = (
 				31736BC9225589A700BCFE53 /* FeedView.swift */,
 				31736BCA225589A700BCFE53 /* FeedViewModel.swift */,
 				31736BCB225589A700BCFE53 /* FeedView.xib */,
 			);
-			path = Feed;
+			path = FeedView;
 			sourceTree = "<group>";
 		};
 		317FDD572255849700356327 = {
@@ -222,14 +238,34 @@
 			path = adocaoAnimalUITests;
 			sourceTree = "<group>";
 		};
-		31DA95E9226E7F16007AD5E6 /* Login */ = {
+		31DA95E9226E7F16007AD5E6 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				31DA95EA226E7F34007AD5E6 /* LoginView.swift */,
 				31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */,
 				31DA95EC226E7F34007AD5E6 /* LoginView.xib */,
 			);
-			path = Login;
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		31EF5E2C22711D94007900B9 /* LoginEmailView */ = {
+			isa = PBXGroup;
+			children = (
+				31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */,
+				31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */,
+				31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */,
+			);
+			path = LoginEmailView;
+			sourceTree = "<group>";
+		};
+		31EF5E3422712FC8007900B9 /* CreateAccountView */ = {
+			isa = PBXGroup;
+			children = (
+				31EF5E3522712FE6007900B9 /* CreateAccountView.swift */,
+				31EF5E3622712FE6007900B9 /* CreateAccountViewModel.swift */,
+				31EF5E3722712FE6007900B9 /* CreateAccountView.xib */,
+			);
+			path = CreateAccountView;
 			sourceTree = "<group>";
 		};
 		31FC8C66225EB45C00AD07BF /* Cells */ = {
@@ -303,14 +339,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D77B10DF2256DC9F009B3561 /* Pet */ = {
+		D77B10DF2256DC9F009B3561 /* PetView */ = {
 			isa = PBXGroup;
 			children = (
 				D77B10E02256DEA6009B3561 /* PetDetailsView.swift */,
 				D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */,
 				D77B10E22256DEA6009B3561 /* PetDetailsView.xib */,
 			);
-			path = Pet;
+			path = PetView;
 			sourceTree = "<group>";
 		};
 		D77B10E82256E6BE009B3561 /* Components */ = {
@@ -323,10 +359,11 @@
 		D77B10EB2256EFA8009B3561 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				31EF5E3B2271323A007900B9 /* perfil.jpg */,
 				31741B91226EA55400265305 /* cat1.jpg */,
 				31DA95F2226E8641007AD5E6 /* dog1.jpg */,
 				31DA95E7226E7EA7007AD5E6 /* logo.png */,
-				D70235E92263D304007740D1 /* perfil.png */,
+				D70235E92263D304007740D1 /* perfilDefault.png */,
 				316A617F226151A10009BE3F /* dog2.png */,
 				31FC8C6D225EB5C600AD07BF /* dog1.png */,
 				312B746E225C20430064B6B9 /* settings_sliders-512.png */,
@@ -447,6 +484,7 @@
 			files = (
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
 				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
+				31EF5E3A22712FE6007900B9 /* CreateAccountView.xib in Resources */,
 				31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */,
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
@@ -456,15 +494,17 @@
 				31DA95E8226E7EA7007AD5E6 /* logo.png in Resources */,
 				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
+				31EF5E3C2271323A007900B9 /* perfil.jpg in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
 				319C3604226554A0001F8B1A /* PetDetailInfoCollectionViewCell.xib in Resources */,
 				31FC8C6E225EB5C600AD07BF /* dog1.png in Resources */,
+				31EF5E3222711DEE007900B9 /* LoginEmailView.xib in Resources */,
 				317FDD692255849700356327 /* Main.storyboard in Resources */,
 				316A6180226151A10009BE3F /* dog2.png in Resources */,
 				31DA95E6226E7D5E007AD5E6 /* Assets.xcassets in Resources */,
-				D70235EA2263D304007740D1 /* perfil.png in Resources */,
+				D70235EA2263D304007740D1 /* perfilDefault.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +742,10 @@
 				31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */,
 				31DA95ED226E7F34007AD5E6 /* LoginView.swift in Sources */,
 				D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */,
+				31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */,
+				31EF5E3822712FE6007900B9 /* CreateAccountView.swift in Sources */,
+				31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */,
+				31EF5E3922712FE6007900B9 /* CreateAccountViewModel.swift in Sources */,
 				D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */,
 				31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */,
 				317FDD642255849700356327 /* AppDelegate.swift in Sources */,

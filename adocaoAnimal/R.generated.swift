@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 12 files.
+  /// This `R.file` struct is generated, and contains static references to 13 files.
   struct file {
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
@@ -38,8 +38,10 @@ struct R: Rswift.Validatable {
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
     /// Resource file `logo.png`.
     static let logoPng = Rswift.FileResource(bundle: R.hostingBundle, name: "logo", pathExtension: "png")
-    /// Resource file `perfil.png`.
-    static let perfilPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "png")
+    /// Resource file `perfil.jpg`.
+    static let perfilJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "jpg")
+    /// Resource file `perfilDefault.png`.
+    static let perfilDefaultPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfilDefault", pathExtension: "png")
     /// Resource file `settings_sliders-512.png`.
     static let settings_sliders512Png = Rswift.FileResource(bundle: R.hostingBundle, name: "settings_sliders-512", pathExtension: "png")
     
@@ -103,9 +105,15 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
-    /// `bundle.url(forResource: "perfil", withExtension: "png")`
-    static func perfilPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.perfilPng
+    /// `bundle.url(forResource: "perfil", withExtension: "jpg")`
+    static func perfilJpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.perfilJpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "perfilDefault", withExtension: "png")`
+    static func perfilDefaultPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.perfilDefaultPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -118,7 +126,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `baseline_tune`.
     static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
@@ -132,8 +140,10 @@ struct R: Rswift.Validatable {
     static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
     /// Image `logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
-    /// Image `perfil`.
-    static let perfil = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil")
+    /// Image `perfil.jpg`.
+    static let perfilJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil.jpg")
+    /// Image `perfilDefault`.
+    static let perfilDefault = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfilDefault")
     /// Image `settings_sliders-512`.
     static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
     
@@ -167,9 +177,14 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "perfil", bundle: ..., traitCollection: ...)`
-    static func perfil(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.perfil, compatibleWith: traitCollection)
+    /// `UIImage(named: "perfil.jpg", bundle: ..., traitCollection: ...)`
+    static func perfilJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.perfilJpg, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "perfilDefault", bundle: ..., traitCollection: ...)`
+    static func perfilDefault(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.perfilDefault, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "settings_sliders-512", bundle: ..., traitCollection: ...)`
@@ -180,12 +195,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
+    /// Nib `CreateAccountView`.
+    static let createAccountView = _R.nib._CreateAccountView()
     /// Nib `FeedView`.
     static let feedView = _R.nib._FeedView()
     /// Nib `HomeFilterCollectionViewCell`.
     static let homeFilterCollectionViewCell = _R.nib._HomeFilterCollectionViewCell()
+    /// Nib `LoginEmailView`.
+    static let loginEmailView = _R.nib._LoginEmailView()
     /// Nib `LoginView`.
     static let loginView = _R.nib._LoginView()
     /// Nib `PetDetailInfoCollectionViewCell`.
@@ -194,6 +213,12 @@ struct R: Rswift.Validatable {
     static let petDetailsView = _R.nib._PetDetailsView()
     /// Nib `PetTableViewCell`.
     static let petTableViewCell = _R.nib._PetTableViewCell()
+    
+    /// `UINib(name: "CreateAccountView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.createAccountView) instead")
+    static func createAccountView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.createAccountView)
+    }
     
     /// `UINib(name: "FeedView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.feedView) instead")
@@ -205,6 +230,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeFilterCollectionViewCell) instead")
     static func homeFilterCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.homeFilterCollectionViewCell)
+    }
+    
+    /// `UINib(name: "LoginEmailView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loginEmailView) instead")
+    static func loginEmailView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loginEmailView)
     }
     
     /// `UINib(name: "LoginView", in: bundle)`
@@ -231,12 +262,20 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.petTableViewCell)
     }
     
+    static func createAccountView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.createAccountView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
     static func feedView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.feedView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func homeFilterCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeFilterCollectionViewCell? {
       return R.nib.homeFilterCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeFilterCollectionViewCell
+    }
+    
+    static func loginEmailView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.loginEmailView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func loginView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -304,10 +343,30 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _CreateAccountView.validate()
       try _FeedView.validate()
+      try _LoginEmailView.validate()
       try _LoginView.validate()
       try _PetDetailsView.validate()
       try _PetTableViewCell.validate()
+    }
+    
+    struct _CreateAccountView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CreateAccountView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "cat1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cat1.jpg' is used in nib 'CreateAccountView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'CreateAccountView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
     }
     
     struct _FeedView: Rswift.NibResourceType, Rswift.Validatable {
@@ -319,6 +378,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "perfil.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.jpg' is used in nib 'FeedView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "settings_sliders-512.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'settings_sliders-512.png' is used in nib 'FeedView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
@@ -336,6 +396,24 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeFilterCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeFilterCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _LoginEmailView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "LoginEmailView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "dog1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.jpg' is used in nib 'LoginEmailView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'LoginEmailView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

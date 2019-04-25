@@ -16,13 +16,16 @@ class FeedView: UIViewController {
     
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
+    let tapGesture = UITapGestureRecognizer()
     
     weak var delegate: AppActionable?
     
     @IBOutlet var locationAnimationView: AnimationView!
     
+    @IBOutlet weak var perfilButton: UIButton!
     @IBOutlet weak var petsTableView: UITableView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
+    @IBOutlet weak var perfilView: UIView!
     
     init(viewModel: FeedViewModel = .init()) {
         self.viewModel = viewModel
@@ -45,6 +48,14 @@ class FeedView: UIViewController {
         super.viewDidLoad()
         self.configureViews()
         self.setupBindings()
+        
+        perfilButton.layer.cornerRadius = 20
+        perfilView.layer.cornerRadius = 25
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -93,6 +104,10 @@ extension FeedView {
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
                         cell .homeFilterLabel.text = element
         }.disposed(by: disposeBag)
+        
+        perfilButton.rx.tap.bind { [unowned self] _ in
+            self.delegate?.handle(.showLogin)
+            }.disposed(by: disposeBag)
         
     }
     

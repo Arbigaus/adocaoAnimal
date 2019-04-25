@@ -53,6 +53,10 @@ class LoginView: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
 }
 
 extension LoginView {
@@ -69,8 +73,12 @@ extension LoginView {
     
     func setupBindings() {
         
-        skipLogin.rx.tap.bind{[unowned self] _ in
-            self.delegate?.handle(.showFeed)
+        skipLogin.rx.tap.bind { [unowned self] _ in
+            self.delegate?.handle(.back)
+        }.disposed(by: disposeBag)
+        
+        emailButton.rx.tap.bind { [unowned self] _ in
+            self.delegate?.handle(.showLoginEmail)
         }.disposed(by: disposeBag)
         
     }

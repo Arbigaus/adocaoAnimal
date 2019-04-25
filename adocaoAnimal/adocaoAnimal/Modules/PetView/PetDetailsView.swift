@@ -94,10 +94,10 @@ extension PetDetailsView {
                 
         }.disposed(by: disposeBag)
         
-        backButton.rx.tap.bind{[unowned self] _ in
+        backButton.rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.back)
             }.disposed(by: disposeBag)
-
+        
     }
     
     
