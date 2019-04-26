@@ -13,7 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginEmailView" customModule="adocaoAnimal" customModuleProvider="target">
             <connections>
                 <outlet property="createAccountButton" destination="5rH-hZ-IKR" id="mSb-Iy-3lr"/>
+                <outlet property="emailField" destination="jER-34-r1o" id="T5a-bQ-I9p"/>
                 <outlet property="loginButton" destination="glo-Xd-3mu" id="Z2o-dy-Dqz"/>
+                <outlet property="passwdField" destination="VX9-af-2fi" id="3ZS-TJ-jLp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

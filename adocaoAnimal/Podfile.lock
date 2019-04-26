@@ -1,111 +1,27 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
-  - Bolts (1.9.0):
-    - Bolts/AppLinks (= 1.9.0)
-    - Bolts/Tasks (= 1.9.0)
-  - Bolts/AppLinks (1.9.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.9.0)
-  - ChatSDK (4.10.2):
-    - ChatSDK/Complete (= 4.10.2)
-  - ChatSDK/Complete (4.10.2):
-    - ChatSDK/Reachability
-    - ChatSDK/UI
-  - ChatSDK/Core (4.10.2):
-    - AFNetworking (~> 3.2.1)
-    - DateTools (~> 2.0)
-    - RXPromise (~> 1.0)
-    - SAMKeychain
-  - ChatSDK/CoreData (4.10.2):
-    - ChatSDK/Core
-  - ChatSDK/Reachability (4.10.2):
-    - ChatSDK/Core
-    - Reachability
-  - ChatSDK/UI (4.10.2):
-    - ChatSDK/CoreData
-    - ChatSDKKeepLayout
-    - CountryPicker (~> 1.0)
-    - Hakawai (~> 5.1.5)
-    - MBProgressHUD (~> 1.0)
-    - SDWebImage (~> 4.0)
-    - StaticDataTableViewController (~> 2.0)
-    - Toast (~> 4.0.0)
-    - TOCropViewController (~> 2.0)
-    - VENTokenField (~> 2.0)
-  - ChatSDKFirebase/Adapter (4.10.2):
-    - ChatSDK
-    - Firebase/Auth
-    - Firebase/Database
-  - ChatSDKFirebase/FileStorage (4.10.2):
-    - ChatSDKFirebase/Adapter
-    - Firebase/Storage
-  - ChatSDKFirebase/Push (4.10.2):
-    - ChatSDKFirebase/Adapter
-    - Firebase/Functions
-    - Firebase/Messaging
-  - ChatSDKFirebase/SocialLogin (4.10.2):
-    - ChatSDK
-    - ChatSDKFirebase/Adapter
-    - FBSDKLoginKit
-    - GoogleSignIn
-    - TwitterCore
-    - TwitterKit
-  - ChatSDKKeepLayout (1.7.5):
-    - ChatSDKKeepLayout/Swift (= 1.7.5)
-  - ChatSDKKeepLayout/ObjC (1.7.5)
-  - ChatSDKKeepLayout/Swift (1.7.5):
-    - ChatSDKKeepLayout/ObjC
-  - CountryPicker (1.3)
-  - DateTools (2.0.0)
-  - ESTabBarController-swift (2.6.4)
-  - FBSDKCoreKit (4.44.0):
-    - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.44.0):
-    - FBSDKCoreKit
-  - Firebase/Auth (5.20.1):
+  - BoringSSL-GRPC (0.0.2):
+    - BoringSSL-GRPC/Implementation (= 0.0.2)
+    - BoringSSL-GRPC/Interface (= 0.0.2)
+  - BoringSSL-GRPC/Implementation (0.0.2):
+    - BoringSSL-GRPC/Interface (= 0.0.2)
+  - BoringSSL-GRPC/Interface (0.0.2)
+  - Firebase/Core (5.20.2):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.4.2)
-  - Firebase/Core (5.20.1):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 5.8.0)
-  - Firebase/CoreOnly (5.20.1):
+    - FirebaseAnalytics (= 5.8.1)
+  - Firebase/CoreOnly (5.20.2):
     - FirebaseCore (= 5.4.1)
-  - Firebase/Database (5.20.1):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.1.1)
-  - Firebase/Functions (5.20.1):
-    - Firebase/CoreOnly
-    - FirebaseFunctions (= 2.4.0)
-  - Firebase/Messaging (5.20.1):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.5.0)
-  - Firebase/Storage (5.20.1):
-    - Firebase/CoreOnly
-    - FirebaseStorage (= 3.1.1)
-  - FirebaseAnalytics (5.8.0):
+  - FirebaseABTesting (2.0.0):
+    - FirebaseCore (~> 5.0)
+    - Protobuf (~> 3.5)
+  - FirebaseAnalytics (5.8.1):
     - FirebaseCore (~> 5.4)
     - FirebaseInstanceID (~> 3.8)
-    - GoogleAppMeasurement (= 5.8.0)
+    - GoogleAppMeasurement (= 5.8.1)
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
-  - FirebaseAnalyticsInterop (1.2.0)
   - FirebaseAuth (5.4.2):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
@@ -119,6 +35,21 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - leveldb-library (~> 1.18)
+  - FirebaseFirestore (1.2.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - FirebaseFirestore/abseil-cpp (= 1.2.1)
+    - "gRPC-C++ (= 0.0.6)"
+    - leveldb-library (~> 1.20)
+    - nanopb (~> 0.3.901)
+    - Protobuf (~> 3.1)
+  - FirebaseFirestore/abseil-cpp (1.2.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - "gRPC-C++ (= 0.0.6)"
+    - leveldb-library (~> 1.20)
+    - nanopb (~> 0.3.901)
+    - Protobuf (~> 3.1)
   - FirebaseFunctions (2.4.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
@@ -127,20 +58,19 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
-  - FirebaseMessaging (3.5.0):
-    - FirebaseAnalyticsInterop (~> 1.1)
-    - FirebaseCore (~> 5.2)
-    - FirebaseInstanceID (~> 3.6)
-    - GoogleUtilities/Environment (~> 5.3)
-    - GoogleUtilities/Reachability (~> 5.3)
-    - GoogleUtilities/UserDefaults (~> 5.3)
-    - Protobuf (~> 3.1)
+  - FirebaseRemoteConfig (3.1.0):
+    - FirebaseABTesting (~> 2.0)
+    - FirebaseAnalytics (~> 5.3)
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleUtilities/Environment (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - Protobuf (~> 3.5)
   - FirebaseStorage (3.1.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FrameAccessor (1.3.2)
-  - GoogleAppMeasurement (5.8.0):
+  - GoogleAppMeasurement (5.8.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
@@ -158,34 +88,43 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.2.0)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
-  - GoogleUtilities/AppDelegateSwizzler (5.5.0):
+  - GoogleUtilities/AppDelegateSwizzler (5.8.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.5.0)
-  - GoogleUtilities/Logger (5.5.0):
+  - GoogleUtilities/Environment (5.8.0)
+  - GoogleUtilities/Logger (5.8.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.5.0):
+  - GoogleUtilities/MethodSwizzler (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.5.0):
+  - GoogleUtilities/Network (5.8.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (5.5.0)"
-  - GoogleUtilities/Reachability (5.5.0):
+  - "GoogleUtilities/NSData+zlib (5.8.0)"
+  - GoogleUtilities/Reachability (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (5.5.0):
+  - GoogleUtilities/UserDefaults (5.8.0):
     - GoogleUtilities/Logger
+  - "gRPC-C++ (0.0.6)":
+    - "gRPC-C++/Implementation (= 0.0.6)"
+    - "gRPC-C++/Interface (= 0.0.6)"
+  - "gRPC-C++/Implementation (0.0.6)":
+    - "gRPC-C++/Interface (= 0.0.6)"
+    - gRPC-Core (= 1.17.0)
+    - nanopb (~> 0.3)
+  - "gRPC-C++/Interface (0.0.6)"
+  - gRPC-Core (1.17.0):
+    - gRPC-Core/Implementation (= 1.17.0)
+    - gRPC-Core/Interface (= 1.17.0)
+  - gRPC-Core/Implementation (1.17.0):
+    - BoringSSL-GRPC (= 0.0.2)
+    - gRPC-Core/Interface (= 1.17.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
-  - Hakawai (5.1.6):
-    - Hakawai/Core (= 5.1.6)
-    - Hakawai/Mentions (= 5.1.6)
-  - Hakawai/Core (5.1.6)
-  - Hakawai/Mentions (5.1.6):
-    - Hakawai/Core
   - leveldb-library (1.20)
-  - lottie-ios (3.0.3)
-  - MBProgressHUD (1.1.0)
+  - lottie-ios (3.0.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -195,10 +134,45 @@ PODS:
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
-  - Reachability (3.2)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
-  - RXPromise (1.0.5)
+  - RxFirebase/Auth (0.3.6):
+    - RxFirebaseAuthentication (~> 0.3)
+  - RxFirebase/Database (0.3.6):
+    - RxFirebaseDatabase (~> 0.3)
+  - RxFirebase/Firestore (0.3.6):
+    - RxFirebaseFirestore (~> 0.3)
+  - RxFirebase/Functions (0.3.6):
+    - RxFirebaseFunctions (~> 0.3)
+  - RxFirebase/RemoteConfig (0.3.6):
+    - RxFirebaseRemoteConfig (~> 0.3)
+  - RxFirebase/Storage (0.3.6):
+    - RxFirebaseStorage (~> 0.3)
+  - RxFirebaseAuthentication (0.3.6):
+    - FirebaseAuth (~> 5)
+    - FirebaseCore (~> 5)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxFirebaseDatabase (0.3.6):
+    - FirebaseDatabase (~> 5)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxFirebaseFirestore (0.3.6):
+    - FirebaseFirestore (~> 1)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxFirebaseFunctions (0.3.6):
+    - FirebaseFunctions (~> 2)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxFirebaseRemoteConfig (0.3.6):
+    - FirebaseRemoteConfig (~> 3)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
+  - RxFirebaseStorage (0.3.6):
+    - FirebaseStorage (~> 3)
+    - RxCocoa (~> 4)
+    - RxSwift (~> 4)
   - RxSwift (4.5.0)
   - RxSwiftExt (3.4.0):
     - RxSwiftExt/Core (= 3.4.0)
@@ -211,138 +185,102 @@ PODS:
   - RxSwiftUtilities (2.1.0):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - SAMKeychain (1.5.3)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
-  - StaticDataTableViewController (2.5.0)
-  - Toast (4.0.0)
-  - TOCropViewController (2.4.0)
-  - TwitterCore (3.2.0)
-  - TwitterKit (3.4.2):
-    - TwitterCore (>= 3.2.0)
-  - VENTokenField (2.5.2):
-    - FrameAccessor (~> 1.0)
 
 DEPENDENCIES:
-  - ChatSDK
-  - ChatSDKFirebase/Adapter
-  - ChatSDKFirebase/FileStorage
-  - ChatSDKFirebase/Push
-  - ChatSDKFirebase/SocialLogin
-  - ESTabBarController-swift
   - Firebase/Core
   - GoogleSignIn
   - lottie-ios
   - R.swift
   - RxCocoa
+  - RxFirebase/Auth
+  - RxFirebase/Database
+  - RxFirebase/Firestore
+  - RxFirebase/Functions
+  - RxFirebase/RemoteConfig
+  - RxFirebase/Storage
   - RxSwift
   - RxSwiftExt
   - RxSwiftUtilities
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AFNetworking
-    - Bolts
-    - ChatSDK
-    - ChatSDKFirebase
-    - ChatSDKKeepLayout
-    - CountryPicker
-    - DateTools
-    - ESTabBarController-swift
-    - FBSDKCoreKit
-    - FBSDKLoginKit
+    - BoringSSL-GRPC
     - Firebase
+    - FirebaseABTesting
     - FirebaseAnalytics
-    - FirebaseAnalyticsInterop
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseDatabase
+    - FirebaseFirestore
     - FirebaseFunctions
     - FirebaseInstanceID
-    - FirebaseMessaging
+    - FirebaseRemoteConfig
     - FirebaseStorage
-    - FrameAccessor
     - GoogleAppMeasurement
     - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
+    - "gRPC-C++"
+    - gRPC-Core
     - GTMSessionFetcher
-    - Hakawai
     - leveldb-library
     - lottie-ios
-    - MBProgressHUD
     - nanopb
     - Protobuf
     - R.swift
     - R.swift.Library
-    - Reachability
     - RxCocoa
-    - RXPromise
+    - RxFirebase
+    - RxFirebaseAuthentication
+    - RxFirebaseDatabase
+    - RxFirebaseFirestore
+    - RxFirebaseFunctions
+    - RxFirebaseRemoteConfig
+    - RxFirebaseStorage
     - RxSwift
     - RxSwiftExt
     - RxSwiftUtilities
-    - SAMKeychain
-    - SDWebImage
-    - StaticDataTableViewController
-    - Toast
-    - TOCropViewController
-    - TwitterCore
-    - TwitterKit
-    - VENTokenField
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  ChatSDK: 51b14b22ef4c20008bdf36c351c75bbfd7c2a10f
-  ChatSDKFirebase: 0a2cf5dc446672e42b027d0db3a089d95b111a4f
-  ChatSDKKeepLayout: 1ddfbdee4cba338728ede47e77c452ef865e46e2
-  CountryPicker: 664c26411d833bb068c80beb15dc951eadde2911
-  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  ESTabBarController-swift: 58cca4ab7de980657d99a02181c1ff310983e975
-  FBSDKCoreKit: 8bcd4503afe43f28823c2175a6142a7f50f1bf28
-  FBSDKLoginKit: 93c5a407ab1a6a17b1b38cff57e89991f714d878
-  Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
-  FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
-  FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
+  BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
+  Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
+  FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
+  FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
   FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
+  FirebaseFirestore: faca891c0f0d1d6c10c793473e2f6a29d75014b5
   FirebaseFunctions: 35b530c69ef8c322c414104280d36a06347a5d49
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
-  FirebaseMessaging: 4235f949ce1c4e827aeb19705ba5c53f9b85aa10
+  FirebaseRemoteConfig: 7e11c65f0769c09bff6947997c209515058c5318
   FirebaseStorage: 6162ef4322502b818d9de0ec552f5226d283de43
-  FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
-  GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
+  GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
-  GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
+  "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
+  gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  Hakawai: caf8cceda91548a12552d167e79c7dd88a88a7c2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  lottie-ios: 55a2de40418f8de2b155efaba4d4d1a025a5c570
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
+  RxFirebase: cfeb02f5b1bfc1c5f8a6d14c54fdca876a35eba7
+  RxFirebaseAuthentication: 3774281f430b51559a7935c43c2ba568ee70d05f
+  RxFirebaseDatabase: 5761cba2ac41c4f4f58ef2a0b35507ffe4c66bf9
+  RxFirebaseFirestore: 724957f7079b0e6cb5d985bb6331f171af7b31ed
+  RxFirebaseFunctions: beb4e0d6cd3fc72f6449ea76699969998c5dd0de
+  RxFirebaseRemoteConfig: 24247837d32f6ba6200adcd4488a9ebd2ab054a6
+  RxFirebaseStorage: 9b8cdab65d20bafeae724a8e40733b92458f2b1a
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
   RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  StaticDataTableViewController: 0c5c4a47861446dd3cfd52530ae801ec7662ce26
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
-  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
-  VENTokenField: 5a19b838fb97f040e3d4c93f584b4adeaf3fc1ee
 
-PODFILE CHECKSUM: 832a1834a4a5ecd543954dde547c87b9d0c8fa09
+PODFILE CHECKSUM: 19aa953757dd60d7a236938ecb599ad8b4e440f6
 
 COCOAPODS: 1.6.1

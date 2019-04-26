@@ -23,6 +23,8 @@ class LoginEmailView: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwdField: UITextField!
     
     init() {
         super.init(nibName: String(describing: LoginEmailView.self), bundle: nil)
@@ -61,7 +63,13 @@ extension LoginEmailView {
     
     func setupViewModel() {
         self.viewModel = LoginEmailViewModel(
-           
+            
+        )
+        
+        self.viewModel.setupBindings(
+            email    : self.emailField.rx.text.orEmpty.asDriver(),
+            passwd   : self.passwdField.rx.text.orEmpty.asDriver(),
+            loginTap : self.loginButton.rx.tap.asSignal()
         )
     }
     
@@ -73,5 +81,9 @@ extension LoginEmailView {
         createAccountButton.rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.showCreateAccount)
             }.disposed(by: disposeBag)
+        
+//        loginButton.rx.tap.bind { [unowned self] _ in
+//            self.view.endEditing(true)
+//            }.dispose(by: disposeBag)
     }
 }

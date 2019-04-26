@@ -9,15 +9,19 @@ target 'adocaoAnimal' do
   pod 'Firebase/Core'
   pod "ESTabBarController-swift"
   pod 'GoogleSignIn'
-  pod 'ChatSDK'
-  pod 'ChatSDKFirebase/Adapter'
-  pod 'ChatSDKFirebase/FileStorage'
-  pod 'ChatSDKFirebase/Push'
-  pod 'ChatSDKFirebase/SocialLogin'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxSwiftUtilities'
   pod 'RxSwiftExt'
+
+  # Rx Firebase utilities
+  pod 'RxFirebase/Firestore'
+  pod 'RxFirebase/RemoteConfig'
+  pod 'RxFirebase/Database'
+  pod 'RxFirebase/Storage'
+  pod 'RxFirebase/Auth'
+  pod 'RxFirebase/Functions'
+
   pod 'lottie-ios'     #Animations
   pod 'R.swift'
 
