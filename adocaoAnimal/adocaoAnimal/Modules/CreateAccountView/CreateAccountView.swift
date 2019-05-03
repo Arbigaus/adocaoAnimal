@@ -16,12 +16,22 @@ protocol CreateAccountViewDelegate: class {
 
 class CreateAccountView: UIViewController {
     
-    var viewModel: CreateAccountViewModel!
+    fileprivate var createdUser : Observable<Bool>
+    
+    fileprivate let disposeBag = DisposeBag()
+    var viewModel: CreateAccountViewModel
     
     weak var delegate: AppActionable?
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var passwdLabel: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     
     init() {
+        self.viewModel = CreateAccountViewModel()
+        
+        self.createdUser = self.viewModel.createdUser.asObservable()
+
         super.init(nibName: String(describing: CreateAccountView.self), bundle: nil)
     }
     
@@ -50,16 +60,28 @@ class CreateAccountView: UIViewController {
 extension CreateAccountView {
     
     func setupViewModel() {
-        self.viewModel = CreateAccountViewModel(
-           
-        )
+        
+        self.viewModel.setupBindings(
+            fullName  : self.nameLabel.rx.text.orEmpty.asDriver(),
+            email     : self.emailLabel.rx.text.orEmpty.asDriver(),
+            passwd    : self.passwdLabel.rx.text.orEmpty.asDriver(),
+            createTap : self.createAccountButton.rx.tap.asSignal() )
     }
     
-    func configureViews() {
-        
-    }
+    func configureViews() {}
     
     func setupBindings() {
-
+        
+        self.createdUser.subscribe(onNext: { status in
+            if status {
+                self.delegate?.handle(.showFeed)
+            }            
+        }).disposed(by: disposeBag)
+        
+        createAccountButton.rx.tap.bind {
+            self.view.endEditing(true)
+        }.disposed(by: disposeBag)
+        
+        
     }
 }

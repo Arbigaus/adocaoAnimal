@@ -12,14 +12,14 @@ import RxFirebase
 import FirebaseAuth
 
 class LoginEmailViewModel {
+        
+    var loggedUser : BehaviorRelay<Bool>
     
-    //let input: Driver<Void>
-    let disposeBag = DisposeBag()
-    let auth = Auth.auth()
-    
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let auth = Auth.auth()
     
     init() {
-        
+        self.loggedUser = BehaviorRelay(value: false)
     }
     
     func setupBindings(
@@ -27,22 +27,27 @@ class LoginEmailViewModel {
         passwd   : Driver<String>,
         loginTap : Signal<Void> )
     {
-        
+       
         let loginData = Driver.combineLatest(email, passwd)
             .asObservable()
         
         let loginResult = loginTap
             .asObservable()
-            .withLatestFrom(loginData)
-            .flatMapLatest { email, passwd in
-                self.auth.rx.signIn(withEmail: email, password: passwd)
-                    .subscribe(onNext: { authResult in
-                        return "logado"
-                    }, onError: {error in
-                        print(error)
-                    }).disposed(by: disposeBag)
-            }
-            .share()
+            .withLatestFrom( loginData )
+            .flatMapLatest { userEmail, userPasswd in
+
+                self.auth.rx.signIn(
+                    withEmail: userEmail,
+                    password: userPasswd )
+
+            }.share()
+        
+        loginResult.subscribe(onNext: { authResult in
+            print("Token: \(authResult)")
+            self.loggedUser = BehaviorRelay(value: true)
+        }, onError: { error in
+            print("Error: \(error)")
+        }).disposed(by: disposeBag)
  
     }
 }

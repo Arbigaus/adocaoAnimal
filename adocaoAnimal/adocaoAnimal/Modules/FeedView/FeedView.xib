@@ -74,7 +74,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA6-Xm-Tfb" userLabel="ImagePerfilView">
                             <rect key="frame" x="30" y="23" width="50" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-jv-13t">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-jv-13t">
                                     <rect key="frame" x="5" y="5" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="8Cn-c4-4fs"/>

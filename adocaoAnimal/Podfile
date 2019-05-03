@@ -25,6 +25,8 @@ target 'adocaoAnimal' do
   pod 'lottie-ios'     #Animations
   pod 'R.swift'
 
+  pod 'TPKeyboardAvoiding', '~> 1.3'
+
   target 'adocaoAnimalTests' do
     inherit! :search_paths
     # Pods for testing

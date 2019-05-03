@@ -8,12 +8,44 @@
 
 import RxSwift
 import RxCocoa
+import RxFirebase
+import FirebaseAuth
 
 class CreateAccountViewModel {
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let auth = Auth.auth()
     
-    //let input: Driver<Void>
+    var createdUser : Variable<Bool>
     
     init() {
+        createdUser = Variable(false)
+    }
+    
+    func setupBindings(
+        fullName  : Driver<String>,
+        email     : Driver<String>,
+        passwd    : Driver<String>,
+        createTap : Signal<Void> )
+    {
+        
+        let loginData = Driver.combineLatest(email, passwd )
+            .asObservable()
+        
+        let createResult = createTap
+            .asObservable()
+            .withLatestFrom(loginData)
+            .flatMapLatest { userEamil, userPasswd in
+                self.auth.rx.createUser(
+                    withEmail: userEamil,
+                    password: userPasswd )
+        }.share()
+        
+        createResult.subscribe(onNext: { authResult in
+            self.createdUser = Variable(true)            
+        }, onError: { error in
+            print("response: \(error)")
+        }).disposed(by: disposeBag)
         
     }
+    
 }

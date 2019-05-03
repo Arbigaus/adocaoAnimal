@@ -15,18 +15,20 @@ protocol LoginEmailViewDelegate: class {
 }
 
 class LoginEmailView: UIViewController {
-    
+    fileprivate let loggedUser : Observable<Bool>
     var viewModel: LoginEmailViewModel!
     
     weak var delegate: AppActionable?
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var goToCreateAccountButton: UIButton!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwdField: UITextField!
     
     init() {
+        self.viewModel = LoginEmailViewModel()
+        self.loggedUser = self.viewModel.loggedUser.asObservable()
         super.init(nibName: String(describing: LoginEmailView.self), bundle: nil)
     }
     
@@ -42,13 +44,11 @@ class LoginEmailView: UIViewController {
         
         self.title = "Entrar com e-mail"
         
-        createAccountButton.layer.borderWidth = 1
-        createAccountButton.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
-        createAccountButton.layer.cornerRadius = 6
+        goToCreateAccountButton.layer.borderWidth = 1
+        goToCreateAccountButton.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
+        goToCreateAccountButton.layer.cornerRadius = 6
         
         loginButton.layer.cornerRadius = 6
-//        loginButton.layer.borderWidth = 6
-//        loginButton.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
         
     }
     
@@ -62,10 +62,6 @@ class LoginEmailView: UIViewController {
 extension LoginEmailView {
     
     func setupViewModel() {
-        self.viewModel = LoginEmailViewModel(
-            
-        )
-        
         self.viewModel.setupBindings(
             email    : self.emailField.rx.text.orEmpty.asDriver(),
             passwd   : self.passwdField.rx.text.orEmpty.asDriver(),
@@ -78,12 +74,18 @@ extension LoginEmailView {
     }
     
     func setupBindings() {
-        createAccountButton.rx.tap.bind { [unowned self] _ in
+        goToCreateAccountButton.rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.showCreateAccount)
             }.disposed(by: disposeBag)
         
-//        loginButton.rx.tap.bind { [unowned self] _ in
-//            self.view.endEditing(true)
-//            }.dispose(by: disposeBag)
+        loginButton.rx.tap.bind { [unowned self] _ in
+            self.view.endEditing(true)
+            }.disposed(by: disposeBag)
+        
+        self.loggedUser.subscribe(onNext: { status in
+            if status {
+                self.delegate?.handle(.showFeed)
+            }
+        }).disposed(by: disposeBag)
     }
 }
