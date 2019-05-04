@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		086374C54EBF040B36DF3B19 /* Pods_adocaoAnimalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD0C90FBDE49AAED683E3E4 /* Pods_adocaoAnimalTests.framework */; };
 		310D6957225823370027C669 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 310D6956225823370027C669 /* GoogleService-Info.plist */; };
+		311AD7C8227CF75700DCB75A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AD7C7227CF75700DCB75A /* LocalStorage.swift */; };
+		311AD7CA227CFA1C00DCB75A /* LocalStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AD7C9227CFA1C00DCB75A /* LocalStorageImpl.swift */; };
+		311AD7CC227CFB2400DCB75A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AD7CB227CFB2400DCB75A /* Profile.swift */; };
+		311AD7CF227D016C00DCB75A /* Rx + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311AD7CE227D016C00DCB75A /* Rx + Utils.swift */; };
 		312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */ = {isa = PBXBuildFile; fileRef = 312B7468225C0CE20064B6B9 /* baseline_tune.png */; };
 		312B746C225C0E050064B6B9 /* Filter2.json in Resources */ = {isa = PBXBuildFile; fileRef = 312B746A225C0E040064B6B9 /* Filter2.json */; };
 		312B746D225C0E050064B6B9 /* Filter1.json in Resources */ = {isa = PBXBuildFile; fileRef = 312B746B225C0E040064B6B9 /* Filter1.json */; };
@@ -76,6 +80,10 @@
 /* Begin PBXFileReference section */
 		18298206FD12530BC1ED0589 /* Pods-adocaoAnimal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-adocaoAnimal.debug.xcconfig"; path = "Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal.debug.xcconfig"; sourceTree = "<group>"; };
 		310D6956225823370027C669 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		311AD7C7227CF75700DCB75A /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		311AD7C9227CFA1C00DCB75A /* LocalStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageImpl.swift; sourceTree = "<group>"; };
+		311AD7CB227CFB2400DCB75A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		311AD7CE227D016C00DCB75A /* Rx + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx + Utils.swift"; sourceTree = "<group>"; };
 		312B7468225C0CE20064B6B9 /* baseline_tune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseline_tune.png; sourceTree = "<group>"; };
 		312B746A225C0E040064B6B9 /* Filter2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Filter2.json; sourceTree = "<group>"; };
 		312B746B225C0E040064B6B9 /* Filter1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Filter1.json; sourceTree = "<group>"; };
@@ -163,6 +171,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		311AD7C6227CF72400DCB75A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				311AD7C7227CF75700DCB75A /* LocalStorage.swift */,
+				311AD7C9227CFA1C00DCB75A /* LocalStorageImpl.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		311AD7CD227D015E00DCB75A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				311AD7CE227D016C00DCB75A /* Rx + Utils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,12 +235,14 @@
 		317FDD622255849700356327 /* adocaoAnimal */ = {
 			isa = PBXGroup;
 			children = (
+				D77B10D02256D242009B3561 /* Base */,
+				D77B10D42256D499009B3561 /* Coordinator */,
+				311AD7CD227D015E00DCB75A /* Utilities */,
+				31736BC52255891D00BCFE53 /* Modules */,
+				311AD7C6227CF72400DCB75A /* Storage */,
 				D70235E42263BCCA007740D1 /* Models */,
 				31FC8C66225EB45C00AD07BF /* Cells */,
 				D77B10E82256E6BE009B3561 /* Components */,
-				D77B10D42256D499009B3561 /* Coordinator */,
-				D77B10D02256D242009B3561 /* Base */,
-				31736BC52255891D00BCFE53 /* Modules */,
 			);
 			path = adocaoAnimal;
 			sourceTree = "<group>";
@@ -308,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				D70235E52263BCF2007740D1 /* PetList.swift */,
+				311AD7CB227CFB2400DCB75A /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,7 +588,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -693,15 +721,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				311AD7CF227D016C00DCB75A /* Rx + Utils.swift in Sources */,
 				D70235E62263BCF2007740D1 /* PetList.swift in Sources */,
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
 				319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
+				311AD7CA227CFA1C00DCB75A /* LocalStorageImpl.swift in Sources */,
 				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,
 				D70235E82263CC40007740D1 /* ViewController.swift in Sources */,
 				31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */,
+				311AD7C8227CF75700DCB75A /* LocalStorage.swift in Sources */,
 				31DA95ED226E7F34007AD5E6 /* LoginView.swift in Sources */,
 				D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */,
 				31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */,
@@ -710,6 +741,7 @@
 				31EF5E3922712FE6007900B9 /* CreateAccountViewModel.swift in Sources */,
 				D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */,
 				31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */,
+				311AD7CC227CFB2400DCB75A /* Profile.swift in Sources */,
 				317FDD642255849700356327 /* AppDelegate.swift in Sources */,
 				D77B10D82256D52D009B3561 /* AppCoordinator.swift in Sources */,
 			);

@@ -12,7 +12,8 @@ import RxFirebase
 import FirebaseAuth
 
 class LoginEmailViewModel {
-        
+    
+    var userUuid : Driver<String>!
     var loggedUser : BehaviorRelay<Bool>
     
     fileprivate let disposeBag = DisposeBag()
@@ -42,8 +43,14 @@ class LoginEmailViewModel {
 
             }.share()
         
-        loginResult.subscribe(onNext: { authResult in
+        self.userUuid = loginResult.asObservable().do(onNext: { authResult in
+            return Auth.auth().currentUser!.uid
+        })
+        
+        
+            onError: loginResult.subscribe(onNext: { authResult in
             print("Token: \(authResult)")
+            print("User ID: \(Auth.auth().currentUser!.uid)")
             self.loggedUser = BehaviorRelay(value: true)
         }, onError: { error in
             print("Error: \(error)")
