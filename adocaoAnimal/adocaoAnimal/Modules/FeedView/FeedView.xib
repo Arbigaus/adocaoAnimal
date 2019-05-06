@@ -18,6 +18,7 @@
                 <outlet property="perfilView" destination="RA6-Xm-Tfb" id="6m5-65-tbH"/>
                 <outlet property="petsTableView" destination="oQc-Fe-Xtp" id="p8e-Qi-lg4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeLabel" destination="0A1-cy-Eoq" id="sAg-Zl-2l4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -80,7 +81,7 @@
                                         <constraint firstAttribute="width" constant="40" id="8Cn-c4-4fs"/>
                                         <constraint firstAttribute="height" constant="40" id="MBZ-BC-XCE"/>
                                     </constraints>
-                                    <state key="normal" title="Button" image="perfil.jpg"/>
+                                    <state key="normal" title="Button" image="perfil.png"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,16 +92,26 @@
                                 <constraint firstAttribute="height" constant="50" id="azD-DH-N2Q"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem vindo" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A1-cy-Eoq">
+                            <rect key="frame" x="88" y="28" width="267" height="40"/>
+                            <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="eil-W8-kyV" secondAttribute="bottom" constant="15" id="1Ca-Yv-35c"/>
+                        <constraint firstItem="0A1-cy-Eoq" firstAttribute="leading" secondItem="RA6-Xm-Tfb" secondAttribute="trailing" constant="8" id="1x1-4a-Fs3"/>
                         <constraint firstItem="eil-W8-kyV" firstAttribute="top" secondItem="Xyp-cc-SEU" secondAttribute="bottom" constant="10" id="7A5-jL-cUA"/>
+                        <constraint firstItem="0A1-cy-Eoq" firstAttribute="height" secondItem="tUD-jv-13t" secondAttribute="height" id="8pc-J6-ZvK"/>
+                        <constraint firstItem="0A1-cy-Eoq" firstAttribute="top" secondItem="tUD-jv-13t" secondAttribute="top" id="99o-Hj-Okt"/>
                         <constraint firstItem="9HJ-oQ-uCf" firstAttribute="leading" secondItem="Xyp-cc-SEU" secondAttribute="trailing" constant="5" id="9Yn-ZS-rlw"/>
                         <constraint firstAttribute="trailing" secondItem="eil-W8-kyV" secondAttribute="trailing" constant="15" id="G7M-9X-O8K"/>
                         <constraint firstItem="Xyp-cc-SEU" firstAttribute="top" secondItem="QdY-9W-oTH" secondAttribute="bottom" constant="5" id="Gb7-44-XGE"/>
                         <constraint firstItem="9HJ-oQ-uCf" firstAttribute="centerY" secondItem="Xyp-cc-SEU" secondAttribute="centerY" id="Ip2-HG-nxx"/>
                         <constraint firstItem="AIQ-8G-dU5" firstAttribute="leading" secondItem="lQ2-SH-5s6" secondAttribute="leading" constant="30" id="LHI-Tw-ReP"/>
+                        <constraint firstAttribute="trailing" secondItem="0A1-cy-Eoq" secondAttribute="trailing" constant="20" id="MKu-AR-H6s"/>
                         <constraint firstItem="AIQ-8G-dU5" firstAttribute="top" secondItem="RA6-Xm-Tfb" secondAttribute="bottom" constant="30" id="XmY-6f-H2q"/>
                         <constraint firstItem="QdY-9W-oTH" firstAttribute="leading" secondItem="AIQ-8G-dU5" secondAttribute="trailing" constant="15" id="eU0-M8-9zO"/>
                         <constraint firstItem="AIQ-8G-dU5" firstAttribute="bottom" secondItem="Xyp-cc-SEU" secondAttribute="bottom" id="gw0-rM-Tto"/>
@@ -168,7 +179,7 @@
         </view>
     </objects>
     <resources>
-        <image name="perfil.jpg" width="960" height="960"/>
+        <image name="perfil.png" width="51.200000762939453" height="51.200000762939453"/>
         <image name="settings_sliders-512.png" width="512" height="512"/>
     </resources>
 </document>

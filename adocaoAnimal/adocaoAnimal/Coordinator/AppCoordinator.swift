@@ -46,7 +46,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showFeed()
+//        showFeed()
+        showCreateAccount()
         
     }
     

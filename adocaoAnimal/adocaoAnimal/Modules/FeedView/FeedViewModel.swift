@@ -10,10 +10,10 @@ import RxSwift
 import RxCocoa
 
 class FeedViewModel {
-    
-    //let input: Driver<Void>
-    
+
+//    let currentUser: Driver<Profile>
+
     init() {
-        
+
     }
 }

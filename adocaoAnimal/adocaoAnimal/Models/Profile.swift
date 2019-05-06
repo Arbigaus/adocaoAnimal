@@ -9,14 +9,22 @@
 import Foundation
 
 struct Profile: Codable {
+    var name : String
     
+    init() {
+        self.name = ""
+    }
 }
 
 struct UserId: Codable {
-    
-    let uuid : String
+    var uuid : String
     
     init() {
         self.uuid = ""
     }
+}
+
+enum LoggedUser {
+    case logged
+    case notLogged
 }

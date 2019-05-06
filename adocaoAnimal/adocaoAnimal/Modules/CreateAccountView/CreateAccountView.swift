@@ -16,8 +16,6 @@ protocol CreateAccountViewDelegate: class {
 
 class CreateAccountView: UIViewController {
     
-    fileprivate var createdUser : Observable<Bool>
-    
     fileprivate let disposeBag = DisposeBag()
     var viewModel: CreateAccountViewModel
     
@@ -30,8 +28,6 @@ class CreateAccountView: UIViewController {
     init() {
         self.viewModel = CreateAccountViewModel()
         
-        self.createdUser = self.viewModel.createdUser.asObservable()
-
         super.init(nibName: String(describing: CreateAccountView.self), bundle: nil)
     }
     
@@ -70,17 +66,17 @@ extension CreateAccountView {
     
     func configureViews() {}
     
+    // MARK: - SetupBindings
     func setupBindings() {
         
-        self.createdUser.subscribe(onNext: { status in
-            if status {
-                self.delegate?.handle(.showFeed)
-            }            
-        }).disposed(by: disposeBag)
-        
-        createAccountButton.rx.tap.bind {
-            self.view.endEditing(true)
-        }.disposed(by: disposeBag)
+        // Verifica se o usuário foi logado e redireciona para a tela principal
+        self.viewModel.loggedUser
+            .subscribe(onNext: { status in
+                if status == .logged {
+                    self.delegate?.handle(.showFeed)
+                }
+            })
+            .disposed(by: disposeBag)
         
         
     }

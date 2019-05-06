@@ -38,8 +38,8 @@ struct R: Rswift.Validatable {
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
     /// Resource file `logo.png`.
     static let logoPng = Rswift.FileResource(bundle: R.hostingBundle, name: "logo", pathExtension: "png")
-    /// Resource file `perfil.jpg`.
-    static let perfilJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "jpg")
+    /// Resource file `perfil.png`.
+    static let perfilPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "png")
     /// Resource file `perfilDefault.png`.
     static let perfilDefaultPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfilDefault", pathExtension: "png")
     /// Resource file `settings_sliders-512.png`.
@@ -105,9 +105,9 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
-    /// `bundle.url(forResource: "perfil", withExtension: "jpg")`
-    static func perfilJpg(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.perfilJpg
+    /// `bundle.url(forResource: "perfil", withExtension: "png")`
+    static func perfilPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.perfilPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -140,10 +140,10 @@ struct R: Rswift.Validatable {
     static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
     /// Image `logo`.
     static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
-    /// Image `perfil.jpg`.
-    static let perfilJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil.jpg")
     /// Image `perfilDefault`.
     static let perfilDefault = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfilDefault")
+    /// Image `perfil`.
+    static let perfil = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil")
     /// Image `settings_sliders-512`.
     static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
     
@@ -177,9 +177,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "perfil.jpg", bundle: ..., traitCollection: ...)`
-    static func perfilJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.perfilJpg, compatibleWith: traitCollection)
+    /// `UIImage(named: "perfil", bundle: ..., traitCollection: ...)`
+    static func perfil(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.perfil, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "perfilDefault", bundle: ..., traitCollection: ...)`
@@ -378,7 +378,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "perfil.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.jpg' is used in nib 'FeedView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "perfil.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.png' is used in nib 'FeedView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "settings_sliders-512.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'settings_sliders-512.png' is used in nib 'FeedView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }

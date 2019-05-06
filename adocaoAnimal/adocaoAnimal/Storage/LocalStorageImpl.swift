@@ -14,7 +14,7 @@ import Firebase
 struct LocalStorageKeys {
     private init() {}
     
-    static let userUuid = "userUuid"
+    static let userUuid = ""
     static let firstAccess = "firstAccess"
 }
 

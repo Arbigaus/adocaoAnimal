@@ -8,18 +8,14 @@
 
 import RxSwift
 import RxCocoa
-import RxFirebase
-import FirebaseAuth
 
 class CreateAccountViewModel {
     fileprivate let disposeBag = DisposeBag()
-    fileprivate let auth = Auth.auth()
+    fileprivate let accountService = AccountServiceImpl()
     
-    var createdUser : Variable<Bool>
+    var loggedUser   = PublishSubject<LoggedUser>()
     
-    init() {
-        createdUser = Variable(false)
-    }
+    init() {}
     
     func setupBindings(
         fullName  : Driver<String>,
@@ -28,22 +24,26 @@ class CreateAccountViewModel {
         createTap : Signal<Void> )
     {
         
-        let loginData = Driver.combineLatest(email, passwd )
+        let loginData = Driver.combineLatest( fullName, email, passwd )
             .asObservable()
         
+        // Chama a função que irá criar a conta
         let createResult = createTap
             .asObservable()
             .withLatestFrom(loginData)
-            .flatMapLatest { userEamil, userPasswd in
-                self.auth.rx.createUser(
-                    withEmail: userEamil,
-                    password: userPasswd )
+            .flatMapLatest { fullName, userEmail, userPasswd in
+                self.accountService.createUser(
+                        name: fullName,
+                        email: userEmail,
+                        password: userPasswd)
         }.share()
         
-        createResult.subscribe(onNext: { authResult in
-            self.createdUser = Variable(true)            
-        }, onError: { error in
-            print("response: \(error)")
+        // Informa a View que foi criada a conta
+        createResult
+            .subscribe(onNext: { response in
+                if response.created {
+                    self.loggedUser.onNext(.logged)
+                }
         }).disposed(by: disposeBag)
         
     }

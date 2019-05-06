@@ -15,7 +15,6 @@ protocol LoginEmailViewDelegate: class {
 }
 
 class LoginEmailView: UIViewController {
-    fileprivate let loggedUser : Observable<Bool>
     var viewModel: LoginEmailViewModel!
     
     weak var delegate: AppActionable?
@@ -28,7 +27,6 @@ class LoginEmailView: UIViewController {
     
     init() {
         self.viewModel = LoginEmailViewModel()
-        self.loggedUser = self.viewModel.loggedUser.asObservable()
         super.init(nibName: String(describing: LoginEmailView.self), bundle: nil)
     }
     
@@ -59,6 +57,7 @@ class LoginEmailView: UIViewController {
     
 }
 
+// MARK: LoginEmailView extensions
 extension LoginEmailView {
     
     func setupViewModel() {
@@ -73,19 +72,28 @@ extension LoginEmailView {
         
     }
     
+    // MARK: SetupBindings
+    
     func setupBindings() {
+        
+        // Ação do botão de criar conta para redirecionar o usuário
         goToCreateAccountButton.rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.showCreateAccount)
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
         loginButton.rx.tap.bind { [unowned self] _ in
             self.view.endEditing(true)
             }.disposed(by: disposeBag)
         
-        self.loggedUser.subscribe(onNext: { status in
-            if status {
-                self.delegate?.handle(.showFeed)
-            }
-        }).disposed(by: disposeBag)
+        // Verifica se o usuário foi logado e redireciona para a tela principal
+        self.viewModel.loggedUser
+            .subscribe(onNext: { status in
+                if status == .logged {
+                    self.delegate?.handle(.showFeed)
+                }
+            })
+            .disposed(by: disposeBag)
+
     }
 }

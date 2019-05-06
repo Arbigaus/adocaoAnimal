@@ -13,15 +13,12 @@ import FirebaseAuth
 
 class LoginEmailViewModel {
     
-    var userUuid : Driver<String>!
-    var loggedUser : BehaviorRelay<Bool>
+    var loggedUser   = PublishSubject<LoggedUser>()
     
     fileprivate let disposeBag = DisposeBag()
     fileprivate let auth = Auth.auth()
     
-    init() {
-        self.loggedUser = BehaviorRelay(value: false)
-    }
+    init(){}
     
     func setupBindings(
         email    : Driver<String>,
@@ -43,18 +40,11 @@ class LoginEmailViewModel {
 
             }.share()
         
-        self.userUuid = loginResult.asObservable().do(onNext: { authResult in
-            return Auth.auth().currentUser!.uid
-        })
-        
-        
-            onError: loginResult.subscribe(onNext: { authResult in
-            print("Token: \(authResult)")
-            print("User ID: \(Auth.auth().currentUser!.uid)")
-            self.loggedUser = BehaviorRelay(value: true)
-        }, onError: { error in
-            print("Error: \(error)")
-        }).disposed(by: disposeBag)
+        loginResult
+            .subscribe({ AuthDataResult in
+                self.loggedUser.onNext(.logged)
+            })
+            .disposed(by: disposeBag)
  
     }
 }

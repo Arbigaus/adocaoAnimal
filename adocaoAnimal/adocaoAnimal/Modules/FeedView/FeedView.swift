@@ -17,7 +17,7 @@ class FeedView: UIViewController {
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
     let tapGesture = UITapGestureRecognizer()
-    
+        
     weak var delegate: AppActionable?
     
     @IBOutlet var locationAnimationView: AnimationView!
@@ -26,6 +26,7 @@ class FeedView: UIViewController {
     @IBOutlet weak var petsTableView: UITableView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var perfilView: UIView!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     init(viewModel: FeedViewModel = .init()) {
         self.viewModel = viewModel
