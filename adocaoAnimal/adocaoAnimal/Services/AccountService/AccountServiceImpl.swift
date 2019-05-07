@@ -38,8 +38,10 @@ class AccountServiceImpl: NSObject, AccountService {
             password: password )
             .subscribe(onNext: { AuthResponse in
                 self.createDBUser(name: name) { msg in
+                    
                     response.message = msg.message
                     response.created = msg.created
+                    
                     handler(response)
                 }
             }, onError: { error in
@@ -59,16 +61,19 @@ class AccountServiceImpl: NSObject, AccountService {
             .document( self.auth.currentUser!.uid )
             .rx
             .setData([
-                "name": name
+                "name": name,
+                "address" : [ "Rua" : "rua da esquina", "Numero" : 11 ]
                 ])
             .subscribe(onNext:{
                 response.message = "Usuário criado com sucesso"
                 response.created = true
+                
                 handler(response)
             },
                onError: { error in
                 response.message = "Error on create user on DB"
                 response.created = false
+                
                 handler(response)
             })
             .disposed(by: self.disposeBag)

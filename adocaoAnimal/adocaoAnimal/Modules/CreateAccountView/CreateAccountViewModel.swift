@@ -30,7 +30,6 @@ class CreateAccountViewModel {
         // Chama a função que irá criar a conta
         let createResult = createTap
             .asObservable()
-            .skip(1)
             .withLatestFrom(loginData)
             .flatMapLatest { fullName, userEmail, userPasswd in
                 self.accountService.createUser(
