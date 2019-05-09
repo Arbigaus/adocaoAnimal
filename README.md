@@ -1,4 +1,4 @@
-#Adoção Animal
+# Adoção Animal
 
 ## Objetivo:
 Criar um aplicativo para melhorar os processos de adoção de Pets existentes hoje.
@@ -8,7 +8,7 @@ O Projeto foi construido em MVVM usando RxSwift em todas as camadas. Cada View �
 
 Utiliza o Firebase para autenticação e banco de dados.
 
-##Bibliotecas:
+## Bibliotecas:
 * [RXSwift]: Framework de programação reativa 
 * [R.swift]: Type safe ressources, fontes, assets, tableviewCells e essas coisas que sempre dao dor de cabeça
 * [Lottie]: Para tornar o App mais animado (badum tss 🥁)
@@ -21,7 +21,7 @@ Utiliza o Firebase para autenticação e banco de dados.
 [Firebase]: <https://github.com/firebase/firebase-ios-sdk>
 [RxFirebase]: <https://github.com/RxSwiftCommunity/RxFirebase>
 
-##Documentação:
+## Documentação:
 * [BigIdea]: Documento com a ideia inicial do projeto
 
 [BigIdea]: <Docs/BigIdea.md>
