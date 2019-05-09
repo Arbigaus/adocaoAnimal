@@ -15,10 +15,10 @@ protocol AccountService {
 
 struct Response : Codable {
     var message : String?
-    var created : Bool
+    var passed : Bool
     
     init() {
-        self.created = false
+        self.passed = false
     }
 }
 

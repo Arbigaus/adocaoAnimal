@@ -106,6 +106,11 @@ extension FeedView {
                         cell .homeFilterLabel.text = element
         }.disposed(by: disposeBag)
         
+        viewModel.userDetails.subscribe(onSuccess: { (user) in
+                self.welcomeLabel.text = "Bem vindo \(user.name)"
+            })
+            .disposed(by: disposeBag)
+        
         perfilButton.rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.showLogin)
             }.disposed(by: disposeBag)

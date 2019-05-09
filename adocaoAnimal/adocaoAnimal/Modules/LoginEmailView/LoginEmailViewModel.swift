@@ -12,11 +12,11 @@ import RxFirebase
 import FirebaseAuth
 
 class LoginEmailViewModel {
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let accountService = AccountServiceImpl()
     
     var loggedUser   = PublishSubject<LoggedUser>()
     
-    fileprivate let disposeBag = DisposeBag()
-    fileprivate let auth = Auth.auth()
     
     init(){}
     
@@ -33,18 +33,17 @@ class LoginEmailViewModel {
             .asObservable()
             .withLatestFrom( loginData )
             .flatMapLatest { userEmail, userPasswd in
-
-                self.auth.rx.signIn(
-                    withEmail: userEmail,
-                    password: userPasswd )
-
+                self.accountService
+                    .userLoggin(
+                        email: userEmail,
+                        password: userPasswd
+                    )
             }.share()
         
         loginResult
             .subscribe({ AuthDataResult in
                 self.loggedUser.onNext(.logged)
             })
-            .disposed(by: disposeBag)
- 
+            .disposed(by: disposeBag) 
     }
 }

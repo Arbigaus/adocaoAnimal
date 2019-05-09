@@ -198,7 +198,7 @@
 				31EF5E3422712FC8007900B9 /* CreateAccountView */,
 				31EF5E2C22711D94007900B9 /* LoginEmailView */,
 				31DA95E9226E7F16007AD5E6 /* LoginView */,
-				D77B10DF2256DC9F009B3561 /* PetView */,
+				D77B10DF2256DC9F009B3561 /* PetDetailsView */,
 				31736BC82255898D00BCFE53 /* FeedView */,
 			);
 			path = Modules;
@@ -372,14 +372,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D77B10DF2256DC9F009B3561 /* PetView */ = {
+		D77B10DF2256DC9F009B3561 /* PetDetailsView */ = {
 			isa = PBXGroup;
 			children = (
 				D77B10E02256DEA6009B3561 /* PetDetailsView.swift */,
 				D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */,
 				D77B10E22256DEA6009B3561 /* PetDetailsView.xib */,
 			);
-			path = PetView;
+			path = PetDetailsView;
 			sourceTree = "<group>";
 		};
 		D77B10E82256E6BE009B3561 /* Components */ = {
@@ -945,7 +945,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.midsen.adocaoAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -965,7 +965,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.midsen.adocaoAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1022,6 +1022,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DAQ868NGN;
 				INFOPLIST_FILE = adocaoAnimalUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1043,6 +1044,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DAQ868NGN;
 				INFOPLIST_FILE = adocaoAnimalUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -77,7 +77,5 @@ extension CreateAccountView {
                 }
             })
             .disposed(by: disposeBag)
-        
-        
     }
 }

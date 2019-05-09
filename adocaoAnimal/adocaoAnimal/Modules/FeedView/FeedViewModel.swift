@@ -10,10 +10,19 @@ import RxSwift
 import RxCocoa
 
 class FeedViewModel {
-
-//    let currentUser: Driver<Profile>
-
+    
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let accountService = AccountServiceImpl()
+    
+    var userDetails : Single<Profile>
+    
     init() {
-
+        userDetails = accountService.getLoggedUser()
+    }
+    
+    func setupBindings(){
+        
+        
+        
     }
 }

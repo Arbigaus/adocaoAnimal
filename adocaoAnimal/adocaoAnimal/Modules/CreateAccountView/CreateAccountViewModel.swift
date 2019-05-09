@@ -15,6 +15,7 @@ class CreateAccountViewModel {
     
     var loggedUser   = PublishSubject<LoggedUser>()
     
+    
     init() {}
     
     func setupBindings(
@@ -41,7 +42,7 @@ class CreateAccountViewModel {
         // Informa a View que foi criada a conta
         createResult
             .subscribe(onNext: { response in
-                if response.created {
+                if response.passed {
                     self.loggedUser.onNext(.logged)
                 }
         }).disposed(by: disposeBag)
