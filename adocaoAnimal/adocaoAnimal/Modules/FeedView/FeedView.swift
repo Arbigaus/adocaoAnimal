@@ -17,7 +17,7 @@ class FeedView: UIViewController {
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
     let tapGesture = UITapGestureRecognizer()
-        
+    
     weak var delegate: AppActionable?
     
     @IBOutlet var locationAnimationView: AnimationView!
@@ -35,6 +35,7 @@ class FeedView: UIViewController {
         let petVader = Pet(name: "Darth Vader", size: .smal, image: "dog1.png", owner: "Adriele", address: "Rua ali", neighborhood: "CIC - 5,4km")
         let petLeia = Pet(name: "Princesa Leia", size: .medium, image: "cat1.jpg", owner: "Gerson", address: "Rua de lá", neighborhood: "Pinheirinho - 2,3km")
         let petYoda = Pet(name: "Yoda", size: .smal, image: "dog1.jpg", owner: "Skywalker", address: "Rua de cima", neighborhood: "Novo Mundo - 10km")
+    
         
         petsList.append(petVader)
         petsList.append(petLeia)
@@ -71,6 +72,8 @@ extension FeedView {
     }
     
     func setupBindings() {
+        
+        var userStatus : LoggedUser?
         
         let itemsTableView = Observable.just(
             petsList.map { $0 }
@@ -112,14 +115,37 @@ extension FeedView {
         // Busca do usuário logado
         viewModel.userDetails
             .subscribe(onNext: { user in
-                print(user)
+                if user.name != "" {
+                    userStatus = .notLogged
+                }
                 self.welcomeLabel.text = "Olá, \(user.name)"
             })
             .disposed(by: disposeBag)
         
+        self.viewModel.loggedUser.asObserver()
+            .subscribe(onNext: { user in
+                switch user {
+                case .logged :
+                    userStatus = .logged
+                    
+                case .notLogged:
+                    userStatus = .notLogged
+                }
+                
+            }).disposed(by: disposeBag)
+        
+        // Ação do botão de perfil
         perfilButton
             .rx.tap.bind { [unowned self] _ in
-            self.delegate?.handle(.showLogin)
+                
+                switch userStatus! {
+                case .logged :
+                    self.delegate?.handle(.showUserProfile)
+                    
+                case .notLogged :
+                    self.delegate?.handle(.showLogin)
+                }
+                
             }
             .disposed(by: disposeBag)
         

@@ -14,8 +14,7 @@ class AccountServiceImpl: NSObject, AccountService {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let auth = Auth.auth()
     fileprivate let db = Firestore.firestore()
-    
-    
+        
     override init() {
     }
     
@@ -131,6 +130,12 @@ class AccountServiceImpl: NSObject, AccountService {
             getLoggedUserInfo(user!.uid) { (user) in
                 loggedUser.onNext(user)
             }
+        } else {
+            var dataFakeUser = Profile()
+            dataFakeUser.name = ""
+            dataFakeUser.lastName = ""
+            
+            loggedUser.onNext(dataFakeUser)
         }
         
         return loggedUser.asObservable()

@@ -195,7 +195,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `CreateAccountView`.
     static let createAccountView = _R.nib._CreateAccountView()
@@ -213,6 +213,8 @@ struct R: Rswift.Validatable {
     static let petDetailsView = _R.nib._PetDetailsView()
     /// Nib `PetTableViewCell`.
     static let petTableViewCell = _R.nib._PetTableViewCell()
+    /// Nib `UserProfileView`.
+    static let userProfileView = _R.nib._UserProfileView()
     
     /// `UINib(name: "CreateAccountView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.createAccountView) instead")
@@ -262,6 +264,12 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.petTableViewCell)
     }
     
+    /// `UINib(name: "UserProfileView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.userProfileView) instead")
+    static func userProfileView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.userProfileView)
+    }
+    
     static func createAccountView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.createAccountView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -292,6 +300,10 @@ struct R: Rswift.Validatable {
     
     static func petTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PetTableViewCell? {
       return R.nib.petTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PetTableViewCell
+    }
+    
+    static func userProfileView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.userProfileView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     fileprivate init() {}
@@ -483,6 +495,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "dog1.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.png' is used in nib 'PetTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _UserProfileView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "UserProfileView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}
