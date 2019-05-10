@@ -21,6 +21,7 @@ class CreateAccountView: UIViewController {
     
     weak var delegate: AppActionable?
     @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var lastNameLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwdLabel: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
@@ -58,7 +59,8 @@ extension CreateAccountView {
     func setupViewModel() {
         
         self.viewModel.setupBindings(
-            fullName  : self.nameLabel.rx.text.orEmpty.asDriver(),
+            name      : self.nameLabel.rx.text.orEmpty.asDriver(),
+            lastName  : self.lastNameLabel.rx.text.orEmpty.asDriver(),
             email     : self.emailLabel.rx.text.orEmpty.asDriver(),
             passwd    : self.passwdLabel.rx.text.orEmpty.asDriver(),
             createTap : self.createAccountButton.rx.tap.asSignal() )

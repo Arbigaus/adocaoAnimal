@@ -9,10 +9,12 @@
 import Foundation
 
 struct Profile: Codable {
-    var name : String
+    var name     : String
+    var lastName : String
     
     init() {
         self.name = ""
+        self.lastName = ""
     }
 }
 

@@ -10,7 +10,7 @@ import RxSwift
 
 protocol AccountService {
     
-    func createUser( name: String, email: String, password: String) -> Observable<Response>
+    func createUser( name: String, lastName: String, email: String, password: String) -> Observable<Response>
 }
 
 struct Response : Codable {

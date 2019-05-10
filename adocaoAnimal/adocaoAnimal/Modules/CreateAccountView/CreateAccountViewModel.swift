@@ -19,22 +19,24 @@ class CreateAccountViewModel {
     init() {}
     
     func setupBindings(
-        fullName  : Driver<String>,
+        name      : Driver<String>,
+        lastName  : Driver<String>,
         email     : Driver<String>,
         passwd    : Driver<String>,
         createTap : Signal<Void> )
     {
         
-        let loginData = Driver.combineLatest( fullName, email, passwd )
+        let loginData = Driver.combineLatest( name, lastName, email, passwd )
             .asObservable()
         
         // Chama a função que irá criar a conta
         let createResult = createTap
             .asObservable()
             .withLatestFrom(loginData)
-            .flatMapLatest { fullName, userEmail, userPasswd in
+            .flatMapLatest { name, lastName, userEmail, userPasswd in
                 self.accountService.createUser(
-                        name: fullName,
+                        name: name,
+                        lastName: lastName,
                         email: userEmail,
                         password: userPasswd)
         }.share()

@@ -14,7 +14,7 @@ class FeedViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
     
-    var userDetails : Single<Profile>
+    var userDetails : Observable<Profile>
     
     init() {
         userDetails = accountService.getLoggedUser()

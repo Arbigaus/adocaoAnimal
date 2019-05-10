@@ -57,6 +57,9 @@
 		D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */; };
 		D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E22256DEA6009B3561 /* PetDetailsView.xib */; };
 		D77B10E72256E39C009B3561 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E62256E39C009B3561 /* location.json */; };
+		D797098F228505B500B8DCC5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098C228505B500B8DCC5 /* UserProfileView.swift */; };
+		D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */; };
+		D7970991228505B500B8DCC5 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D797098E228505B500B8DCC5 /* UserProfileView.xib */; };
 		D7FBB3B4227F419E0020FE23 /* perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = D7FBB3B3227F419E0020FE23 /* perfil.png */; };
 		D7FBB3BA227F45C50020FE23 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBB3B9227F45C50020FE23 /* AccountService.swift */; };
 		D7FBB3BC227F468F0020FE23 /* AccountServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBB3BB227F468F0020FE23 /* AccountServiceImpl.swift */; };
@@ -138,6 +141,9 @@
 		D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewModel.swift; sourceTree = "<group>"; };
 		D77B10E22256DEA6009B3561 /* PetDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsView.xib; sourceTree = "<group>"; };
 		D77B10E62256E39C009B3561 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		D797098C228505B500B8DCC5 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		D797098E228505B500B8DCC5 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
 		D7FBB3B3227F419E0020FE23 /* perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perfil.png; sourceTree = "<group>"; };
 		D7FBB3B9227F45C50020FE23 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		D7FBB3BB227F468F0020FE23 /* AccountServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceImpl.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D7970985228503FF00B8DCC5 /* ProfileView */,
 				31EF5E3422712FC8007900B9 /* CreateAccountView */,
 				31EF5E2C22711D94007900B9 /* LoginEmailView */,
 				31DA95E9226E7F16007AD5E6 /* LoginView */,
@@ -244,6 +251,7 @@
 				D77B10D42256D499009B3561 /* Coordinator */,
 				311AD7CD227D015E00DCB75A /* Utilities */,
 				31736BC52255891D00BCFE53 /* Modules */,
+				D7970984228503F100B8DCC5 /* New Group */,
 				311AD7C6227CF72400DCB75A /* Storage */,
 				D70235E42263BCCA007740D1 /* Models */,
 				31FC8C66225EB45C00AD07BF /* Cells */,
@@ -405,6 +413,24 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
+		D7970984228503F100B8DCC5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D7970985228503FF00B8DCC5 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D797098C228505B500B8DCC5 /* UserProfileView.swift */,
+				D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */,
+				D797098E228505B500B8DCC5 /* UserProfileView.xib */,
+			);
+			name = ProfileView;
+			path = "/Users/arbigaus/Documents/Capacitacao iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/ProfileView";
+			sourceTree = "<absolute>";
+		};
 		D7FBB3B5227F443D0020FE23 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +565,7 @@
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
 				D7FBB3B4227F419E0020FE23 /* perfil.png in Resources */,
+				D7970991228505B500B8DCC5 /* UserProfileView.xib in Resources */,
 				312B746C225C0E050064B6B9 /* Filter2.json in Resources */,
 				31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */,
 				31741B92226EA55400265305 /* cat1.jpg in Resources */,
@@ -748,8 +775,10 @@
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
 				319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
+				D797098F228505B500B8DCC5 /* UserProfileView.swift in Sources */,
 				311AD7CA227CFA1C00DCB75A /* LocalStorageImpl.swift in Sources */,
 				D7FBB3BC227F468F0020FE23 /* AccountServiceImpl.swift in Sources */,
+				D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */,
 				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,

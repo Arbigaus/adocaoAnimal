@@ -20,10 +20,16 @@ class AccountServiceImpl: NSObject, AccountService {
     }
     
     // MARK: - Main function to create User
-    func createUser( name: String, email: String, password: String) -> Observable<Response> {
+    func createUser(
+            name: String,
+            lastName: String,
+            email: String,
+            password: String
+        ) -> Observable<Response> {
+        
         let response = PublishSubject<Response>()
         
-        createAuthUser(name: name, email: email, password: password) { (msg) in
+        createAuthUser(name: name, lastName: lastName, email: email, password: password) { (msg) in
             response.onNext(msg)
         }
         
@@ -32,14 +38,14 @@ class AccountServiceImpl: NSObject, AccountService {
     }
     
     // MARK: - Create User Account
-    private func createAuthUser(name: String, email: String, password : String, handler: @escaping ((Response)->Void)) {
+    private func createAuthUser(name: String, lastName: String, email: String, password : String, handler: @escaping ((Response)->Void)) {
         var response = Response()
         
         self.auth.rx.createUser(
             withEmail: email,
             password: password )
             .subscribe(onNext: { AuthResponse in
-                self.createDBUser(name: name) { msg in
+                self.createDBUser(name: name, lastName: lastName) { msg in
                     
                     response.message = msg.message
                     response.passed = msg.passed
@@ -57,14 +63,15 @@ class AccountServiceImpl: NSObject, AccountService {
     }
     
     // MARK: - Create user on DB
-    private func createDBUser(name: String, handler: @escaping ((Response)->Void)) {
+    private func createDBUser(name: String, lastName: String, handler: @escaping ((Response)->Void)) {
         var response = Response()
         
         self.db.collection("Users")
             .document( self.auth.currentUser!.uid )
             .rx
             .setData([
-                "name": name
+                "name": name,
+                "lastName": lastName
                 ])
             .subscribe(onNext:{
                 response.message = "Usuário criado com sucesso"
@@ -116,14 +123,17 @@ class AccountServiceImpl: NSObject, AccountService {
     }
     
     //MARK: - Main Get logged user function
-    func getLoggedUser() -> Single<Profile>{
+    func getLoggedUser() -> Observable<Profile>{
         let loggedUser = PublishSubject<Profile>()
         
-        getLoggedUserInfo(self.auth.currentUser!.uid) { (user) in
-            loggedUser.onNext(user)
+        let user = self.auth.currentUser ?? nil
+        if user != nil {
+            getLoggedUserInfo(user!.uid) { (user) in
+                loggedUser.onNext(user)
+            }
         }
         
-        return loggedUser.asSingle()
+        return loggedUser.asObservable()
     }
     
     // MARK: - Get logged user from Firestore
@@ -135,7 +145,10 @@ class AccountServiceImpl: NSObject, AccountService {
                 .rx.listen()
             .subscribe(onNext: { document in
                 let doc = document.data()
-                userProfile.name = (doc!["name"] as? String)!
+                if doc != nil {
+                    userProfile.name     = (doc!["name"] as? String)!
+                    userProfile.lastName = (doc!["lastName"] as? String) ?? ""
+                }
                 handler(userProfile)
             }, onError: { error in
                 print("Error fetching snapshots: \(error)")

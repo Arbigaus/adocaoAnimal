@@ -28,7 +28,7 @@ class FeedView: UIViewController {
     @IBOutlet weak var perfilView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    init(viewModel: FeedViewModel = .init()) {
+    init( viewModel: FeedViewModel = .init() ) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
         
@@ -59,8 +59,6 @@ class FeedView: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    
-    
 }
 
 extension FeedView {
@@ -84,13 +82,16 @@ extension FeedView {
             filters.map { "\($0)" }
         )
         
+        // Popular a Table View de pets
         itemsTableView
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { [unowned self] _ , pet, cell in
                         cell.bind(pet)
-        }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
+        // Chamar a view de Pet
         self.petsTableView.rx
             .modelSelected(Pet.self)
             .subscribe(onNext: { (pet) in
@@ -99,21 +100,28 @@ extension FeedView {
                 print(error)
             }).disposed(by: disposeBag)
         
+        // Popular a collection view de filtros
         itemsCollecView
             .bind(to: filterCollectionView.rx
                 .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
                         cell .homeFilterLabel.text = element
-        }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
-        viewModel.userDetails.subscribe(onSuccess: { (user) in
-                self.welcomeLabel.text = "Bem vindo \(user.name)"
+        // Busca do usuário logado
+        viewModel.userDetails
+            .subscribe(onNext: { user in
+                print(user)
+                self.welcomeLabel.text = "Olá, \(user.name)"
             })
             .disposed(by: disposeBag)
         
-        perfilButton.rx.tap.bind { [unowned self] _ in
+        perfilButton
+            .rx.tap.bind { [unowned self] _ in
             self.delegate?.handle(.showLogin)
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
     }
     

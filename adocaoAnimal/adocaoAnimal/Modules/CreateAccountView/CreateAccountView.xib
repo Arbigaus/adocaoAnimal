@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="createAccountButton" destination="DSf-Ff-UdY" id="dhc-aE-f77"/>
                 <outlet property="emailLabel" destination="d7t-vk-h25" id="agq-3F-nO3"/>
+                <outlet property="lastNameLabel" destination="MUF-04-ASH" id="g6m-tm-Bzl"/>
                 <outlet property="nameLabel" destination="YUp-7P-Kl7" id="02i-vF-6EH"/>
                 <outlet property="passwdLabel" destination="nok-wA-ezI" id="hGr-kB-Mad"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -77,7 +78,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-MAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-vk-h25">
-                                            <rect key="frame" x="40" y="195" width="334" height="40"/>
+                                            <rect key="frame" x="40" y="275" width="334" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="P9c-4l-4fp"/>
                                             </constraints>
@@ -86,7 +87,7 @@
                                             <textInputTraits key="textInputTraits" textContentType="email"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SENHA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nok-wA-ezI">
-                                            <rect key="frame" x="40" y="275" width="334" height="40"/>
+                                            <rect key="frame" x="40" y="355" width="334" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="ROd-2l-sew"/>
                                             </constraints>
@@ -95,7 +96,7 @@
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSf-Ff-UdY">
-                                            <rect key="frame" x="132" y="355" width="150" height="50"/>
+                                            <rect key="frame" x="132" y="435" width="150" height="50"/>
                                             <color key="backgroundColor" red="1" green="0.24728529260000001" blue="0.38504720440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="J8v-vC-XUI"/>
@@ -115,23 +116,33 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" textContentType="name"/>
                                         </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SOBRENOME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUF-04-ASH">
+                                            <rect key="frame" x="40" y="195" width="334" height="40"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="YUp-7P-Kl7" firstAttribute="top" secondItem="59U-UF-ywA" secondAttribute="bottom" constant="20" id="4tu-69-pQM"/>
                                         <constraint firstItem="GRJ-zs-B7T" firstAttribute="top" secondItem="PUc-vD-fgS" secondAttribute="top" constant="10" id="5Z4-fW-GQE"/>
                                         <constraint firstItem="YUp-7P-Kl7" firstAttribute="leading" secondItem="PUc-vD-fgS" secondAttribute="leading" constant="40" id="5fk-zh-Ijg"/>
+                                        <constraint firstItem="MUF-04-ASH" firstAttribute="height" secondItem="YUp-7P-Kl7" secondAttribute="height" id="9FW-GM-oxx"/>
+                                        <constraint firstItem="MUF-04-ASH" firstAttribute="centerX" secondItem="PUc-vD-fgS" secondAttribute="centerX" id="BJU-QN-xhO"/>
                                         <constraint firstItem="GRJ-zs-B7T" firstAttribute="leading" secondItem="PUc-vD-fgS" secondAttribute="leading" constant="20" id="BdH-E5-Uoj"/>
                                         <constraint firstItem="nok-wA-ezI" firstAttribute="leading" secondItem="PUc-vD-fgS" secondAttribute="leading" constant="40" id="EEG-mf-bHh"/>
                                         <constraint firstItem="d7t-vk-h25" firstAttribute="leading" secondItem="PUc-vD-fgS" secondAttribute="leading" constant="40" id="Gu8-Uw-PiT"/>
                                         <constraint firstItem="nok-wA-ezI" firstAttribute="top" secondItem="d7t-vk-h25" secondAttribute="bottom" constant="40" id="KF5-PB-NEJ"/>
-                                        <constraint firstItem="d7t-vk-h25" firstAttribute="top" secondItem="YUp-7P-Kl7" secondAttribute="bottom" constant="40" id="NL2-eR-QHg"/>
                                         <constraint firstAttribute="trailing" secondItem="59U-UF-ywA" secondAttribute="trailing" constant="40" id="TAI-TW-eI3"/>
                                         <constraint firstAttribute="trailing" secondItem="GRJ-zs-B7T" secondAttribute="trailing" constant="20" id="UDP-Z6-jfS"/>
                                         <constraint firstItem="DSf-Ff-UdY" firstAttribute="top" secondItem="nok-wA-ezI" secondAttribute="bottom" constant="40" id="Upy-RF-C2R"/>
                                         <constraint firstItem="59U-UF-ywA" firstAttribute="leading" secondItem="PUc-vD-fgS" secondAttribute="leading" constant="40" id="ZEE-GJ-Mh4"/>
                                         <constraint firstAttribute="trailing" secondItem="d7t-vk-h25" secondAttribute="trailing" constant="40" id="bWG-sR-ncD"/>
+                                        <constraint firstItem="MUF-04-ASH" firstAttribute="top" secondItem="YUp-7P-Kl7" secondAttribute="bottom" constant="40" id="c1b-62-A4V"/>
+                                        <constraint firstItem="MUF-04-ASH" firstAttribute="width" secondItem="YUp-7P-Kl7" secondAttribute="width" id="cT2-y4-OfT"/>
                                         <constraint firstItem="DSf-Ff-UdY" firstAttribute="centerX" secondItem="PUc-vD-fgS" secondAttribute="centerX" id="h3j-ni-B6c"/>
+                                        <constraint firstItem="d7t-vk-h25" firstAttribute="top" secondItem="MUF-04-ASH" secondAttribute="bottom" constant="40" id="kKh-kw-j10"/>
                                         <constraint firstAttribute="trailing" secondItem="YUp-7P-Kl7" secondAttribute="trailing" constant="40" id="wgo-gp-5cf"/>
                                         <constraint firstAttribute="trailing" secondItem="nok-wA-ezI" secondAttribute="trailing" constant="40" id="x2O-ft-h6X"/>
                                         <constraint firstItem="59U-UF-ywA" firstAttribute="top" secondItem="GRJ-zs-B7T" secondAttribute="bottom" constant="10" id="zs8-ap-tPr"/>
