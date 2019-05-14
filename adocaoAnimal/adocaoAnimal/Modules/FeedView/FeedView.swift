@@ -12,6 +12,7 @@ import RxCocoa
 import Lottie
 
 class FeedView: UIViewController {
+    
     let disposeBag = DisposeBag()
     let loadingView = LoadingView()
     
@@ -79,7 +80,22 @@ extension FeedView {
     
     func setupBindings() {
         
-        var userStatus : LoggedUser?
+        //ideia:
+        
+        
+        viewModel.userDetails
+            .subscribe(onNext: { user in
+                //TEU user esta aqui!
+                // aqui Vc pode atribuir isso em uma variavel "Normal" e usar no resto do app :) livre de rx :)
+                print("----->> Gerson")
+                print(user)
+                if user.name != "" {
+                   // self.loggedUser.onNext(.logged)
+                } else {
+                    //self.loggedUser.onNext(.notLogged)
+                }
+            })
+            .disposed(by: disposeBag)
         
         let itemsTableView = Observable.just(
             petsList.map { $0 }
@@ -118,42 +134,47 @@ extension FeedView {
             }
             .disposed(by: disposeBag)
         
-        // Busca do usuário logado
-        viewModel.userDetails
-            .subscribe(onNext: { user in
-                if user.name != "" {
-                    userStatus = .notLogged
-                }
-                self.welcomeLabel.text = "Olá, \(user.name)"
-            })
-            .disposed(by: disposeBag)
+        //COMENTEI DAQUI PRA BAIXO PQ VC VAI TER Q ARRUMAR A LOGICA DA VIEW 👇
         
-        self.viewModel.loggedUser.asObserver()
-            .subscribe(onNext: { user in
-                switch user {
-                case .logged :
-                    userStatus = .logged
-                    
-                case .notLogged:
-                    userStatus = .notLogged
-                }
-                
-            }).disposed(by: disposeBag)
+        // Busca do usuário logado
+//        viewModel.userDetails
+//            .subscribe(onNext: { user in
+//                if user.name != "" {
+//                    userStatus = .notLogged
+//                }
+//                self.welcomeLabel.text = "Olá, \(user.name)"
+//            })
+//            .disposed(by: disposeBag)
+        
+//        self.viewModel.loggedUser.asObserver()
+//            .subscribe(onNext: { user in
+//                switch user {
+//                case .logged :
+//                    print("USUARIO LOGADO")
+//                   // userStatus = .logged
+//
+//                case .notLogged:
+//                    print("USUARIO NAO LOGADO")
+//                    //userStatus = .notLogged
+//                }
+//
+//            }).disposed(by: disposeBag)
         
         // Ação do botão de perfil
-        perfilButton
-            .rx.tap.bind { [unowned self] _ in
-                
-//                switch userStatus! {
-//                case .logged :
-//                    self.delegate?.handle(.showUserProfile)
-//
-//                case .notLogged :
-                    self.delegate?.handle(.showLogin)
-//                }
-                
-            }
-            .disposed(by: disposeBag)
+        // Ação do botão de perfil
+        //        perfilButton
+        //            .rx.tap.bind { [unowned self] _ in
+        //
+        //                switch userStatus! {
+        //                case .logged :
+        //                    self.delegate?.handle(.showUserProfile)
+        //
+        //                case .notLogged :
+        //                    self.delegate?.handle(.showLogin)
+        //                }
+        //
+        //            }
+        //            .disposed(by: disposeBag)
         
     }
     
