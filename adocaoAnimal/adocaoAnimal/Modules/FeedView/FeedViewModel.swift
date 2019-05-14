@@ -14,29 +14,29 @@ class FeedViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
     
-    var userDetails : Observable<Profile>
+//    var userDetails : Observable<Profile>
     
     var loggedUser   = PublishSubject<LoggedUser>()
     
     init() {        
-        userDetails = accountService.getLoggedUser()
+//        userDetails = accountService.getLoggedUser()
         setupBindings()
         
     }
     
     func setupBindings(){
-        
-        self.userDetails
-            .subscribe(onNext: { user in
-                print("----->> Gerson")
-                print(user)
-                if user.name != "" {
-                    self.loggedUser.onNext(.logged)
-                } else {
-                    self.loggedUser.onNext(.notLogged)
-                }
-            })
-            .disposed(by: disposeBag)
+//
+//        self.userDetails
+//            .subscribe(onNext: { user in
+//                print("----->> Gerson")
+//                print(user)
+//                if user.name != "" {
+//                    self.loggedUser.onNext(.logged)
+//                } else {
+//                    self.loggedUser.onNext(.notLogged)
+//                }
+//            })
+//            .disposed(by: disposeBag)
         
     }
 }

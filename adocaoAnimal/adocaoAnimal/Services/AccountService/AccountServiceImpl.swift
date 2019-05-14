@@ -123,44 +123,29 @@ class AccountServiceImpl: NSObject, AccountService {
     
     //MARK: - Main Get logged user function
     func getLoggedUser() -> Observable<Profile>{
-        let loggedUser = PublishSubject<Profile>()
-        
-        let user = self.auth.currentUser ?? nil
-        if user != nil {
-            getLoggedUserInfo(user!.uid) { (user) in
-                loggedUser.onNext(user)
-            }
-        } else {
-            var dataFakeUser = Profile()
-            dataFakeUser.name = ""
-            dataFakeUser.lastName = ""
-            
-            loggedUser.onNext(dataFakeUser)
+        return Observable
+            .just(self.auth.currentUser)
+            .flatMap{ (user) in
+                self.getLoggedUserInfo(user?.uid ?? "0")
         }
-        
-        return loggedUser.asObservable()
     }
     
     // MARK: - Get logged user from Firestore
-    func getLoggedUserInfo(_ uuid: String, handler: @escaping ((Profile) -> Void)) {
-        var userProfile = Profile()
-        
-        self.db.collection("Users")
+    func getLoggedUserInfo(_ uuid: String) -> Observable<Profile> {
+        return self.db.collection("Users")
                 .document(uuid)
                 .rx.listen()
-            .subscribe(onNext: { document in
-                let doc = document.data()
-                if doc != nil {
-                    userProfile.name     = (doc!["name"] as? String)!
-                    userProfile.lastName = (doc!["lastName"] as? String) ?? ""
-                }
-                handler(userProfile)
-            }, onError: { error in
-                print("Error fetching snapshots: \(error)")
-                handler(userProfile)
-            })
-            .disposed(by: self.disposeBag)
-        
+            .map{$0.data()}
+            .map { data -> Profile in
+                
+                guard let data = data else { return Profile() }
+                
+                var userProfile = Profile()
+                userProfile.name     = (data["name"] as? String)!
+                userProfile.lastName = (data["lastNane"] as? String) ?? ""
+                return userProfile
+                
+        }
     }
     
 }

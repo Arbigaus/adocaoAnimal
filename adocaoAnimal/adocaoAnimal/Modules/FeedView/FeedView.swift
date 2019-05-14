@@ -113,14 +113,14 @@ extension FeedView {
             .disposed(by: disposeBag)
         
         // Busca do usuário logado
-        viewModel.userDetails
-            .subscribe(onNext: { user in
-                if user.name != "" {
-                    userStatus = .notLogged
-                }
-                self.welcomeLabel.text = "Olá, \(user.name)"
-            })
-            .disposed(by: disposeBag)
+//        viewModel.userDetails
+//            .subscribe(onNext: { user in
+//                if user.name != "" {
+//                    userStatus = .notLogged
+//                }
+//                self.welcomeLabel.text = "Olá, \(user.name)"
+//            })
+//            .disposed(by: disposeBag)
         
         self.viewModel.loggedUser.asObserver()
             .subscribe(onNext: { user in
