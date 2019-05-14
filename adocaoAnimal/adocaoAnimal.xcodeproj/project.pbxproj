@@ -34,6 +34,9 @@
 		31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */; };
 		31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95EC226E7F34007AD5E6 /* LoginView.xib */; };
 		31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95F2226E8641007AD5E6 /* dog1.jpg */; };
+		31E2EFE4228A337500C30F33 /* 4888-dog-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */; };
+		31E2EFE5228A337500C30F33 /* 4889-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E2EFE3228A337500C30F33 /* 4889-cat.json */; };
+		31E2EFE7228A33F300C30F33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2EFE6228A33F300C30F33 /* LoadingView.swift */; };
 		31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */; };
 		31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */; };
 		31EF5E3222711DEE007900B9 /* LoginEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */; };
@@ -116,6 +119,9 @@
 		31DA95EB226E7F34007AD5E6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		31DA95EC226E7F34007AD5E6 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		31DA95F2226E8641007AD5E6 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
+		31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4888-dog-icon.json"; sourceTree = "<group>"; };
+		31E2EFE3228A337500C30F33 /* 4889-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4889-cat.json"; sourceTree = "<group>"; };
+		31E2EFE6228A33F300C30F33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
 		31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewModel.swift; sourceTree = "<group>"; };
 		31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginEmailView.xib; sourceTree = "<group>"; };
@@ -251,7 +257,6 @@
 				D77B10D42256D499009B3561 /* Coordinator */,
 				311AD7CD227D015E00DCB75A /* Utilities */,
 				31736BC52255891D00BCFE53 /* Modules */,
-				D7970984228503F100B8DCC5 /* New Group */,
 				311AD7C6227CF72400DCB75A /* Storage */,
 				D70235E42263BCCA007740D1 /* Models */,
 				31FC8C66225EB45C00AD07BF /* Cells */,
@@ -286,6 +291,18 @@
 				31DA95EC226E7F34007AD5E6 /* LoginView.xib */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		31E2EFE1228A335100C30F33 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */,
+				31E2EFE3228A337500C30F33 /* 4889-cat.json */,
+				312B746B225C0E040064B6B9 /* Filter1.json */,
+				312B746A225C0E040064B6B9 /* Filter2.json */,
+				D77B10E62256E39C009B3561 /* location.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		31EF5E2C22711D94007900B9 /* LoginEmailView */ = {
@@ -356,13 +373,11 @@
 		D77B10D02256D242009B3561 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				31E2EFE1228A335100C30F33 /* Animations */,
 				31DA95E5226E7D5E007AD5E6 /* Assets.xcassets */,
 				317FDD6F2255849800356327 /* Info.plist */,
 				310D6956225823370027C669 /* GoogleService-Info.plist */,
-				312B746B225C0E040064B6B9 /* Filter1.json */,
-				312B746A225C0E040064B6B9 /* Filter2.json */,
 				D77B10EB2256EFA8009B3561 /* assets */,
-				D77B10E62256E39C009B3561 /* location.json */,
 				D77B10D12256D2B0009B3561 /* R.generated.swift */,
 				317FDD632255849700356327 /* AppDelegate.swift */,
 				317FDD672255849700356327 /* Main.storyboard */,
@@ -393,6 +408,7 @@
 		D77B10E82256E6BE009B3561 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				31E2EFE6228A33F300C30F33 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -413,13 +429,6 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		D7970984228503F100B8DCC5 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		D7970985228503FF00B8DCC5 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,9 +436,8 @@
 				D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */,
 				D797098E228505B500B8DCC5 /* UserProfileView.xib */,
 			);
-			name = ProfileView;
-			path = "/Users/arbigaus/Documents/Capacitacao iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/ProfileView";
-			sourceTree = "<absolute>";
+			path = ProfileView;
+			sourceTree = "<group>";
 		};
 		D7FBB3B5227F443D0020FE23 /* Services */ = {
 			isa = PBXGroup;
@@ -561,6 +569,7 @@
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
 				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
 				31EF5E3A22712FE6007900B9 /* CreateAccountView.xib in Resources */,
+				31E2EFE5228A337500C30F33 /* 4889-cat.json in Resources */,
 				31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */,
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
@@ -572,6 +581,7 @@
 				31DA95E8226E7EA7007AD5E6 /* logo.png in Resources */,
 				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
+				31E2EFE4228A337500C30F33 /* 4888-dog-icon.json in Resources */,
 				310D6957225823370027C669 /* GoogleService-Info.plist in Resources */,
 				D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */,
 				D77B10E72256E39C009B3561 /* location.json in Resources */,
@@ -775,6 +785,7 @@
 				D77B10E32256DEA6009B3561 /* PetDetailsView.swift in Sources */,
 				319C3603226554A0001F8B1A /* PetDetailInfoCollectionViewCell.swift in Sources */,
 				31736BCC225589A700BCFE53 /* FeedView.swift in Sources */,
+				31E2EFE7228A33F300C30F33 /* LoadingView.swift in Sources */,
 				D797098F228505B500B8DCC5 /* UserProfileView.swift in Sources */,
 				311AD7CA227CFA1C00DCB75A /* LocalStorageImpl.swift in Sources */,
 				D7FBB3BC227F468F0020FE23 /* AccountServiceImpl.swift in Sources */,

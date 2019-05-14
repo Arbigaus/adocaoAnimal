@@ -16,8 +16,12 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 13 files.
+  /// This `R.file` struct is generated, and contains static references to 15 files.
   struct file {
+    /// Resource file `4888-dog-icon.json`.
+    static let dogIconJson = Rswift.FileResource(bundle: R.hostingBundle, name: "4888-dog-icon", pathExtension: "json")
+    /// Resource file `4889-cat.json`.
+    static let catJson = Rswift.FileResource(bundle: R.hostingBundle, name: "4889-cat", pathExtension: "json")
     /// Resource file `Filter1.json`.
     static let filter1Json = Rswift.FileResource(bundle: R.hostingBundle, name: "Filter1", pathExtension: "json")
     /// Resource file `Filter2.json`.
@@ -44,6 +48,18 @@ struct R: Rswift.Validatable {
     static let perfilDefaultPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfilDefault", pathExtension: "png")
     /// Resource file `settings_sliders-512.png`.
     static let settings_sliders512Png = Rswift.FileResource(bundle: R.hostingBundle, name: "settings_sliders-512", pathExtension: "png")
+    
+    /// `bundle.url(forResource: "4888-dog-icon", withExtension: "json")`
+    static func dogIconJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dogIconJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "4889-cat", withExtension: "json")`
+    static func catJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.catJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
     
     /// `bundle.url(forResource: "Filter1", withExtension: "json")`
     static func filter1Json(_: Void = ()) -> Foundation.URL? {

@@ -56,9 +56,7 @@ class AccountServiceImpl: NSObject, AccountService {
                 response.passed = false
                 handler(response)
             })
-            .disposed(by: self.disposeBag)
-
-        
+            .disposed(by: self.disposeBag)        
     }
     
     // MARK: - Create user on DB

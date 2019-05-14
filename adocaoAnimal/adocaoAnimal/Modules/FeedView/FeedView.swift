@@ -13,6 +13,7 @@ import Lottie
 
 class FeedView: UIViewController {
     let disposeBag = DisposeBag()
+    let loadingView = LoadingView()
     
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
@@ -40,6 +41,8 @@ class FeedView: UIViewController {
         petsList.append(petVader)
         petsList.append(petLeia)
         petsList.append(petYoda)
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,6 +72,9 @@ extension FeedView {
         
         petsTableView.register(R.nib.petTableViewCell)
         filterCollectionView.register(R.nib.homeFilterCollectionViewCell)
+        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.show()
     }
     
     func setupBindings() {
@@ -138,13 +144,13 @@ extension FeedView {
         perfilButton
             .rx.tap.bind { [unowned self] _ in
                 
-                switch userStatus! {
-                case .logged :
-                    self.delegate?.handle(.showUserProfile)
-                    
-                case .notLogged :
+//                switch userStatus! {
+//                case .logged :
+//                    self.delegate?.handle(.showUserProfile)
+//
+//                case .notLogged :
                     self.delegate?.handle(.showLogin)
-                }
+//                }
                 
             }
             .disposed(by: disposeBag)
