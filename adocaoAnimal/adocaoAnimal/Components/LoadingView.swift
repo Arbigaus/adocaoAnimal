@@ -43,7 +43,7 @@ class LoadingView: UIView {
     
     private func setupConstraints() {
         
-        self.frame = CGRect(x: 100, y: 100, width: 200, height: 400)
+        self.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
         self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         let loading = Animation.named("4888-dog-icon")
