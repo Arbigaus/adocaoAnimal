@@ -140,7 +140,8 @@ class AccountServiceImpl: NSObject, AccountService {
                 
                 var userProfile = Profile()
                 userProfile.name     = (data["name"] as? String)!
-                userProfile.lastName = (data["lastNane"] as? String) ?? ""
+                userProfile.lastName = (data["lastName"] as? String) ?? ""
+                                
                 return userProfile
                 
         }

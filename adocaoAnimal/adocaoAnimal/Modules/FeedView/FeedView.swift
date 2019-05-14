@@ -21,6 +21,8 @@ class FeedView: UIViewController {
     
     weak var delegate: AppActionable?
     
+    fileprivate var userDetails = Profile()
+    
     @IBOutlet var locationAnimationView: AnimationView!
     
     @IBOutlet weak var perfilButton: UIButton!
@@ -73,13 +75,19 @@ extension FeedView {
         petsTableView.register(R.nib.petTableViewCell)
         filterCollectionView.register(R.nib.homeFilterCollectionViewCell)
         
-        self.view.addSubview(self.loadingView)
-        self.loadingView.show()
+//        self.view.addSubview(self.loadingView)
+//        self.loadingView.show()
     }
     
     func setupBindings() {
         
-        var userStatus : LoggedUser?
+        viewModel.userDetails
+            .subscribe(onNext: { user in
+                self.userDetails = user
+                self.welcomeLabel.text = "Olá \(user.name)"
+            })
+            .disposed(by: disposeBag)
+        
         
         let itemsTableView = Observable.just(
             petsList.map { $0 }
@@ -118,40 +126,15 @@ extension FeedView {
             }
             .disposed(by: disposeBag)
         
-        // Busca do usuário logado
-//        viewModel.userDetails
-//            .subscribe(onNext: { user in
-//                if user.name != "" {
-//                    userStatus = .notLogged
-//                }
-//                self.welcomeLabel.text = "Olá, \(user.name)"
-//            })
-//            .disposed(by: disposeBag)
-        
-        self.viewModel.loggedUser.asObserver()
-            .subscribe(onNext: { user in
-                switch user {
-                case .logged :
-                    userStatus = .logged
-                    
-                case .notLogged:
-                    userStatus = .notLogged
-                }
-                
-            }).disposed(by: disposeBag)
-        
         // Ação do botão de perfil
         perfilButton
             .rx.tap.bind { [unowned self] _ in
                 
-//                switch userStatus! {
-//                case .logged :
-//                    self.delegate?.handle(.showUserProfile)
-//
-//                case .notLogged :
+                if self.userDetails.name != "" {
+                    self.delegate?.handle(.showUserProfile)
+                } else {
                     self.delegate?.handle(.showLogin)
-//                }
-                
+                }
             }
             .disposed(by: disposeBag)
         
