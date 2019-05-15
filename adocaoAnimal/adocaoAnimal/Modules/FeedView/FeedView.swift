@@ -95,8 +95,11 @@ extension FeedView {
         viewModel.userDetails
             .subscribe(onNext: { user in
                 self.userDetails = user
-                self.welcomeLabel.text = "Olá \(user.name)"
-//                self.loadingAnimation(false)
+                if user.name != "" {
+                    self.welcomeLabel.text = "Olá \(user.name)"
+                } else {
+                    self.welcomeLabel.text = "Bem vindo"
+                }
             })
             .disposed(by: disposeBag)
         
@@ -154,11 +157,16 @@ extension FeedView {
     
     func startAnimationView() {
         
-//        let locationAnimation = Animation.named("location")
-//
-//        locationAnimationView.loopMode = .loop
-//        locationAnimationView.animation = locationAnimation
-//        locationAnimationView.play()
+        let locationAnimation = LOTAnimationView(name: "location")
+        
+        locationAnimation.center = self.locationAnimationView.center
+        locationAnimation.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        locationAnimation.contentMode = .scaleAspectFill
+        locationAnimation.loopAnimation = true
+        
+        self.locationAnimationView.addSubview(locationAnimation)
+        
+        locationAnimation.play()
         
     }
     

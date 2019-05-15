@@ -56,9 +56,8 @@ extension UserProfileView {
     
     func setupBindings() {
         self.viewModel.loggedUser
-            .asObservable()
             .subscribe(onNext: { user in
-                if user == .logged {
+                if user == .notLogged {
                     self.delegate?.handle(.showFeed)
                 }
             })
