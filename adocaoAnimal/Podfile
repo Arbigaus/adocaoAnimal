@@ -22,7 +22,7 @@ target 'adocaoAnimal' do
   pod 'RxFirebase/Auth'
   pod 'RxFirebase/Functions'
 
-  pod 'lottie-ios'     #Animations
+  pod 'lottie-ios', '~> 2.5.2'    #Animations
   pod 'R.swift'
 
   pod 'TPKeyboardAvoiding', '~> 1.3'

@@ -35,7 +35,6 @@
 		31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95EC226E7F34007AD5E6 /* LoginView.xib */; };
 		31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DA95F2226E8641007AD5E6 /* dog1.jpg */; };
 		31E2EFE4228A337500C30F33 /* 4888-dog-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */; };
-		31E2EFE5228A337500C30F33 /* 4889-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E2EFE3228A337500C30F33 /* 4889-cat.json */; };
 		31E2EFE7228A33F300C30F33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2EFE6228A33F300C30F33 /* LoadingView.swift */; };
 		31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */; };
 		31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */; };
@@ -53,6 +52,9 @@
 		D70235E62263BCF2007740D1 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235E52263BCF2007740D1 /* PetList.swift */; };
 		D70235E82263CC40007740D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70235E72263CC40007740D1 /* ViewController.swift */; };
 		D70235EA2263D304007740D1 /* perfilDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D70235E92263D304007740D1 /* perfilDefault.png */; };
+		D71DE335228B8D4500E0E7F7 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DE334228B8D4500E0E7F7 /* UIView+Constraints.swift */; };
+		D71DE337228B91E100E0E7F7 /* 4889-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = D71DE336228B91E000E0E7F7 /* 4889-cat.json */; };
+		D71DE339228B933900E0E7F7 /* 3864-fat-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = D71DE338228B933900E0E7F7 /* 3864-fat-cat.json */; };
 		D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D12256D2B0009B3561 /* R.generated.swift */; };
 		D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D52256D4D0009B3561 /* Coordinator.swift */; };
 		D77B10D82256D52D009B3561 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10D72256D52D009B3561 /* AppCoordinator.swift */; };
@@ -120,7 +122,6 @@
 		31DA95EC226E7F34007AD5E6 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		31DA95F2226E8641007AD5E6 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
 		31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4888-dog-icon.json"; sourceTree = "<group>"; };
-		31E2EFE3228A337500C30F33 /* 4889-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4889-cat.json"; sourceTree = "<group>"; };
 		31E2EFE6228A33F300C30F33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
 		31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +141,9 @@
 		D70235E52263BCF2007740D1 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		D70235E72263CC40007740D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D70235E92263D304007740D1 /* perfilDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perfilDefault.png; sourceTree = "<group>"; };
+		D71DE334228B8D4500E0E7F7 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		D71DE336228B91E000E0E7F7 /* 4889-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4889-cat.json"; sourceTree = "<group>"; };
+		D71DE338228B933900E0E7F7 /* 3864-fat-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3864-fat-cat.json"; sourceTree = "<group>"; };
 		D77B10D12256D2B0009B3561 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D77B10D52256D4D0009B3561 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D77B10D72256D52D009B3561 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				311AD7CE227D016C00DCB75A /* Rx + Utils.swift */,
+				D71DE334228B8D4500E0E7F7 /* UIView+Constraints.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,8 +301,9 @@
 		31E2EFE1228A335100C30F33 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				D71DE338228B933900E0E7F7 /* 3864-fat-cat.json */,
 				31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */,
-				31E2EFE3228A337500C30F33 /* 4889-cat.json */,
+				D71DE336228B91E000E0E7F7 /* 4889-cat.json */,
 				312B746B225C0E040064B6B9 /* Filter1.json */,
 				312B746A225C0E040064B6B9 /* Filter2.json */,
 				D77B10E62256E39C009B3561 /* location.json */,
@@ -569,12 +575,13 @@
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
 				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
 				31EF5E3A22712FE6007900B9 /* CreateAccountView.xib in Resources */,
-				31E2EFE5228A337500C30F33 /* 4889-cat.json in Resources */,
+				D71DE337228B91E100E0E7F7 /* 4889-cat.json in Resources */,
 				31DA95EF226E7F34007AD5E6 /* LoginView.xib in Resources */,
 				312B7469225C0CE20064B6B9 /* baseline_tune.png in Resources */,
 				312B746F225C20430064B6B9 /* settings_sliders-512.png in Resources */,
 				D7FBB3B4227F419E0020FE23 /* perfil.png in Resources */,
 				D7970991228505B500B8DCC5 /* UserProfileView.xib in Resources */,
+				D71DE339228B933900E0E7F7 /* 3864-fat-cat.json in Resources */,
 				312B746C225C0E050064B6B9 /* Filter2.json in Resources */,
 				31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */,
 				31741B92226EA55400265305 /* cat1.jpg in Resources */,
@@ -790,6 +797,7 @@
 				311AD7CA227CFA1C00DCB75A /* LocalStorageImpl.swift in Sources */,
 				D7FBB3BC227F468F0020FE23 /* AccountServiceImpl.swift in Sources */,
 				D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */,
+				D71DE335228B8D4500E0E7F7 /* UIView+Constraints.swift in Sources */,
 				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,

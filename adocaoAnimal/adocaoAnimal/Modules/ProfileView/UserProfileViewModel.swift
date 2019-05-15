@@ -10,10 +10,22 @@ import RxSwift
 import RxCocoa
 
 class UserProfileViewModel {
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let accountService = AccountServiceImpl()
     
-    //let input: Driver<Void>
+    var loggedUser   = PublishSubject<LoggedUser>()
     
     init() {
+        loggedUser.onNext(.logged)
+    }
+    
+    func setupBindings( loggoutTap : Signal<Void> ) {
         
+        loggoutTap.asObservable()
+            .subscribe(onNext: { _ in
+                if self.accountService.userLoggout() {
+                    self.loggedUser.onNext(.notLogged)
+                }
+            }).disposed(by: disposeBag)
     }
 }

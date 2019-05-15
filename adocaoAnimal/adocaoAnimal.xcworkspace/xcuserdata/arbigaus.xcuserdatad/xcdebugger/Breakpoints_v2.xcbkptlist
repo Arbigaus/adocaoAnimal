@@ -22,31 +22,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "adocaoAnimal.CreateAccountViewModel.setupBindings(fullName: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, email: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, passwd: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, createTap: RxCocoa.SharedSequence&lt;RxCocoa.SignalSharingStrategy, ()&gt;) -&gt; ()"
+                  symbolName = "adocaoAnimal.CreateAccountViewModel.setupBindings(name: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, lastName: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, email: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, passwd: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, createTap: RxCocoa.SharedSequence&lt;RxCocoa.SignalSharingStrategy, ()&gt;) -&gt; ()"
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/CreateAccountView/CreateAccountViewModel.swift"
-                  timestampString = "579135670.253099"
+                  timestampString = "579610470.853961"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "1207">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1012">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (adocaoAnimal.Response) -&gt; () in adocaoAnimal.CreateAccountViewModel.setupBindings(fullName: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, email: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, passwd: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, createTap: RxCocoa.SharedSequence&lt;RxCocoa.SignalSharingStrategy, ()&gt;) -&gt; ()"
+                  symbolName = "closure #2 (adocaoAnimal.Response) -&gt; () in adocaoAnimal.CreateAccountViewModel.setupBindings(name: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, lastName: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, email: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, passwd: RxCocoa.SharedSequence&lt;RxCocoa.DriverSharingStrategy, Swift.String&gt;, createTap: RxCocoa.SharedSequence&lt;RxCocoa.SignalSharingStrategy, ()&gt;) -&gt; ()"
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/CreateAccountView/CreateAccountViewModel.swift"
-                  timestampString = "579135670.255776"
+                  timestampString = "579610470.856388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "122">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "128">
                </Location>
             </Locations>
          </BreakpointContent>

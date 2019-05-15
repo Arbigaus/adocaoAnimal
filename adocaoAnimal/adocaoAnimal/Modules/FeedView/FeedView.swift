@@ -21,6 +21,8 @@ class FeedView: UIViewController {
     
     weak var delegate: AppActionable?
     
+    fileprivate var userDetails = Profile()
+    
     @IBOutlet var locationAnimationView: AnimationView!
     
     @IBOutlet weak var perfilButton: UIButton!
@@ -42,7 +44,6 @@ class FeedView: UIViewController {
         petsList.append(petLeia)
         petsList.append(petYoda)
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,16 +52,22 @@ class FeedView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureViews()
+        
         self.setupBindings()
         
         perfilButton.layer.cornerRadius = 20
         perfilView.layer.cornerRadius = 25
         
+//        self.loadingAnimation(true)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
+        
+        self.configureViews()
+        
     }
     
 }
@@ -74,12 +81,28 @@ extension FeedView {
         filterCollectionView.register(R.nib.homeFilterCollectionViewCell)
         
         self.view.addSubview(self.loadingView)
-        self.loadingView.show()
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
     }
     
     func setupBindings() {
         
-        var userStatus : LoggedUser?
+        viewModel.isLoading.drive(onNext: { (isLoading) in
+            self.loadingAnimation(isLoading)
+        }).disposed(by: disposeBag)
+        
+        viewModel.userDetails
+            .subscribe(onNext: { user in
+                self.userDetails = user
+                if user.name != "" {
+                    self.welcomeLabel.text = "Olá \(user.name)"
+                } else {
+                    self.welcomeLabel.text = "Bem vindo"
+                }
+            })
+            .disposed(by: disposeBag)
+        
         
         let itemsTableView = Observable.just(
             petsList.map { $0 }
@@ -118,40 +141,15 @@ extension FeedView {
             }
             .disposed(by: disposeBag)
         
-        // Busca do usuário logado
-        viewModel.userDetails
-            .subscribe(onNext: { user in
-                if user.name != "" {
-                    userStatus = .notLogged
-                }
-                self.welcomeLabel.text = "Olá, \(user.name)"
-            })
-            .disposed(by: disposeBag)
-        
-        self.viewModel.loggedUser.asObserver()
-            .subscribe(onNext: { user in
-                switch user {
-                case .logged :
-                    userStatus = .logged
-                    
-                case .notLogged:
-                    userStatus = .notLogged
-                }
-                
-            }).disposed(by: disposeBag)
-        
         // Ação do botão de perfil
         perfilButton
             .rx.tap.bind { [unowned self] _ in
                 
-//                switch userStatus! {
-//                case .logged :
-//                    self.delegate?.handle(.showUserProfile)
-//
-//                case .notLogged :
+                if self.userDetails.name != "" {
+                    self.delegate?.handle(.showUserProfile)
+                } else {
                     self.delegate?.handle(.showLogin)
-//                }
-                
+                }
             }
             .disposed(by: disposeBag)
         
@@ -159,11 +157,23 @@ extension FeedView {
     
     func startAnimationView() {
         
-        let locationAnimation = Animation.named("location")
+        let locationAnimation = LOTAnimationView(name: "location")
         
-        locationAnimationView.loopMode = .loop
-        locationAnimationView.animation = locationAnimation
-        locationAnimationView.play()
+        locationAnimation.center = self.locationAnimationView.center
+        locationAnimation.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        locationAnimation.contentMode = .scaleAspectFill
+        locationAnimation.loopAnimation = true
+        
+        self.locationAnimationView.addSubview(locationAnimation)
+        
+        locationAnimation.play()
         
     }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
+    }
+    
 }
