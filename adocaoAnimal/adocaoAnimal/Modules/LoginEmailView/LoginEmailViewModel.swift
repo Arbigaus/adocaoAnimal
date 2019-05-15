@@ -16,8 +16,6 @@ class LoginEmailViewModel {
     fileprivate let accountService = AccountServiceImpl()
     
     var loggedUser   = PublishSubject<LoggedUser>()
-    
-    
     init(){}
     
     func setupBindings(

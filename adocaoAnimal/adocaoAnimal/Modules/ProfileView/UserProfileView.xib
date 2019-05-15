@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileView" customModule="adocaoAnimal" customModuleProvider="target">
             <connections>
+                <outlet property="loggoutButton" destination="RPd-f8-rX9" id="lf7-jW-Aq7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +27,7 @@
                         <constraint firstAttribute="height" constant="40" id="T9T-xw-Igy"/>
                         <constraint firstAttribute="width" constant="100" id="zOz-Is-P7b"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Loggout"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

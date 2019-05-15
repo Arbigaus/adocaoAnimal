@@ -125,7 +125,7 @@ PODS:
   - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
   - leveldb-library (1.20)
-  - lottie-ios (3.0.4)
+  - lottie-ios (2.5.3)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -192,7 +192,7 @@ DEPENDENCIES:
   - ESTabBarController-swift
   - Firebase/Core
   - GoogleSignIn
-  - lottie-ios
+  - lottie-ios (~> 2.5.2)
   - R.swift
   - RxCocoa
   - RxFirebase/Auth
@@ -271,7 +271,7 @@ SPEC CHECKSUMS:
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  lottie-ios: 55a2de40418f8de2b155efaba4d4d1a025a5c570
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
@@ -289,6 +289,6 @@ SPEC CHECKSUMS:
   RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 37aa565d0ed6513b33be3f69c284b10112c6e8dd
+PODFILE CHECKSUM: e9a0a80085833a29f23c9a4e7b9d1317c5d7059d
 
 COCOAPODS: 1.6.1

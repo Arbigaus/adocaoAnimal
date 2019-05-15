@@ -17,10 +17,13 @@ protocol UserProfileViewDelegate: class {
 class UserProfileView: UIViewController {
     
     var viewModel: UserProfileViewModel!
+    fileprivate let disposeBag = DisposeBag()
     
     weak var delegate: AppActionable?
 
+    @IBOutlet weak var loggoutButton: UIButton!
     init() {
+        self.viewModel = UserProfileViewModel()
         super.init(nibName: String(describing: UserProfileView.self), bundle: nil)
     }
     
@@ -44,9 +47,7 @@ class UserProfileView: UIViewController {
 extension UserProfileView {
     
     func setupViewModel() {
-        self.viewModel = UserProfileViewModel(
-           
-        )
+        viewModel.setupBindings(loggoutTap: self.loggoutButton.rx.tap.asSignal())
     }
     
     func configureViews() {
@@ -54,6 +55,13 @@ extension UserProfileView {
     }
     
     func setupBindings() {
-
+        self.viewModel.loggedUser
+            .asObservable()
+            .subscribe(onNext: { user in
+                if user == .logged {
+                    self.delegate?.handle(.showFeed)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }

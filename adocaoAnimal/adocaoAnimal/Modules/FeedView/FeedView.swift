@@ -44,7 +44,6 @@ class FeedView: UIViewController {
         petsList.append(petLeia)
         petsList.append(petYoda)
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,16 +52,22 @@ class FeedView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureViews()
+        
         self.setupBindings()
         
         perfilButton.layer.cornerRadius = 20
         perfilView.layer.cornerRadius = 25
         
+//        self.loadingAnimation(true)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
+        
+        self.configureViews()
+        
     }
     
 }
@@ -75,16 +80,23 @@ extension FeedView {
         petsTableView.register(R.nib.petTableViewCell)
         filterCollectionView.register(R.nib.homeFilterCollectionViewCell)
         
-//        self.view.addSubview(self.loadingView)
-//        self.loadingView.show()
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
     }
     
     func setupBindings() {
+        
+        viewModel.isLoading.drive(onNext: { (isLoading) in
+            self.loadingAnimation(isLoading)
+        }).disposed(by: disposeBag)
         
         viewModel.userDetails
             .subscribe(onNext: { user in
                 self.userDetails = user
                 self.welcomeLabel.text = "Olá \(user.name)"
+//                self.loadingAnimation(false)
             })
             .disposed(by: disposeBag)
         
@@ -142,11 +154,18 @@ extension FeedView {
     
     func startAnimationView() {
         
-        let locationAnimation = Animation.named("location")
-        
-        locationAnimationView.loopMode = .loop
-        locationAnimationView.animation = locationAnimation
-        locationAnimationView.play()
+//        let locationAnimation = Animation.named("location")
+//
+//        locationAnimationView.loopMode = .loop
+//        locationAnimationView.animation = locationAnimation
+//        locationAnimationView.play()
         
     }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
+    }
+    
 }

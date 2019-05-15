@@ -8,17 +8,25 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class FeedViewModel {
     
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
+    let isLoading: Driver<Bool>
     
-    var userDetails : Observable<Profile>    
+    var userDetails : Observable<Profile>
     var loggedUser   = PublishSubject<LoggedUser>()
     
     init() {        
         userDetails = accountService.getLoggedUser()
+        
+        let loadingIndicator = ActivityIndicator()
+        
+        self.isLoading = loadingIndicator
+            .startWith(false)
+            .asDriver()
     }
     
     func setupBindings(){

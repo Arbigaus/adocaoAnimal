@@ -10,9 +10,11 @@ import UIKit
 import Lottie
 
 class LoadingView: UIView {
+    
     private var didSetupViews: Bool = false
     
-    var lottieView = AnimationView()
+    var lottieView: LOTAnimationView?
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -24,14 +26,14 @@ class LoadingView: UIView {
         UIView.animate(withDuration: 0.2) {
             self.alpha = 1.0
         }
-        lottieView.play()
+        lottieView?.play()
     }
     
     func hide() {
         UIView.animate(withDuration: 0.2) {
             self.alpha = 0.0
         }
-        lottieView.stop()
+        lottieView?.stop()
     }
     
     private func setupViews() {
@@ -42,18 +44,19 @@ class LoadingView: UIView {
     }
     
     private func setupConstraints() {
+        self.lottieView = LOTAnimationView(name: "4888-dog-icon")
+        self.addSubview(lottieView!)
         
-        self.frame = CGRect(x: 100, y: 100, width: 200, height: 400)
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        lottieView?.alpha = 1
+        lottieView?.constraintWidth(400.0)
+        lottieView?.constraintHeight(400.0)
+        lottieView?.prepareForConstraints()
+        lottieView?.centerHorizontally()
+        lottieView?.centerVertically()
+        lottieView?.loopAnimation = true
         
-        let loading = Animation.named("4888-dog-icon")
-        
-        self.lottieView.loopMode = .loop
-        self.lottieView.animation = loading
-        self.lottieView.contentMode = .scaleToFill
-        
-        self.addSubview(lottieView)
-    
-        
+        self.backgroundColor = UIColor.white.withAlphaComponent(1)
     }
+    
+    
 }

@@ -147,4 +147,9 @@ class AccountServiceImpl: NSObject, AccountService {
         }
     }
     
+    func userLoggout() -> Bool {
+        try! self.auth.signOut()
+        return true
+    }
+    
 }
