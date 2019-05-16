@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 enum AppAction {
     case back
@@ -52,10 +53,28 @@ class AppCoordinator: Coordinator {
     }
     
     fileprivate func showFeed(){
-        let homeView = FeedView()
-        self.navigationController.setViewControllers([homeView], animated: false)
-        homeView.delegate = self
-        self.currentView = navigationController
+//        let homeView = FeedView()
+        
+        let tabBar = TabBarView(viewControllers: tabBarControllers(with: FeedView()))
+        
+        self.navigationController.pushViewController(tabBar, animated: true)
+//        homeView.delegate = self
+//        self.currentView = navigationController
+    }
+    
+    func tabBarControllers(with feed: FeedView) -> [UIViewController] {
+        var views: [UIViewController] = []
+        
+        let addPet = CreatePetView()
+        addPet.title = "Add Pet"
+        addPet.tabBarItem = setupTabBarItem(
+            title: "Adicionar",
+            image: R.image.chatIcon()!,
+            position: 1
+        )
+        views.append(addPet)
+        
+        return views
     }
     
     fileprivate func showLogin() {
@@ -125,6 +144,19 @@ extension AppCoordinator: AppActionable {
             showCreateAccount()
             
         }       
+    }
+    
+    /// Configures a UITabBarItem to be attributed to a UIViewController.
+    ///
+    /// - Parameters:
+    ///   - title: The title shown in the tab under the icon.
+    ///   - image: The image shown in the tab.
+    ///   - position: The position of the item in the tab bar. It starts at 1.
+    /// - Returns: A UITabBarItem
+    func setupTabBarItem(title: String, image: UIImage, position: Int) -> UITabBarItem {
+        let tabBarItem = UITabBarItem(title: title, image: image, tag: position - 1)
+        
+        return tabBarItem
     }
     
 }

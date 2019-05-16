@@ -17,6 +17,7 @@
                 <outlet property="perfilButton" destination="tUD-jv-13t" id="iOG-A6-EDd"/>
                 <outlet property="perfilView" destination="RA6-Xm-Tfb" id="6m5-65-tbH"/>
                 <outlet property="petsTableView" destination="oQc-Fe-Xtp" id="p8e-Qi-lg4"/>
+                <outlet property="tabBar" destination="KMF-PL-5rU" id="3NK-mx-x5F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welcomeLabel" destination="0A1-cy-Eoq" id="sAg-Zl-2l4"/>
             </connections>
@@ -160,17 +161,31 @@
                     <rect key="frame" x="0.0" y="364" width="375" height="364"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMF-PL-5rU">
+                    <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="KYE-e7-tBR"/>
+                    </constraints>
+                    <items>
+                        <tabBarItem title="Adicionar" id="Eaf-AH-YJL"/>
+                        <tabBarItem title="Filtro" id="shy-ue-1KE"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="lQ2-SH-5s6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2sD-sB-3BI"/>
                 <constraint firstItem="dTg-wf-2UT" firstAttribute="top" secondItem="lQ2-SH-5s6" secondAttribute="bottom" id="AcW-lS-9kN"/>
                 <constraint firstItem="oQc-Fe-Xtp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CA8-h0-u60"/>
+                <constraint firstItem="KMF-PL-5rU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HG3-jL-yVl"/>
+                <constraint firstItem="KMF-PL-5rU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hi1-LN-s9s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dTg-wf-2UT" secondAttribute="trailing" id="Y9R-Mf-Tbc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oQc-Fe-Xtp" secondAttribute="bottom" constant="50" id="cIz-Sn-Bsh"/>
+                <constraint firstItem="KMF-PL-5rU" firstAttribute="top" secondItem="oQc-Fe-Xtp" secondAttribute="bottom" id="ZAs-t3-Dnf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lQ2-SH-5s6" secondAttribute="trailing" id="ezz-W2-QGP"/>
                 <constraint firstItem="lQ2-SH-5s6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gZJ-wq-gHu"/>
                 <constraint firstItem="oQc-Fe-Xtp" firstAttribute="top" secondItem="dTg-wf-2UT" secondAttribute="bottom" id="lse-xu-E7r"/>
+                <constraint firstItem="KMF-PL-5rU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="oK9-Pm-TYB"/>
                 <constraint firstItem="dTg-wf-2UT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w3C-Hg-ZN9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oQc-Fe-Xtp" secondAttribute="trailing" id="zqh-BU-Lv4"/>
             </constraints>

@@ -150,30 +150,38 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
-    /// Image `baseline_tune`.
-    static let baseline_tune = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_tune")
+    /// Image `Image`.
+    static let image = Rswift.ImageResource(bundle: R.hostingBundle, name: "Image")
+    /// Image `baseline_filter`.
+    static let baseline_filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "baseline_filter")
     /// Image `cat1.jpg`.
     static let cat1Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "cat1.jpg")
+    /// Image `cat1`.
+    static let cat1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cat1")
+    /// Image `chat-icon`.
+    static let chatIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "chat-icon")
     /// Image `dog1.jpg`.
     static let dog1Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1.jpg")
-    /// Image `dog1`.
-    static let dog1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1")
-    /// Image `dog2`.
-    static let dog2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog2")
-    /// Image `logo`.
-    static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
-    /// Image `perfilDefault`.
-    static let perfilDefault = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfilDefault")
-    /// Image `perfil`.
-    static let perfil = Rswift.ImageResource(bundle: R.hostingBundle, name: "perfil")
-    /// Image `settings_sliders-512`.
-    static let settings_sliders512 = Rswift.ImageResource(bundle: R.hostingBundle, name: "settings_sliders-512")
+    /// Image `heart`.
+    static let heart = Rswift.ImageResource(bundle: R.hostingBundle, name: "heart")
+    /// Image `send`.
+    static let send = Rswift.ImageResource(bundle: R.hostingBundle, name: "send")
     
-    /// `UIImage(named: "baseline_tune", bundle: ..., traitCollection: ...)`
-    static func baseline_tune(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.baseline_tune, compatibleWith: traitCollection)
+    /// `UIImage(named: "Image", bundle: ..., traitCollection: ...)`
+    static func image(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.image, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "baseline_filter", bundle: ..., traitCollection: ...)`
+    static func baseline_filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.baseline_filter, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "cat1", bundle: ..., traitCollection: ...)`
+    static func cat1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cat1, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "cat1.jpg", bundle: ..., traitCollection: ...)`
@@ -181,9 +189,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.cat1Jpg, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "dog1", bundle: ..., traitCollection: ...)`
-    static func dog1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dog1, compatibleWith: traitCollection)
+    /// `UIImage(named: "chat-icon", bundle: ..., traitCollection: ...)`
+    static func chatIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.chatIcon, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "dog1.jpg", bundle: ..., traitCollection: ...)`
@@ -191,38 +199,25 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.dog1Jpg, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "dog2", bundle: ..., traitCollection: ...)`
-    static func dog2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dog2, compatibleWith: traitCollection)
+    /// `UIImage(named: "heart", bundle: ..., traitCollection: ...)`
+    static func heart(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.heart, compatibleWith: traitCollection)
     }
     
-    /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
-    static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "perfil", bundle: ..., traitCollection: ...)`
-    static func perfil(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.perfil, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "perfilDefault", bundle: ..., traitCollection: ...)`
-    static func perfilDefault(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.perfilDefault, compatibleWith: traitCollection)
-    }
-    
-    /// `UIImage(named: "settings_sliders-512", bundle: ..., traitCollection: ...)`
-    static func settings_sliders512(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.settings_sliders512, compatibleWith: traitCollection)
+    /// `UIImage(named: "send", bundle: ..., traitCollection: ...)`
+    static func send(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.send, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
   struct nib {
     /// Nib `CreateAccountView`.
     static let createAccountView = _R.nib._CreateAccountView()
+    /// Nib `CreatePetView`.
+    static let createPetView = _R.nib._CreatePetView()
     /// Nib `FeedView`.
     static let feedView = _R.nib._FeedView()
     /// Nib `HomeFilterCollectionViewCell`.
@@ -244,6 +239,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.createAccountView) instead")
     static func createAccountView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.createAccountView)
+    }
+    
+    /// `UINib(name: "CreatePetView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.createPetView) instead")
+    static func createPetView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.createPetView)
     }
     
     /// `UINib(name: "FeedView", in: bundle)`
@@ -296,6 +297,10 @@ struct R: Rswift.Validatable {
     
     static func createAccountView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.createAccountView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+    
+    static func createPetView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.createPetView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
     static func feedView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -400,6 +405,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'CreateAccountView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _CreatePetView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CreatePetView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
       
       fileprivate init() {}

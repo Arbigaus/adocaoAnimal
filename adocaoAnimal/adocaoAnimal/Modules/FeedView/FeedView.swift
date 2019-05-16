@@ -15,10 +15,12 @@ class FeedView: UIViewController {
     let disposeBag = DisposeBag()
     let loadingView = LoadingView()
     
+    @IBOutlet weak var tabBar: UITabBar!
+    
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
     let tapGesture = UITapGestureRecognizer()
-    
+        
     weak var delegate: AppActionable?
     
     fileprivate var userDetails = Profile()
@@ -58,8 +60,6 @@ class FeedView: UIViewController {
         perfilButton.layer.cornerRadius = 20
         perfilView.layer.cornerRadius = 25
         
-//        self.loadingAnimation(true)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +67,7 @@ class FeedView: UIViewController {
         super.viewWillAppear(animated)
         
         self.configureViews()
-        
+//        self.loadingAnimation(true)
     }
     
 }
@@ -97,8 +97,10 @@ extension FeedView {
                 self.userDetails = user
                 if user.name != "" {
                     self.welcomeLabel.text = "Olá \(user.name)"
+                    
                 } else {
                     self.welcomeLabel.text = "Bem vindo"
+                    
                 }
             })
             .disposed(by: disposeBag)

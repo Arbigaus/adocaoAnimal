@@ -238,6 +238,6 @@
     </objects>
     <resources>
         <image name="dog1.png" width="326" height="194"/>
-        <image name="perfil.png" width="215" height="234"/>
+        <image name="perfil.png" width="51.200000762939453" height="51.200000762939453"/>
     </resources>
 </document>

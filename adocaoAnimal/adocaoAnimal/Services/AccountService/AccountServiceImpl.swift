@@ -125,7 +125,7 @@ class AccountServiceImpl: NSObject, AccountService {
             .just(self.auth.currentUser)
             .flatMap{ (user) in
                 self.getLoggedUserInfo(user?.uid ?? "0")
-        }
+            }
     }
     
     // MARK: - Get logged user from Firestore
@@ -143,8 +143,7 @@ class AccountServiceImpl: NSObject, AccountService {
                 userProfile.lastName = (data["lastName"] as? String) ?? ""
                                 
                 return userProfile
-                
-        }
+            }
     }
     
     func userLoggout() -> Bool {
