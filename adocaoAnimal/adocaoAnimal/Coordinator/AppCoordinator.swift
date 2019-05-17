@@ -53,29 +53,36 @@ class AppCoordinator: Coordinator {
     }
     
     fileprivate func showFeed(){
-//        let homeView = FeedView()
-        
-        let tabBar = TabBarView(viewControllers: tabBarControllers(with: FeedView()))
-        
-        self.navigationController.pushViewController(tabBar, animated: true)
-//        homeView.delegate = self
-//        self.currentView = navigationController
-    }
-    
-    func tabBarControllers(with feed: FeedView) -> [UIViewController] {
-        var views: [UIViewController] = []
-        
-        let addPet = CreatePetView()
-        addPet.title = "Add Pet"
-        addPet.tabBarItem = setupTabBarItem(
-            title: "Adicionar",
+        //instancia a tela
+        let homeView = FeedView()
+        homeView.delegate = self
+        homeView.title = "HOME"
+        //cria os icones
+        homeView.tabBarItem = setupTabBarItem(
+            title: "Home",
             image: R.image.chatIcon()!,
             position: 1
         )
-        views.append(addPet)
+        //Adiciona em uma navigation controller pra facilitar sua vida depois
+        let homeNavigation = UINavigationController(rootViewController: homeView)
         
-        return views
+        //instancia a tela
+        let addPet = CreatePetView()
+        addPet.title = "Add Pet"
+        //cria os icones
+        addPet.tabBarItem = setupTabBarItem(
+            title: "Adicionar",
+            image: R.image.chatIcon()!,
+            position: 2
+        )
+        let addPetNavigation = UINavigationController(rootViewController: addPet)
+       
+        //Cria a tabBar
+        let tabBar = TabBarView(viewControllers: [homeNavigation, addPetNavigation])
+        
+        self.currentView = tabBar
     }
+
     
     fileprivate func showLogin() {
         let view = LoginView()

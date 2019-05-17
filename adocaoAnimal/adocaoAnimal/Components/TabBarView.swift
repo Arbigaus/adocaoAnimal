@@ -27,7 +27,7 @@ class TabBarView: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tabBar.tintColor = UIColor(hexString: "0D0D0D")
-        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
     }
     
     override var childForStatusBarStyle: UIViewController? {
