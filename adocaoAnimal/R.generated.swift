@@ -385,6 +385,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _CreateAccountView.validate()
+      try _CreatePetView.validate()
       try _FeedView.validate()
       try _LoginEmailView.validate()
       try _LoginView.validate()
@@ -410,12 +411,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _CreatePetView: Rswift.NibResourceType {
+    struct _CreatePetView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "CreatePetView"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "cat1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cat1.jpg' is used in nib 'CreatePetView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
