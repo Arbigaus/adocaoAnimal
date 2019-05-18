@@ -12,13 +12,3 @@ protocol AccountService {
     
     func createUser( name: String, lastName: String, email: String, password: String) -> Observable<Response>
 }
-
-struct Response : Codable {
-    var message : String?
-    var passed : Bool
-    
-    init() {
-        self.passed = false
-    }
-}
-

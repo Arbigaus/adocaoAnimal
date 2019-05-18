@@ -212,10 +212,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `CreateAccountView`.
     static let createAccountView = _R.nib._CreateAccountView()
+    /// Nib `CreatePetImagesCollectionViewCell`.
+    static let createPetImagesCollectionViewCell = _R.nib._CreatePetImagesCollectionViewCell()
     /// Nib `CreatePetView`.
     static let createPetView = _R.nib._CreatePetView()
     /// Nib `FeedView`.
@@ -239,6 +241,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.createAccountView) instead")
     static func createAccountView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.createAccountView)
+    }
+    
+    /// `UINib(name: "CreatePetImagesCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.createPetImagesCollectionViewCell) instead")
+    static func createPetImagesCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.createPetImagesCollectionViewCell)
     }
     
     /// `UINib(name: "CreatePetView", in: bundle)`
@@ -299,6 +307,10 @@ struct R: Rswift.Validatable {
       return R.nib.createAccountView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
+    static func createPetImagesCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreatePetImagesCollectionViewCell? {
+      return R.nib.createPetImagesCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreatePetImagesCollectionViewCell
+    }
+    
     static func createPetView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.createPetView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -338,10 +350,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `PetDetailCollectionViewCell`.
     static let petDetailCollectionViewCell: Rswift.ReuseIdentifier<PetDetailInfoCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PetDetailCollectionViewCell")
+    /// Reuse identifier `createPetViewImage`.
+    static let createPetViewImage: Rswift.ReuseIdentifier<CreatePetImagesCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "createPetViewImage")
     /// Reuse identifier `filterCollectionView`.
     static let filterCollectionView: Rswift.ReuseIdentifier<HomeFilterCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "filterCollectionView")
     /// Reuse identifier `petTableView`.
@@ -406,6 +420,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'CreateAccountView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _CreatePetImagesCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = CreatePetImagesCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "createPetViewImage"
+      let name = "CreatePetImagesCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CreatePetImagesCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CreatePetImagesCollectionViewCell
       }
       
       fileprivate init() {}

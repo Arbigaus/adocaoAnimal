@@ -7,7 +7,8 @@
 //
 
 import RxSwift
-import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 import RxFirebase
 
 class AccountServiceImpl: NSObject, AccountService {

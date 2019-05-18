@@ -17,6 +17,7 @@ protocol CreatePetViewDelegate: class {
 class CreatePetView: UIViewController {
     
     var viewModel: CreatePetViewModel!
+    private let disposeBag = DisposeBag()
     
     weak var delegate: AppActionable?
     
@@ -25,10 +26,18 @@ class CreatePetView: UIViewController {
 
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var ageSlide: UISlider!
-    @IBOutlet weak var weightSlider: UISlider!
     @IBOutlet weak var colorPickerView: UIPickerView!
     @IBOutlet weak var genderPickerView: UIPickerView!
+    @IBOutlet weak var ageSwitch: UISwitch!
+    @IBOutlet weak var weightSwitch: UISwitch!
+    
+    @IBOutlet weak var monthsLabel: UILabel!
+    @IBOutlet weak var yearsLabel: UILabel!
+    
+    @IBOutlet weak var gramasLabel: UILabel!
+    @IBOutlet weak var kilogramasLabel: UILabel!
+    
+    
     
     init() {
         super.init(nibName: String(describing: CreatePetView.self), bundle: nil)
@@ -50,9 +59,12 @@ class CreatePetView: UIViewController {
         self.genderPickerView.delegate = self
         self.genderPickerView.delegate = self
         
+        self.pictureCollectionView.register(R.nib.createPetImagesCollectionViewCell)
+        
         colorData = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
         genderData = [ "Fêmea", "Macho" ]
     }
+    
     
 }
 
@@ -69,6 +81,34 @@ extension CreatePetView {
     }
     
     func setupBindings() {
+        
+        self.ageSwitch.rx
+            .controlEvent(.valueChanged)
+            .withLatestFrom(self.ageSwitch.rx.value)
+            .subscribe(onNext: { bool in
+                if bool {
+                    self.yearsLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
+                    self.monthsLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
+                } else {
+                    self.monthsLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
+                    self.yearsLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        self.weightSwitch.rx
+            .controlEvent(.valueChanged)
+            .withLatestFrom(self.weightSwitch.rx.value)
+            .subscribe(onNext: { bool in
+                if bool {
+                    self.gramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
+                    self.kilogramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
+                } else {
+                    self.kilogramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
+                    self.gramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
+                }
+            })
+            .disposed(by: disposeBag)
 
     }
 }
