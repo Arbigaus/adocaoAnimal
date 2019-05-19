@@ -474,8 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				D79561F12291E4D000544EBD /* CreatePetView.swift */,
-				D79561F22291E4D000544EBD /* CreatePetView.xib */,
 				D79561F32291E4D000544EBD /* CreatePetViewModel.swift */,
+				D79561F22291E4D000544EBD /* CreatePetView.xib */,
 			);
 			path = CreatePetView;
 			sourceTree = "<group>";

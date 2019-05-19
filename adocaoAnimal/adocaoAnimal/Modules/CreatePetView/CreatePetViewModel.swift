@@ -8,12 +8,27 @@
 
 import RxSwift
 import RxCocoa
+import Photos
 
 class CreatePetViewModel {
+    fileprivate let disposeBag = DisposeBag()
+    
+    var petPhotos = [PHAsset]()
     
     //let input: Driver<Void>
     
     init() {
+        
+    }
+    
+    func setupBindings(
+        petName: Driver<String>,
+        petColor: Driver<String>,
+        petGender: Driver<String>,
+        petType: Driver<String>,
+        petWeight: Driver<String>,
+        petDescription: Driver<String>
+        ){
         
     }
 }

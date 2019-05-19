@@ -25,13 +25,15 @@ class CreatePetView: UIViewController {
     
     var photos = [PHAsset]()
     
-    var colorData: [String] = [String]()
-    var genderData: [String] = [String]()
+    var colorData  = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
+    var genderData = [ "Fêmea", "Macho" ]
+    var typesData  = [ "Cachorro", "Gato", "Coelho", "Outro" ]
 
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var colorPickerView: UIPickerView!
     @IBOutlet weak var genderPickerView: UIPickerView!
+    @IBOutlet weak var typePickerView: UIPickerView!
     @IBOutlet weak var ageSwitch: UISwitch!
     @IBOutlet weak var weightSwitch: UISwitch!
     
@@ -63,16 +65,8 @@ class CreatePetView: UIViewController {
         self.setupViewModel()
         self.setupBindings()
         
-        self.colorPickerView.delegate = self
-        self.colorPickerView.dataSource = self
-        
-        self.genderPickerView.delegate = self
-        self.genderPickerView.delegate = self
-        
         self.pictureCollectionView.register(R.nib.createPetImagesCollectionViewCell)
         
-        colorData = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
-        genderData = [ "Fêmea", "Macho" ]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +118,46 @@ extension CreatePetView {
             })
             .disposed(by: disposeBag)
         
+        // MARK: - PickerView functions
+        
+        Observable.just(typesData)
+            .bind(to: typePickerView.rx.itemAttributedTitles) { _ , type in
+                return NSAttributedString(string: "\(type)",
+                    attributes: [ NSAttributedString.Key.foregroundColor: UIColor.white ])
+        }
+        .disposed(by: disposeBag)
+        
+        typePickerView.rx.modelSelected(String.self)
+            .subscribe(onNext: { type in
+                print("selected type ==> \(type)")
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.just(colorData)
+            .bind(to: colorPickerView.rx.itemAttributedTitles) { _ , color in
+                return NSAttributedString(string: "\(color)",
+                    attributes: [ NSAttributedString.Key.foregroundColor: UIColor.white ])
+            }
+            .disposed(by: disposeBag)
+        
+        colorPickerView.rx.modelSelected(String.self)
+            .subscribe(onNext: { color in
+                print("selected color ==> \(color)")
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.just(genderData)
+            .bind(to: genderPickerView.rx.itemAttributedTitles) { _ , gender in
+                return NSAttributedString(string: "\(gender)",
+                    attributes: [ NSAttributedString.Key.foregroundColor: UIColor.white ])
+        }
+        
+        genderPickerView.rx.modelSelected(String.self)
+            .subscribe(onNext: { gender in
+                print("selected gender \(gender)")
+            })
+            .disposed(by: disposeBag)
+        
         // MARK: - Add Photos
         
         addPhotosButton.rx
@@ -171,45 +205,4 @@ extension CreatePetView {
             .disposed(by: disposeBag)
         
     }
-}
-
-extension CreatePetView: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        
-        if pickerView == self.genderPickerView {
-            return genderData.count
-        } else if pickerView == self.colorPickerView {
-            return colorData.count
-        }
-        
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        if pickerView == self.genderPickerView {
-            let gender = genderData[row]
-            
-            return NSAttributedString(string: gender, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-            
-        } else if pickerView == self.colorPickerView {
-            let color = colorData[row]
-            
-            return NSAttributedString(string: color, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        }
-        
-        return NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-    }
-    
 }
