@@ -26,6 +26,8 @@ target 'adocaoAnimal' do
   pod 'R.swift'
 
   pod 'TPKeyboardAvoiding', '~> 1.3'
+  
+  pod "BSImagePicker", "~> 2.8"
 
   target 'adocaoAnimalTests' do
     inherit! :search_paths

@@ -95,7 +95,7 @@ extension PetDetailsView {
         }.disposed(by: disposeBag)
         
         backButton.rx.tap.bind { [unowned self] _ in
-            self.delegate?.handle(.back)
+            self.delegate?.handle(.showFeed)
             }.disposed(by: disposeBag)
         
     }

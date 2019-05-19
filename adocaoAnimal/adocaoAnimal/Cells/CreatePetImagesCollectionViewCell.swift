@@ -9,10 +9,16 @@
 import UIKit
 
 class CreatePetImagesCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func bind(_ image: UIImage ) {
+        imageView.image = image
+    }
+    
 }

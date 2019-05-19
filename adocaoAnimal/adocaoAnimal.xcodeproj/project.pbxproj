@@ -42,9 +42,6 @@
 		31E2EFE4228A337500C30F33 /* 4888-dog-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */; };
 		31E2EFE7228A33F300C30F33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E2EFE6228A33F300C30F33 /* LoadingView.swift */; };
 		31E83D77228CD04000226709 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E83D76228CD04000226709 /* TabBarView.swift */; };
-		31E83D7C228CD82500226709 /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E83D79228CD82500226709 /* CreatePetView.swift */; };
-		31E83D7D228CD82500226709 /* CreatePetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E83D7A228CD82500226709 /* CreatePetViewModel.swift */; };
-		31E83D7E228CD82500226709 /* CreatePetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31E83D7B228CD82500226709 /* CreatePetView.xib */; };
 		31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */; };
 		31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */; };
 		31EF5E3222711DEE007900B9 /* LoginEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */; };
@@ -74,6 +71,7 @@
 		D797098F228505B500B8DCC5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098C228505B500B8DCC5 /* UserProfileView.swift */; };
 		D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */; };
 		D7970991228505B500B8DCC5 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D797098E228505B500B8DCC5 /* UserProfileView.xib */; };
+		D79F97C222909C83008F21B6 /* UIViewController+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F97C122909C83008F21B6 /* UIViewController+rx.swift */; };
 		D7FBB3B4227F419E0020FE23 /* perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = D7FBB3B3227F419E0020FE23 /* perfil.png */; };
 		D7FBB3BA227F45C50020FE23 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBB3B9227F45C50020FE23 /* AccountService.swift */; };
 		D7FBB3BC227F468F0020FE23 /* AccountServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FBB3BB227F468F0020FE23 /* AccountServiceImpl.swift */; };
@@ -138,9 +136,6 @@
 		31E2EFE2228A337500C30F33 /* 4888-dog-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4888-dog-icon.json"; sourceTree = "<group>"; };
 		31E2EFE6228A33F300C30F33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		31E83D76228CD04000226709 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		31E83D79228CD82500226709 /* CreatePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetView.swift; sourceTree = "<group>"; };
-		31E83D7A228CD82500226709 /* CreatePetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewModel.swift; sourceTree = "<group>"; };
-		31E83D7B228CD82500226709 /* CreatePetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePetView.xib; sourceTree = "<group>"; };
 		31EF5E2D22711DEE007900B9 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
 		31EF5E2E22711DEE007900B9 /* LoginEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewModel.swift; sourceTree = "<group>"; };
 		31EF5E2F22711DEE007900B9 /* LoginEmailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginEmailView.xib; sourceTree = "<group>"; };
@@ -172,6 +167,7 @@
 		D797098C228505B500B8DCC5 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		D797098E228505B500B8DCC5 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
+		D79F97C122909C83008F21B6 /* UIViewController+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+rx.swift"; sourceTree = "<group>"; };
 		D7FBB3B3227F419E0020FE23 /* perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perfil.png; sourceTree = "<group>"; };
 		D7FBB3B9227F45C50020FE23 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		D7FBB3BB227F468F0020FE23 /* AccountServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceImpl.swift; sourceTree = "<group>"; };
@@ -223,6 +219,7 @@
 			children = (
 				311AD7CE227D016C00DCB75A /* Rx + Utils.swift */,
 				D71DE334228B8D4500E0E7F7 /* UIView+Constraints.swift */,
+				D79F97C122909C83008F21B6 /* UIViewController+rx.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,9 +227,8 @@
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				31E83D78228CD7E200226709 /* CreatePetView */,
-				D7970985228503FF00B8DCC5 /* ProfileView */,
 				31EF5E3422712FC8007900B9 /* CreateAccountView */,
+				D7970985228503FF00B8DCC5 /* ProfileView */,
 				31EF5E2C22711D94007900B9 /* LoginEmailView */,
 				31DA95E9226E7F16007AD5E6 /* LoginView */,
 				D77B10DF2256DC9F009B3561 /* PetDetailsView */,
@@ -337,16 +333,6 @@
 				D77B10E62256E39C009B3561 /* location.json */,
 			);
 			path = Animations;
-			sourceTree = "<group>";
-		};
-		31E83D78228CD7E200226709 /* CreatePetView */ = {
-			isa = PBXGroup;
-			children = (
-				31E83D79228CD82500226709 /* CreatePetView.swift */,
-				31E83D7A228CD82500226709 /* CreatePetViewModel.swift */,
-				31E83D7B228CD82500226709 /* CreatePetView.xib */,
-			);
-			path = CreatePetView;
 			sourceTree = "<group>";
 		};
 		31EF5E2C22711D94007900B9 /* LoginEmailView */ = {
@@ -629,7 +615,6 @@
 				31DA95F3226E8641007AD5E6 /* dog1.jpg in Resources */,
 				31741B92226EA55400265305 /* cat1.jpg in Resources */,
 				31DA95E8226E7EA7007AD5E6 /* logo.png in Resources */,
-				31E83D7E228CD82500226709 /* CreatePetView.xib in Resources */,
 				31FC8C6C225EB48A00AD07BF /* PetTableViewCell.xib in Resources */,
 				312B746D225C0E050064B6B9 /* Filter1.json in Resources */,
 				31E2EFE4228A337500C30F33 /* 4888-dog-icon.json in Resources */,
@@ -780,6 +765,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-adocaoAnimal/Pods-adocaoAnimal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -802,6 +790,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -845,11 +836,11 @@
 				3173A20D228F7EC50022FEEC /* PetsService.swift in Sources */,
 				D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */,
 				D71DE335228B8D4500E0E7F7 /* UIView+Constraints.swift in Sources */,
+				D79F97C222909C83008F21B6 /* UIViewController+rx.swift in Sources */,
 				31FC8C6B225EB48A00AD07BF /* PetTableViewCell.swift in Sources */,
 				31FC8C71225EB85700AD07BF /* HomeFilterCollectionViewCell.swift in Sources */,
 				D77B10D62256D4D0009B3561 /* Coordinator.swift in Sources */,
 				D70235E82263CC40007740D1 /* ViewController.swift in Sources */,
-				31E83D7C228CD82500226709 /* CreatePetView.swift in Sources */,
 				31DA95EE226E7F34007AD5E6 /* LoginViewModel.swift in Sources */,
 				311AD7C8227CF75700DCB75A /* LocalStorage.swift in Sources */,
 				3173A20F228F7EDB0022FEEC /* PetsServiceImpl.swift in Sources */,
@@ -863,7 +854,6 @@
 				31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */,
 				311AD7CC227CFB2400DCB75A /* Profile.swift in Sources */,
 				D7FBB3BA227F45C50020FE23 /* AccountService.swift in Sources */,
-				31E83D7D228CD82500226709 /* CreatePetViewModel.swift in Sources */,
 				317FDD642255849700356327 /* AppDelegate.swift in Sources */,
 				31E83D77228CD04000226709 /* TabBarView.swift in Sources */,
 				D77B10D82256D52D009B3561 /* AppCoordinator.swift in Sources */,
@@ -1046,7 +1036,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.midsen.adocaoAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1066,7 +1056,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.midsen.adocaoAnimal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

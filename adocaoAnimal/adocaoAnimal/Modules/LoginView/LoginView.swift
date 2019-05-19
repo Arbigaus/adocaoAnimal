@@ -74,7 +74,7 @@ extension LoginView {
     func setupBindings() {
         
         skipLogin.rx.tap.bind { [unowned self] _ in
-            self.delegate?.handle(.back)
+            self.delegate?.handle(.showFeed)
         }.disposed(by: disposeBag)
         
         emailButton.rx.tap.bind { [unowned self] _ in

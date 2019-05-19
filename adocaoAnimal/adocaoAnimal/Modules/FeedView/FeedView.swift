@@ -14,9 +14,7 @@ import Lottie
 class FeedView: UIViewController {
     let disposeBag = DisposeBag()
     let loadingView = LoadingView()
-    
-    @IBOutlet weak var tabBar: UITabBar!
-    
+        
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
     let tapGesture = UITapGestureRecognizer()
@@ -120,8 +118,8 @@ extension FeedView {
         itemsTableView
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
-                       cellType: PetTableViewCell.self)) { [unowned self] _ , pet, cell in
-                        cell.bind(pet)
+                       cellType: PetTableViewCell.self)) { (row , pet, cell) in
+                            cell.bind(pet)
             }
             .disposed(by: disposeBag)
         
@@ -139,7 +137,7 @@ extension FeedView {
             .bind(to: filterCollectionView.rx
                 .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
-                        cell .homeFilterLabel.text = element
+                            cell.homeFilterLabel.text = element
             }
             .disposed(by: disposeBag)
         

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePetView" customModule="adocaoAnimal" customModuleProvider="target">
             <connections>
+                <outlet property="addPhotosButton" destination="R8z-Ul-edh" id="Opf-nt-IYO"/>
                 <outlet property="ageSwitch" destination="9am-Ze-eJi" id="NGp-6p-DKd"/>
                 <outlet property="colorPickerView" destination="M1c-jk-gLa" id="4iQ-CZ-rcH"/>
                 <outlet property="genderPickerView" destination="I0D-Fz-sMs" id="CKv-i3-gXp"/>
@@ -41,7 +42,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-C7-vuc" userLabel="MainView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="868"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-za-XnR">
                                     <rect key="frame" x="20" y="50" width="374" height="120"/>
@@ -73,6 +74,9 @@
                                         <constraint firstAttribute="width" constant="100" id="VcN-xa-K2f"/>
                                     </constraints>
                                     <state key="normal" title="Inserir Fotos"/>
+                                    <connections>
+                                        <action selector="insertPhotosButton:" destination="-1" eventType="touchUpInside" id="jFg-VN-R1x"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwG-Ch-tUg" userLabel="Top View">
                                     <rect key="frame" x="20" y="170" width="374" height="200"/>
@@ -284,10 +288,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvN-dx-Z1x" userLabel="DescriptionView">
-                                    <rect key="frame" x="20" y="490" width="374" height="220"/>
+                                    <rect key="frame" x="20" y="490" width="374" height="200"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Descrição" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-kO-QzV">
-                                            <rect key="frame" x="0.0" y="5" width="374" height="215"/>
+                                            <rect key="frame" x="0.0" y="5" width="374" height="195"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -297,16 +301,16 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="CfR-kO-QzV" secondAttribute="trailing" id="1Lj-7y-D47"/>
                                         <constraint firstAttribute="bottom" secondItem="CfR-kO-QzV" secondAttribute="bottom" id="6Di-a8-g4V"/>
-                                        <constraint firstAttribute="height" constant="220" id="bNk-fT-gJy"/>
+                                        <constraint firstAttribute="height" constant="200" id="bNk-fT-gJy"/>
                                         <constraint firstItem="CfR-kO-QzV" firstAttribute="leading" secondItem="PvN-dx-Z1x" secondAttribute="leading" id="iMl-zW-4uT"/>
                                         <constraint firstItem="CfR-kO-QzV" firstAttribute="top" secondItem="PvN-dx-Z1x" secondAttribute="top" constant="5" id="q0f-Hr-g14"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ime-BZ-8B2" userLabel="BottomView">
-                                    <rect key="frame" x="0.0" y="710" width="414" height="108"/>
+                                    <rect key="frame" x="0.0" y="690" width="414" height="100"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oud-If-MmO">
-                                            <rect key="frame" x="147" y="34" width="120" height="40"/>
+                                            <rect key="frame" x="147" y="30" width="120" height="40"/>
                                             <color key="backgroundColor" red="1" green="0.40223287299999999" blue="0.4420172396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="9Aa-UN-nyQ"/>
@@ -321,6 +325,7 @@
                                     <constraints>
                                         <constraint firstItem="oud-If-MmO" firstAttribute="centerX" secondItem="ime-BZ-8B2" secondAttribute="centerX" id="MSs-xN-3mX"/>
                                         <constraint firstItem="oud-If-MmO" firstAttribute="centerY" secondItem="ime-BZ-8B2" secondAttribute="centerY" id="dBK-fl-qSQ"/>
+                                        <constraint firstAttribute="height" constant="100" id="kUo-Ef-TO2"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -340,7 +345,6 @@
                                 <constraint firstItem="PvN-dx-Z1x" firstAttribute="leading" secondItem="mPt-C7-vuc" secondAttribute="leading" constant="20" id="mnZ-Fm-PqZ"/>
                                 <constraint firstItem="VUc-za-XnR" firstAttribute="leading" secondItem="mPt-C7-vuc" secondAttribute="leading" constant="20" id="oQs-aF-Xut"/>
                                 <constraint firstAttribute="trailing" secondItem="nwG-Ch-tUg" secondAttribute="trailing" constant="20" id="pA3-ls-B3O"/>
-                                <constraint firstAttribute="bottom" secondItem="ime-BZ-8B2" secondAttribute="bottom" id="rXg-zd-pOC"/>
                                 <constraint firstAttribute="trailing" secondItem="4aX-zU-4j4" secondAttribute="trailing" constant="20" id="suY-MG-9C1"/>
                                 <constraint firstAttribute="trailing" secondItem="ime-BZ-8B2" secondAttribute="trailing" id="tK7-Ev-xKc"/>
                                 <constraint firstAttribute="trailing" secondItem="R8z-Ul-edh" secondAttribute="trailing" constant="20" id="vZL-hX-CDT"/>
@@ -367,7 +371,7 @@
                 <constraint firstItem="mPt-C7-vuc" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="EcP-yX-JgL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MP9-ER-fsy" secondAttribute="trailing" id="QFC-fg-arb"/>
                 <constraint firstAttribute="bottom" secondItem="frf-MM-NXg" secondAttribute="bottom" id="SEJ-z8-qIH"/>
-                <constraint firstItem="mPt-C7-vuc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="VA3-gg-8wa"/>
+                <constraint firstItem="mPt-C7-vuc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" constant="50" id="VA3-gg-8wa"/>
                 <constraint firstAttribute="trailing" secondItem="Qas-Vf-s7w" secondAttribute="trailing" id="VY4-PW-z1T"/>
                 <constraint firstItem="MP9-ER-fsy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ahq-tK-cyP"/>
                 <constraint firstAttribute="bottom" secondItem="Qas-Vf-s7w" secondAttribute="bottom" id="bLN-pG-e9P"/>

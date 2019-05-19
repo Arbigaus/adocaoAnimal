@@ -31,10 +31,18 @@ class AppCoordinator: Coordinator {
     // MARK: - Properties
     let window: UIWindow
     var navigationController: CustomNavigation
+    
+    // MARK: - Private var
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let accountService = AccountServiceImpl()
+    fileprivate var userDetails : Observable<Profile>
+    
     // MARK: - Coordinator
     init(window: UIWindow) {
         self.window = window
         self.navigationController = CustomNavigation()
+        
+        userDetails = accountService.getLoggedUser()
     }
     
     var currentView: UIViewController? {
@@ -51,6 +59,7 @@ class AppCoordinator: Coordinator {
     func start() {
         showFeed()
 //        showCreatePetView()
+//        showPhotosView()
         
     }
     
@@ -60,8 +69,8 @@ class AppCoordinator: Coordinator {
         homeView.title = "HOME"
         
         homeView.tabBarItem = setupTabBarItem(
-                title: "HOME",
-                image: R.image.chatIcon()!,
+                title: "PETS",
+                image: R.image.pets()!,
                 position: 1
         )
         
@@ -71,8 +80,8 @@ class AppCoordinator: Coordinator {
         addPet.title = "Adicionar um Pet"
         
         addPet.tabBarItem = setupTabBarItem(
-            title: "HOME",
-            image: R.image.chatIcon()!,
+            title: "ADICIONAR",
+            image: R.image.animalPrints()!,
             position: 2
         )
         
@@ -91,6 +100,7 @@ class AppCoordinator: Coordinator {
         self.currentView = navigationController
     }
     
+    
     fileprivate func showUserProfile() {
         let view = UserProfileView()
         self.navigationController.pushViewController(view, animated: true)
@@ -106,9 +116,17 @@ class AppCoordinator: Coordinator {
     }
     
     fileprivate func showCreatePetView() {
-        let view = CreatePetView()
-        view.delegate = self
-        self.navigationController.pushViewController(view, animated: true)
+        var view : UIViewController?
+        self.userDetails.subscribe(onNext: { user in
+            if user.name != "" {
+                view = LoginView()
+            } else {
+                view = CreatePetView()
+            }
+        })
+        .disposed(by: self.disposeBag)
+        
+        self.navigationController.pushViewController(view!, animated: true)
         self.currentView = navigationController
     }
     
