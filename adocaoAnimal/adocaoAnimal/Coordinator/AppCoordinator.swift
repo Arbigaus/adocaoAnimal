@@ -116,17 +116,9 @@ class AppCoordinator: Coordinator {
     }
     
     fileprivate func showCreatePetView() {
-        var view : UIViewController?
-        self.userDetails.subscribe(onNext: { user in
-            if user.name != "" {
-                view = LoginView()
-            } else {
-                view = CreatePetView()
-            }
-        })
-        .disposed(by: self.disposeBag)
-        
-        self.navigationController.pushViewController(view!, animated: true)
+        let view = LoginView()
+        view.delegate = self
+        self.navigationController.pushViewController(view, animated: true)
         self.currentView = navigationController
     }
     

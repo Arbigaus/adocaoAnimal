@@ -13,7 +13,6 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-
     var window: UIWindow?
     
     var appCoordinator : AppCoordinator!

@@ -68,6 +68,9 @@
 		D77B10E42256DEA6009B3561 /* PetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */; };
 		D77B10E52256DEA6009B3561 /* PetDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E22256DEA6009B3561 /* PetDetailsView.xib */; };
 		D77B10E72256E39C009B3561 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = D77B10E62256E39C009B3561 /* location.json */; };
+		D79561F42291E4D000544EBD /* CreatePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79561F12291E4D000544EBD /* CreatePetView.swift */; };
+		D79561F52291E4D000544EBD /* CreatePetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D79561F22291E4D000544EBD /* CreatePetView.xib */; };
+		D79561F62291E4D000544EBD /* CreatePetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79561F32291E4D000544EBD /* CreatePetViewModel.swift */; };
 		D797098F228505B500B8DCC5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098C228505B500B8DCC5 /* UserProfileView.swift */; };
 		D7970990228505B500B8DCC5 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */; };
 		D7970991228505B500B8DCC5 /* UserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D797098E228505B500B8DCC5 /* UserProfileView.xib */; };
@@ -164,6 +167,9 @@
 		D77B10E12256DEA6009B3561 /* PetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewModel.swift; sourceTree = "<group>"; };
 		D77B10E22256DEA6009B3561 /* PetDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetDetailsView.xib; sourceTree = "<group>"; };
 		D77B10E62256E39C009B3561 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		D79561F12291E4D000544EBD /* CreatePetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePetView.swift; sourceTree = "<group>"; };
+		D79561F22291E4D000544EBD /* CreatePetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePetView.xib; sourceTree = "<group>"; };
+		D79561F32291E4D000544EBD /* CreatePetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePetViewModel.swift; sourceTree = "<group>"; };
 		D797098C228505B500B8DCC5 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		D797098D228505B500B8DCC5 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		D797098E228505B500B8DCC5 /* UserProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileView.xib; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 		31736BC52255891D00BCFE53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D79561F02291E4B100544EBD /* CreatePetView */,
 				31EF5E3422712FC8007900B9 /* CreateAccountView */,
 				D7970985228503FF00B8DCC5 /* ProfileView */,
 				31EF5E2C22711D94007900B9 /* LoginEmailView */,
@@ -463,6 +470,16 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
+		D79561F02291E4B100544EBD /* CreatePetView */ = {
+			isa = PBXGroup;
+			children = (
+				D79561F12291E4D000544EBD /* CreatePetView.swift */,
+				D79561F22291E4D000544EBD /* CreatePetView.xib */,
+				D79561F32291E4D000544EBD /* CreatePetViewModel.swift */,
+			);
+			path = CreatePetView;
+			sourceTree = "<group>";
+		};
 		D7970985228503FF00B8DCC5 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +618,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79561F52291E4D000544EBD /* CreatePetView.xib in Resources */,
 				31736BCE225589A700BCFE53 /* FeedView.xib in Resources */,
 				31FC8C72225EB85700AD07BF /* HomeFilterCollectionViewCell.xib in Resources */,
 				31EF5E3A22712FE6007900B9 /* CreateAccountView.xib in Resources */,
@@ -849,6 +867,7 @@
 				31EF5E3022711DEE007900B9 /* LoginEmailView.swift in Sources */,
 				31EF5E3822712FE6007900B9 /* CreateAccountView.swift in Sources */,
 				31EF5E3122711DEE007900B9 /* LoginEmailViewModel.swift in Sources */,
+				D79561F42291E4D000544EBD /* CreatePetView.swift in Sources */,
 				31EF5E3922712FE6007900B9 /* CreateAccountViewModel.swift in Sources */,
 				D77B10D22256D2B0009B3561 /* R.generated.swift in Sources */,
 				31736BCD225589A700BCFE53 /* FeedViewModel.swift in Sources */,
@@ -858,6 +877,7 @@
 				31E83D77228CD04000226709 /* TabBarView.swift in Sources */,
 				D77B10D82256D52D009B3561 /* AppCoordinator.swift in Sources */,
 				3173A211228F80010022FEEC /* Response.swift in Sources */,
+				D79561F62291E4D000544EBD /* CreatePetViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
