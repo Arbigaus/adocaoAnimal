@@ -27,7 +27,8 @@ class CreatePetViewModel {
         petGender: Driver<String>,
         petType: Driver<String>,
         petWeight: Driver<String>,
-        petDescription: Driver<String>
+        petDescription: Driver<String>,
+        createTap: Signal<Void> 
         ){
         
     }

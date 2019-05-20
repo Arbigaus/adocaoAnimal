@@ -28,14 +28,21 @@ class CreatePetView: UIViewController {
     var colorData  = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
     var genderData = [ "Fêmea", "Macho" ]
     var typesData  = [ "Cachorro", "Gato", "Coelho", "Outro" ]
+    
+    let selectedColor  = PublishSubject<String>()
+    let selectedGender = PublishSubject<String>()
+    let selectedType   = PublishSubject<String>()
 
     @IBOutlet weak var pictureCollectionView: UICollectionView!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var weigthTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var colorPickerView: UIPickerView!
     @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var typePickerView: UIPickerView!
     @IBOutlet weak var ageSwitch: UISwitch!
     @IBOutlet weak var weightSwitch: UISwitch!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var monthsLabel: UILabel!
     @IBOutlet weak var yearsLabel: UILabel!
@@ -43,6 +50,8 @@ class CreatePetView: UIViewController {
     @IBOutlet weak var gramasLabel: UILabel!
     @IBOutlet weak var kilogramasLabel: UILabel!
     @IBOutlet weak var addPhotosButton: UIButton!
+    
+    @IBOutlet weak var saveButton: UIButton!
     
     private lazy var imageManager = PHCachingImageManager()
     private lazy var thumbnailSize: CGSize = {
@@ -79,9 +88,18 @@ class CreatePetView: UIViewController {
 extension CreatePetView {
     
     func setupViewModel() {
-        self.viewModel = CreatePetViewModel(
-           
+        self.viewModel = CreatePetViewModel()
+        
+        viewModel.setupBindings(
+            petName: self.nameTextField.rx.text.orEmpty.asDriver(),
+            petColor: self.selectedColor.asDriver(onErrorJustReturn: "Error"),
+            petGender: self.selectedGender.asDriver(onErrorJustReturn: "Error"),
+            petType: self.selectedType.asDriver(onErrorJustReturn: "Error"),
+            petWeight: self.weigthTextField.rx.text.orEmpty.asDriver(),
+            petDescription: self.descriptionTextView.rx.text.orEmpty.asDriver(),
+            createTap: self.saveButton.rx.tap.asSignal()
         )
+        
     }
     
     func configureViews() {
@@ -185,6 +203,8 @@ extension CreatePetView {
     fileprivate func updateCollectionViewOfImages() {
         self.pictureCollectionView.delegate = nil
         self.pictureCollectionView.dataSource = nil
+        
+        self.viewModel.petPhotos = self.photos
         
         let listPhotos = Observable.just(
             self.photos.map { $0 }
