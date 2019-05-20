@@ -128,11 +128,11 @@ extension CreatePetView {
             .withLatestFrom(self.weightSwitch.rx.value)
             .subscribe(onNext: { bool in
                 if bool {
-                    self.gramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
-                    self.kilogramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
-                } else {
                     self.kilogramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
                     self.gramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
+                } else {
+                    self.gramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
+                    self.kilogramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
                 }
             })
             .disposed(by: disposeBag)

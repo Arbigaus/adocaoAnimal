@@ -8,15 +8,23 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 
 class CreateAccountViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
     
     var loggedUser   = PublishSubject<LoggedUser>()
+    let isLoading: Driver<Bool>
     
     
-    init() {}
+    init() {
+        let loadingIndicator = ActivityIndicator()
+        
+        self.isLoading = loadingIndicator
+            .startWith(false)
+            .asDriver()
+    }
     
     func setupBindings(
         name      : Driver<String>,

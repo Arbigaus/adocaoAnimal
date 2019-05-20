@@ -412,6 +412,7 @@ struct _R: Rswift.Validatable {
       try _LoginView.validate()
       try _PetDetailsView.validate()
       try _PetTableViewCell.validate()
+      try _UserProfileView.validate()
     }
     
     struct _CreateAccountView: Rswift.NibResourceType, Rswift.Validatable {
@@ -581,12 +582,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _UserProfileView: Rswift.NibResourceType {
+    struct _UserProfileView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "UserProfileView"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "perfil", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil' is used in nib 'UserProfileView', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}

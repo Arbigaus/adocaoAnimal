@@ -13,9 +13,11 @@ class UserProfileViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
     
+    var userDetails : Observable<Profile>
     var loggedUser   = PublishSubject<LoggedUser>()
     
     init() {
+        userDetails = accountService.getLoggedUser()
         loggedUser.onNext(.logged)
     }
     

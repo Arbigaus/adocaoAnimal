@@ -69,7 +69,9 @@ class AccountServiceImpl: NSObject, AccountService {
             .rx
             .setData([
                 "name": name,
-                "lastName": lastName
+                "lastName": lastName,
+                "fullName": "\(name) \(lastName)",
+                "email": "\(self.auth.currentUser!.email ?? "")"
                 ])
             .subscribe(onNext:{
                 response.message = "Usuário criado com sucesso"
@@ -131,6 +133,7 @@ class AccountServiceImpl: NSObject, AccountService {
     
     // MARK: - Get logged user from Firestore
     func getLoggedUserInfo(_ uuid: String) -> Observable<Profile> {
+        
         return self.db.collection("Users")
                 .document(uuid)
                 .rx.listen()
@@ -142,6 +145,8 @@ class AccountServiceImpl: NSObject, AccountService {
                 var userProfile = Profile()
                 userProfile.name     = (data["name"] as? String)!
                 userProfile.lastName = (data["lastName"] as? String) ?? ""
+                userProfile.fullName = (data["fullName"] as? String) ?? (data["name"] as? String)!  
+                userProfile.email    = (data["email"] as? String ) ?? ""
                                 
                 return userProfile
             }

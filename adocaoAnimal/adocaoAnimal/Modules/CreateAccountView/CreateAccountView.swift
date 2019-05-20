@@ -19,6 +19,8 @@ class CreateAccountView: UIViewController {
     fileprivate let disposeBag = DisposeBag()
     var viewModel: CreateAccountViewModel
     
+    let loadingView = LoadingView()
+    
     weak var delegate: AppActionable?
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var lastNameLabel: UITextField!
@@ -66,10 +68,20 @@ extension CreateAccountView {
             createTap : self.createAccountButton.rx.tap.asSignal() )
     }
     
-    func configureViews() {}
+    func configureViews() {
+        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
+    }
     
     // MARK: - SetupBindings
     func setupBindings() {
+        
+        viewModel.isLoading.drive(onNext: { (isLoading) in
+            self.loadingAnimation(isLoading)
+        }).disposed(by: self.disposeBag)
         
         // Verifica se o usuário foi logado e redireciona para a tela principal
         self.viewModel.loggedUser
@@ -80,4 +92,11 @@ extension CreateAccountView {
             })
             .disposed(by: disposeBag)
     }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
+    }
+    
 }

@@ -12,6 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileView" customModule="adocaoAnimal" customModuleProvider="target">
             <connections>
+                <outlet property="addressTextLabel" destination="cl9-QD-Itz" id="t8t-y6-Ci7"/>
+                <outlet property="emailTextLabel" destination="1Do-gv-Abt" id="tW4-qa-LW7"/>
+                <outlet property="nameTextLabel" destination="gxc-x4-kwP" id="x8g-te-du0"/>
+                <outlet property="perfilImage" destination="2id-1H-5FP" id="eba-ZF-cPP"/>
+                <outlet property="petsTableView" destination="xuf-d2-wkW" id="IKo-Jo-2mH"/>
+                <outlet property="phoneTextLabel" destination="cu3-zm-c5Q" id="YAq-D9-2Rr"/>
+                <outlet property="updateButton" destination="BbR-9s-NIx" id="CyV-LO-hwW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +33,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87u-nd-ACX" userLabel="TopView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2id-1H-5FP">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="2id-1H-5FP">
                                     <rect key="frame" x="20" y="10" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="GJJ-At-QSE"/>
@@ -103,10 +110,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbR-9s-NIx">
-                            <rect key="frame" x="320" y="172" width="74" height="30"/>
+                            <rect key="frame" x="300" y="157" width="94" height="45"/>
                             <color key="backgroundColor" red="1" green="0.40223287299999999" blue="0.4420172396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="cDk-Qc-da6"/>
+                                <constraint firstAttribute="height" constant="45" id="cDk-Qc-da6"/>
                             </constraints>
                             <state key="normal" title="Atualizar">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,14 +134,14 @@
                         <constraint firstItem="87u-nd-ACX" firstAttribute="leading" secondItem="jpG-mY-yZ6" secondAttribute="leading" id="MAO-2G-bFW"/>
                         <constraint firstItem="cu3-zm-c5Q" firstAttribute="leading" secondItem="jpG-mY-yZ6" secondAttribute="leading" constant="20" id="MMD-vy-5FQ"/>
                         <constraint firstAttribute="trailing" secondItem="87u-nd-ACX" secondAttribute="trailing" id="OlU-Jk-JLM"/>
-                        <constraint firstItem="BbR-9s-NIx" firstAttribute="leading" secondItem="cu3-zm-c5Q" secondAttribute="trailing" constant="200" id="WPd-D3-1wb"/>
+                        <constraint firstItem="BbR-9s-NIx" firstAttribute="leading" secondItem="cu3-zm-c5Q" secondAttribute="trailing" constant="180" id="WPd-D3-1wb"/>
                         <constraint firstItem="BbR-9s-NIx" firstAttribute="bottom" secondItem="cu3-zm-c5Q" secondAttribute="bottom" id="fD0-lX-wjD"/>
                         <constraint firstItem="cu3-zm-c5Q" firstAttribute="top" secondItem="Rwg-0R-lvr" secondAttribute="bottom" id="gYn-0F-2wu"/>
                         <constraint firstItem="Rwg-0R-lvr" firstAttribute="top" secondItem="cl9-QD-Itz" secondAttribute="bottom" constant="5" id="vtQ-Xc-0p2"/>
                         <constraint firstAttribute="trailing" secondItem="BbR-9s-NIx" secondAttribute="trailing" constant="20" id="xi2-aL-vE2"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-d2-wkW">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-d2-wkW">
                     <rect key="frame" x="0.0" y="254" width="414" height="608"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
@@ -153,4 +160,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="143.97321428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="perfil" width="128" height="128"/>
+    </resources>
 </document>

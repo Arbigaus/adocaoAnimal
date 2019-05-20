@@ -19,6 +19,8 @@ class LoginEmailView: UIViewController {
     
     weak var delegate: AppActionable?
     let disposeBag = DisposeBag()
+    
+    let loadingView = LoadingView()
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var goToCreateAccountButton: UIButton!
@@ -69,12 +71,18 @@ extension LoginEmailView {
     }
     
     func configureViews() {
-        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
     }
     
     // MARK: SetupBindings
     
     func setupBindings() {
+        
+        viewModel.isLoading.drive(onNext: { (isLoading) in
+            self.loadingAnimation(isLoading)
+        }).disposed(by: self.disposeBag)
         
         // Ação do botão de criar conta para redirecionar o usuário
         goToCreateAccountButton.rx.tap.bind { [unowned self] _ in
@@ -96,4 +104,11 @@ extension LoginEmailView {
             .disposed(by: disposeBag)
 
     }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
+    }
+    
 }

@@ -8,15 +8,23 @@
 
 import RxSwift
 import RxCocoa
+import RxSwiftUtilities
 import RxFirebase
 import FirebaseAuth
 
 class LoginEmailViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
+    let isLoading: Driver<Bool>
     
     var loggedUser   = PublishSubject<LoggedUser>()
-    init(){}
+    init(){
+        let loadingIndicator = ActivityIndicator()
+        
+        self.isLoading = loadingIndicator
+            .startWith(false)
+            .asDriver()
+    }
     
     func setupBindings(
         email    : Driver<String>,

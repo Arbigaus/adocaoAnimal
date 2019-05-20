@@ -11,10 +11,14 @@ import Foundation
 struct Profile: Codable {
     var name     : String
     var lastName : String
+    var fullName : String
+    var email    : String
     
     init() {
         self.name = ""
         self.lastName = ""
+        self.fullName = "\(self.name) \(self.lastName)"
+        self.email = ""
     }
 }
 
