@@ -19,13 +19,10 @@ class UserProfileViewModel {
         loggedUser.onNext(.logged)
     }
     
-    func setupBindings( loggoutTap : Signal<Void> ) {
-        
-        loggoutTap.asObservable()
-            .subscribe(onNext: { _ in
-                if self.accountService.userLoggout() {
-                    self.loggedUser.onNext(.notLogged)
-                }
-            }).disposed(by: disposeBag)
+    func loggout() {
+        if self.accountService.userLoggout() {
+            self.loggedUser.onNext(.notLogged)
+        }
     }
+    
 }

@@ -21,7 +21,7 @@ class UserProfileView: UIViewController {
     
     weak var delegate: AppActionable?
 
-    @IBOutlet weak var loggoutButton: UIButton!
+//    @IBOutlet weak var loggoutButton: UIButton!
     init() {
         self.viewModel = UserProfileViewModel()
         super.init(nibName: String(describing: UserProfileView.self), bundle: nil)
@@ -35,11 +35,34 @@ class UserProfileView: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+//        if self.isMovingFromParent {
+//            self.delegate?.handle(.showFeed)
+//        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(title: "< Voltar", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.back(sender:)))
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        let loggoutButton = UIBarButtonItem(title: "Sair", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.loggout(sender:)))
+        self.navigationItem.rightBarButtonItem = loggoutButton
         self.configureViews()
         self.setupViewModel()
         self.setupBindings()
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        self.delegate?.handle(.showFeed)
+    }
+    
+    @objc func loggout(sender: UIBarButtonItem) {
+        self.viewModel.loggout()
     }
     
 }
@@ -47,7 +70,7 @@ class UserProfileView: UIViewController {
 extension UserProfileView {
     
     func setupViewModel() {
-        viewModel.setupBindings(loggoutTap: self.loggoutButton.rx.tap.asSignal())
+//        viewModel.setupBindings(loggoutTap: self.loggoutButton.rx.tap.asSignal())
     }
     
     func configureViews() {
