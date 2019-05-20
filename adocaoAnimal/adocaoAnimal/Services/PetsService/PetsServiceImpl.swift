@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Photos
 import FirebaseFirestore
 import RxFirebase
 
@@ -15,14 +16,34 @@ class PetsServiceImpl: NSObject, PetsService {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let db = Firestore.firestore()
     
-    func createPet(_ pet: Pet) -> Observable<Response> {
+    func createPet(
+            petName: String,
+            petSize: String,
+            petColor: String,
+            petGender: String,
+            petType: String,
+            petWeight: String,
+            petDescription: String,
+            petImages: [ PHAsset ]
+        ) -> Observable<Response> {
         let response = PublishSubject<Response>()
         var msg = Response()
+        
+        let petToSend = Pet(
+                    petName: petName,
+                    petSize: petSize,
+                    petColor: petColor,
+                    petGender: petGender,
+                    petType: petType,
+                    petWeight: petWeight,
+                    petDescription: petDescription,
+                    petImages: petImages
+            )
         
         self.db.collection("Pets")
             .rx
             .addDocument(data: [
-                "name" : pet.name
+                "name" : petToSend.petName
             ]).subscribe(onNext: { ref in
                 
                 msg.message = ref.documentID

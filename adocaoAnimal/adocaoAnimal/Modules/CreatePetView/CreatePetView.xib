@@ -43,7 +43,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="970"/>
                     <color key="backgroundColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP9-ER-fsy" customClass="TPKeyboardAvoidingScrollView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MP9-ER-fsy" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="44" width="414" height="892"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPt-C7-vuc" userLabel="MainView">

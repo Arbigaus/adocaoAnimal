@@ -92,6 +92,7 @@ extension CreatePetView {
         
         viewModel.setupBindings(
             petName: self.nameTextField.rx.text.orEmpty.asDriver(),
+            petSize: self.weigthTextField.rx.text.orEmpty.asDriver(),
             petColor: self.selectedColor.asDriver(onErrorJustReturn: "Error"),
             petGender: self.selectedGender.asDriver(onErrorJustReturn: "Error"),
             petType: self.selectedType.asDriver(onErrorJustReturn: "Error"),
@@ -197,6 +198,14 @@ extension CreatePetView {
                 }, completion: nil)
         }
         .disposed(by: disposeBag)
+        
+        self.viewModel.createdPet
+            .subscribe(onNext: { value in
+                if value {
+                    self.delegate?.handle(.showFeed)
+                }
+            })
+            .disposed(by: disposeBag)
         
     }
     

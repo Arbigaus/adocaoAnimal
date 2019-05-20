@@ -7,7 +7,16 @@
 //
 
 import RxSwift
+import Photos
 
 protocol PetsService {
-    func createPet(_ pet: Pet ) -> Observable<Response>
+    func createPet(
+        petName: String,
+        petSize: String,
+        petColor: String,
+        petGender: String,
+        petType: String,
+        petWeight: String,
+        petDescription: String,
+        petImages: [ PHAsset ] ) -> Observable<Response>
 }

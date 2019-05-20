@@ -50,9 +50,9 @@ class PetDetailsView: UIViewController {
         self.setupViewModel()
         self.setupBindings()
         
-        self.petImage?.image = UIImage(named: self.pet.image)
-        self.petNameLabel?.text = self.pet.name
-        self.ownerName?.text = self.pet.owner
+//        self.petImage?.image = UIImage(named: self.pet.image)
+//        self.petNameLabel?.text = self.pet.name
+//        self.ownerName?.text = self.pet.owner
         
         self.ownerImage.layer.cornerRadius = 25
         
