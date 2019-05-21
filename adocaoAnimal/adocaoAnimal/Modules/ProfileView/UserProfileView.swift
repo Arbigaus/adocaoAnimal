@@ -130,6 +130,11 @@ extension UserProfileView {
             }
             .disposed(by: disposeBag)
         
+        self.updateButton
+            .rx.tap.bind { [unowned self] _ in
+                self.delegate?.handle(.showEditProfile)
+        }.disposed(by: disposeBag)
+        
         
         self.viewModel.loggedUser
             .subscribe(onNext: { user in
