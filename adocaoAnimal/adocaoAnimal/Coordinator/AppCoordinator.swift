@@ -16,6 +16,7 @@ enum AppAction {
     case showLogin
     case showLoginEmail
     case showUserProfile
+    case showEditProfile
     case showCreatePetView
     case showCreateAccount
     case showPetDetails(_ pet: Pet)
@@ -108,6 +109,13 @@ class AppCoordinator: Coordinator {
         self.currentView = navigationController
     }
     
+    fileprivate func showEditProfile() {
+        let view = EditProfileView()
+        self.navigationController.pushViewController(view, animated: true)
+        view.delegate = self
+        self.currentView = navigationController
+    }
+    
     fileprivate func showPetDetail(_ pet : Pet){
         let view = PetDetailsView(pet: pet)
         view.delegate = self
@@ -154,6 +162,9 @@ extension AppCoordinator: AppActionable {
         
         case .showUserProfile :
             showUserProfile()
+            
+        case .showEditProfile :
+            showEditProfile()
             
         case .showPetDetails(let pet) :
             showPetDetail(pet)
