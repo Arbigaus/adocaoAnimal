@@ -81,6 +81,10 @@ class CreatePetView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.updateCollectionViewOfImages()
+        
+        self.selectedColor.onNext("Preto")
+        self.selectedGender.onNext("Fêmea")
+        self.selectedType.onNext("Cachorro")
     }
     
 }
@@ -148,7 +152,7 @@ extension CreatePetView {
         
         typePickerView.rx.modelSelected(String.self)
             .subscribe(onNext: { type in
-                print("selected type ==> \(type)")
+                self.selectedType.onNext(type[0])
             })
             .disposed(by: disposeBag)
         
@@ -161,7 +165,7 @@ extension CreatePetView {
         
         colorPickerView.rx.modelSelected(String.self)
             .subscribe(onNext: { color in
-                print("selected color ==> \(color)")
+                self.selectedColor.onNext(color[0])
             })
             .disposed(by: disposeBag)
         
@@ -173,7 +177,8 @@ extension CreatePetView {
         
         genderPickerView.rx.modelSelected(String.self)
             .subscribe(onNext: { gender in
-                print("selected gender \(gender)")
+                print(gender[0])
+                self.selectedGender.onNext(gender[0])
             })
             .disposed(by: disposeBag)
         

@@ -9,6 +9,7 @@
 import RxSwift
 import Photos
 import FirebaseFirestore
+import FirebaseStorage
 import RxFirebase
 
 class PetsServiceImpl: NSObject, PetsService {
@@ -29,6 +30,29 @@ class PetsServiceImpl: NSObject, PetsService {
         let response = PublishSubject<Response>()
         var msg = Response()
         
+        let reference = Storage.storage()
+            .reference(forURL: "gs://adocaoanimal-21d2c.appspot.com/images/teste.jpg")
+            .rx
+        
+        var dataImage : Data?
+        
+        if petImages.count > 0 {
+            PHImageManager().requestImage(for: petImages[0], targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: nil) { (pickedImage, info) in
+                print(pickedImage)
+                print(info)
+                dataImage = pickedImage!.jpegData(compressionQuality: 1)
+            }
+        }
+        
+        if dataImage != nil {
+            reference.putData(dataImage!)
+                .subscribe(onNext: { metadata in
+                    // Success
+                }, onError: { error in
+                    // Uh-oh, an error occurred!
+                }).disposed(by: disposeBag)
+        }
+        
         let petToSend = Pet(
                     petName: petName,
                     petSize: petSize,
@@ -39,6 +63,7 @@ class PetsServiceImpl: NSObject, PetsService {
                     petDescription: petDescription,
                     petImages: petImages
             )
+        
         
         self.db.collection("Pets")
             .rx

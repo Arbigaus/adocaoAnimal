@@ -25,14 +25,14 @@ class CreatePetViewModel {
     }
     
     func setupBindings(
-        petName: Driver<String>,
-        petSize: Driver<String>,
-        petColor: Driver<String>,
-        petGender: Driver<String>,
-        petType: Driver<String>,
-        petWeight: Driver<String>,
-        petDescription: Driver<String>,
-        createTap: Signal<Void> 
+        petName         : Driver<String>,
+        petSize         : Driver<String>,
+        petColor        : Driver<String>,
+        petGender       : Driver<String>,
+        petType         : Driver<String>,
+        petWeight       : Driver<String>,
+        petDescription  : Driver<String>,
+        createTap       : Signal<Void>
         ){
                 
         let petData = Driver.combineLatest(petName, petSize, petColor, petGender, petType, petWeight, petDescription)
@@ -42,10 +42,10 @@ class CreatePetViewModel {
             .asObservable()
             .withLatestFrom(petData)
             .flatMapLatest { namePet, sizePet, colorPet, genderPet, typePet, weightPet, descriptionPet in
-                
+
                 self.petsService.createPet(petName: namePet, petSize: sizePet, petColor: colorPet, petGender: genderPet, petType: typePet, petWeight: weightPet, petDescription: descriptionPet, petImages: self.petPhotos)
         }.share()
-            
+        
         createResult
             .subscribe(onNext: { response in
                 print(response)
