@@ -31,61 +31,31 @@ class PetsServiceImpl: NSObject, PetsService {
         
         let response = PublishSubject<Response>()
         let uploadedImages = PublishSubject<Bool>()
-        var msg = Response()
         
-        self.uploadImages(petImages) { (imagesResponse) in
-            print(imagesResponse)
-            uploadedImages.onNext(true)
+        let petToSend = Pet(
+            petName: petName,
+            petSize: petSize,
+            petColor: petColor,
+            petGender: petGender,
+            petType: petType,
+            petWeight: petWeight,
+            petDescription: petDescription,
+            petImages: petImages
+        )
+        
+        self.uploadImages(petImages, petToSend) { createResponse in
+           response.onNext(createResponse)
         }
-        
-        uploadedImages
-            .asObservable()
-            .subscribe(onNext: { (imagesUploaded) in
-                if imagesUploaded {
-                    let petToSend = Pet(
-                        petName: petName,
-                        petSize: petSize,
-                        petColor: petColor,
-                        petGender: petGender,
-                        petType: petType,
-                        petWeight: petWeight,
-                        petDescription: petDescription,
-                        petImages: petImages
-                    )
-                    
-                    
-                    self.db.collection("Pets")
-                        .rx
-                        .addDocument(data: [
-                            "name" : petToSend.petName
-                            ]).subscribe(onNext: { ref in
-                                
-                                msg.message = ref.documentID
-                                msg.passed = true
-                                print("Document added with ID: \(ref.documentID)")
-                                
-                                response.onNext(msg)
-                                
-                            }, onError: { error in
-                                
-                                msg.message = "Error adding document: \(error)"
-                                msg.passed = false
-                                
-                                response.onNext(msg)
-                                print("Error adding document: \(error)")
-                            }).disposed(by: self.disposeBag)
-                    
-                }
-            }).disposed(by: disposeBag)
         
         return response.asObservable()
         
     }
     
-    fileprivate func uploadImages(_ images: [PHAsset], handler: @escaping (([String]) -> Void) ) {
+    fileprivate func uploadImages(_ images: [PHAsset],_ petToSend: Pet, handler: @escaping ((Response) -> Void) ) {
         
         let count = PublishSubject<Int>()
-        let response = [String]()
+        var urlImages = [String]()
+        let response = Response()
         
         let reference = Storage.storage()
             .reference(forURL: "gs://adocaoanimal-21d2c.appspot.com/pets/\(UUID().uuidString)")
@@ -110,6 +80,8 @@ class PetsServiceImpl: NSObject, PetsService {
                         
                         let actualIndex = images.index(of: image)
                         
+                        urlImages.append("\(String(describing: metadata.name))")
+                        
                         count.onNext(actualIndex!)
                     }, onError: { error in
                         print("Erro ao fazer upload!!")
@@ -120,10 +92,41 @@ class PetsServiceImpl: NSObject, PetsService {
         
         count.asObservable()
             .subscribe(onNext: { (i) in
-                if response.count == images.count {
+                var createResponse = Response()
+                if urlImages.count == images.count {
+                    self.createPetOnDb(petToSend, urlImages, handler: { response in
+                        createResponse.message = response.message
+                        createResponse.passed = response.passed
+                    })
                     handler(response)
                 }
             }).disposed(by: self.disposeBag)
+    }
+    
+    fileprivate func createPetOnDb(_ petToSend : Pet,_ imagesUrl : [ String ], handler: @escaping ((Response) -> Void)) {
+        
+        var msg = Response()
+        
+        self.db.collection("Pets")
+            .rx
+            .addDocument(data: [
+                "name" : petToSend.petName
+                ]).subscribe(onNext: { ref in
+                    
+                    msg.message = ref.documentID
+                    msg.passed = true
+                    print("Document added with ID: \(ref.documentID)")
+                    
+                    handler(msg)
+                    
+                }, onError: { error in
+                    
+                    msg.message = "Error adding document: \(error)"
+                    msg.passed = false
+                    
+                    handler(msg)
+                    print("Error adding document: \(error)")
+                }).disposed(by: self.disposeBag)
     }
     
     
