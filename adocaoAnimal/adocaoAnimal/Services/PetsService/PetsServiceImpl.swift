@@ -32,7 +32,8 @@ class PetsServiceImpl: NSObject, PetsService {
             petWeight: String,
             petDescription: String,
             petImages: [ PHAsset ]
-        ) -> Observable<Response> {
+        ) -> Observable<Response>
+    {
         
         let response = PublishSubject<Response>()
         
@@ -44,7 +45,7 @@ class PetsServiceImpl: NSObject, PetsService {
             petType: petType,
             petWeight: petWeight,
             petDescription: petDescription,
-            petImages: petImages
+            petImages: nil
         )
         
         self.createPet(petImages, petToSend) { createResponse in
@@ -58,6 +59,7 @@ class PetsServiceImpl: NSObject, PetsService {
     fileprivate func createPet(_ images: [PHAsset], _ petToSend: Pet, handler: @escaping ((Response) -> Void) ) {
         var urlImages = [String]()
         let countUrl = PublishSubject<String>()
+        var pet = petToSend
         
         for image in images {
             
@@ -89,7 +91,8 @@ class PetsServiceImpl: NSObject, PetsService {
         countUrl.asObservable()
             .subscribe(onNext: { _ in
                 if urlImages.count == images.count {
-                    self.createPetOnDb(petToSend, urlImages, handler: { response in
+                    pet.petImages = urlImages 
+                    self.createPetOnDb(pet, handler: { response in
                         handler(response)
                     })
                 }
@@ -97,7 +100,7 @@ class PetsServiceImpl: NSObject, PetsService {
         
     }
     
-    fileprivate func createPetOnDb(_ petToSend : Pet,_ imagesUrl : [ String ], handler: @escaping ((Response) -> Void)) {
+    fileprivate func createPetOnDb(_ petToSend : Pet, handler: @escaping ((Response) -> Void)) {
         
         var msg = Response()
         
@@ -107,7 +110,7 @@ class PetsServiceImpl: NSObject, PetsService {
                 "petName"        : petToSend.petName,
                 "petTutorId"     : "\(Auth.auth().currentUser?.uid ?? "")",
                 "petTutorName"   : self.userDetails.name,
-                "petImages"      : imagesUrl,
+                "petImages"      : petToSend.petImages as Any,
                 "petAge"         : petToSend.petAge,
                 "petWeight"      : petToSend.petWeight,
                 "petType"        : petToSend.petType,

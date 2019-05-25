@@ -106,11 +106,11 @@ extension CreatePetView {
         
         viewModel.setupBindings(
             petName: self.nameTextField.rx.text.orEmpty.asDriver(),
-            petAge: self.ageTextField.rx.text.orEmpty.asDriver(),
+            petAge: self.ageToSend.asDriver(onErrorJustReturn: "Error"),
             petColor: self.selectedColor.asDriver(onErrorJustReturn: "Error"),
             petGender: self.selectedGender.asDriver(onErrorJustReturn: "Error"),
             petType: self.selectedType.asDriver(onErrorJustReturn: "Error"),
-            petWeight: self.weigthTextField.rx.text.orEmpty.asDriver(),
+            petWeight: self.weigthToSend.asDriver(onErrorJustReturn: "Error"),
             petDescription: self.descriptionTextView.rx.text.orEmpty.asDriver(),
             createTap: self.saveButton.rx.tap.asSignal()
         )
@@ -245,6 +245,7 @@ extension CreatePetView {
             .asObservable()
             .subscribe(onNext: { value in
                 if value {
+                    self.loadingAnimation(false)
                     self.delegate?.handle(.showFeed)
                 }
             })

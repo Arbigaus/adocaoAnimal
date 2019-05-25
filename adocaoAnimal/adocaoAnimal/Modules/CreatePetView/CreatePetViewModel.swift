@@ -48,21 +48,14 @@ class CreatePetViewModel {
         let createResult = createTap
             .asObservable()
             .withLatestFrom(petData)
-            .flatMapLatest { namePet, sizeAge, colorPet, genderPet, typePet, weightPet, descriptionPet in
-                self.petsService.createPet(petName: namePet, petAge: sizeAge, petColor: colorPet, petGender: genderPet, petType: typePet, petWeight: weightPet, petDescription: descriptionPet, petImages: self.petPhotos)
+            .flatMapLatest { namePet, petAge, colorPet, genderPet, typePet, weightPet, descriptionPet in
+                self.petsService.createPet(petName: namePet, petAge: petAge, petColor: colorPet, petGender: genderPet, petType: typePet, petWeight: weightPet, petDescription: descriptionPet, petImages: self.petPhotos)
         }.share()
-        
-//        createTap
-//            .asObservable()
-//            .subscribe(onNext: { _ in
-//                self.startLoading.onNext(true)
-//            })
-//            .disposed(by: disposeBag)
         
         createResult
             .subscribe(onNext: { response in
                 print(response)
-                self.createdPet.onNext(true)
+                self.createdPet.onNext(response.passed)
             })
             .disposed(by: disposeBag)
         

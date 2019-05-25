@@ -21,7 +21,7 @@ struct Pet {
     let petType: String
     let petWeight: String
     let petDescription: String
-    let petImages: [ PHAsset ]
+    var petImages: [ String ]?
 }
 
 enum petSize {
