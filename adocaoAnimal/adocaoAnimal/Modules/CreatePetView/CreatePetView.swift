@@ -204,7 +204,8 @@ extension CreatePetView {
         ageTextField.rx.text.asObservable()
             .subscribe(onNext: { value in
                 if value != "" {
-                    self.ageToConvert = Float(value!) as! Float
+                    let ageValue = value!.replacingOccurrences(of: ",", with: ".")
+                    self.ageToConvert = Float(ageValue ?? "0") as! Float
                     self.ageToSend.onNext( self.ageTypeSelected ? "\(self.ageToConvert)" : "\(self.ageToConvert / 12)" )
                 }
             })
@@ -213,7 +214,8 @@ extension CreatePetView {
         weigthTextField.rx.text.asObservable()
             .subscribe(onNext: { value in
                 if value != "" {
-                    self.weightToConvert = Float(value!) as! Float
+                    let weightValue = value!.replacingOccurrences(of: ",", with: ".")
+                    self.weightToConvert = Float(weightValue ?? "0") as! Float
                     self.weigthToSend.onNext( self.weightTypeSelexted ? "\(self.weightToConvert)" : "\(self.weightToConvert / 1000)")
                 }
             })
