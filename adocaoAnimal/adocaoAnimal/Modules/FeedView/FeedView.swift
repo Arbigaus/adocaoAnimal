@@ -17,8 +17,8 @@ class FeedView: UIViewController {
         
     var viewModel: FeedViewModel!
     var petsList = [ Pet ]()
-    let tapGesture = UITapGestureRecognizer()
-        
+//    let tapGesture = UITapGestureRecognizer()
+    
     weak var delegate: AppActionable?
     
     fileprivate var userDetails = Profile()

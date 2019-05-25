@@ -12,7 +12,7 @@ import Photos
 protocol PetsService {
     func createPet(
         petName: String,
-        petSize: String,
+        petAge: String,
         petColor: String,
         petGender: String,
         petType: String,

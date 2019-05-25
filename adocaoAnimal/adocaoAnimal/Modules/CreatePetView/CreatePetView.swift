@@ -10,28 +10,37 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Photos
+import Lottie
 import BSImagePicker
 
-protocol CreatePetViewDelegate: class {
-    
-}
+protocol CreatePetViewDelegate: class {}
 
 class CreatePetView: UIViewController {
     
     var viewModel: CreatePetViewModel!
     private let disposeBag = DisposeBag()
+    let loadingView = LoadingView()
     
     weak var delegate: AppActionable?
     
     var photos = [PHAsset]()
     
-    var colorData  = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
-    var genderData = [ "Fêmea", "Macho" ]
-    var typesData  = [ "Cachorro", "Gato", "Coelho", "Outro" ]
+    var colorData      = [ "Preto", "Branco", "Bege", "Malhado", "Caramelo" ]
+    var genderData     = [ "Fêmea", "Macho" ]
+    var typesData      = [ "Cachorro", "Gato", "Coelho", "Outro" ]
     
     let selectedColor  = PublishSubject<String>()
     let selectedGender = PublishSubject<String>()
     let selectedType   = PublishSubject<String>()
+    
+    let ageToSend      = PublishSubject<String>()
+    let weigthToSend   = PublishSubject<String>()
+    
+    var ageToConvert    : Float = 0.0
+    var weightToConvert : Float = 0.0
+    
+    var ageTypeSelected     = true
+    var weightTypeSelexted  = true
 
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     @IBOutlet weak var ageTextField: UITextField!
@@ -62,6 +71,10 @@ class CreatePetView: UIViewController {
     
     init() {
         super.init(nibName: String(describing: CreatePetView.self), bundle: nil)
+        
+        self.selectedColor.onNext("Preto")
+        self.selectedGender.onNext("Fêmea")
+        self.selectedType.onNext("Cachorro")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,9 +95,6 @@ class CreatePetView: UIViewController {
         super.viewWillAppear(true)
         self.updateCollectionViewOfImages()
         
-        self.selectedColor.onNext("Preto")
-        self.selectedGender.onNext("Fêmea")
-        self.selectedType.onNext("Cachorro")
     }
     
 }
@@ -96,11 +106,11 @@ extension CreatePetView {
         
         viewModel.setupBindings(
             petName: self.nameTextField.rx.text.orEmpty.asDriver(),
-            petSize: self.weigthTextField.rx.text.orEmpty.asDriver(),
+            petAge: self.ageToSend.asDriver(onErrorJustReturn: "Error"),
             petColor: self.selectedColor.asDriver(onErrorJustReturn: "Error"),
             petGender: self.selectedGender.asDriver(onErrorJustReturn: "Error"),
             petType: self.selectedType.asDriver(onErrorJustReturn: "Error"),
-            petWeight: self.weigthTextField.rx.text.orEmpty.asDriver(),
+            petWeight: self.weigthToSend.asDriver(onErrorJustReturn: "Error"),
             petDescription: self.descriptionTextView.rx.text.orEmpty.asDriver(),
             createTap: self.saveButton.rx.tap.asSignal()
         )
@@ -108,7 +118,10 @@ extension CreatePetView {
     }
     
     func configureViews() {
-        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        self.loadingAnimation(false)
     }
     
     func setupBindings() {
@@ -118,9 +131,11 @@ extension CreatePetView {
             .withLatestFrom(self.ageSwitch.rx.value)
             .subscribe(onNext: { bool in
                 if bool {
+                    self.ageTypeSelected = true
                     self.yearsLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
                     self.monthsLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
                 } else {
+                    self.ageTypeSelected = false
                     self.monthsLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
                     self.yearsLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
                 }
@@ -132,9 +147,11 @@ extension CreatePetView {
             .withLatestFrom(self.weightSwitch.rx.value)
             .subscribe(onNext: { bool in
                 if bool {
+                    self.weightTypeSelexted = true
                     self.kilogramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
                     self.gramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
                 } else {
+                    self.weightTypeSelexted = false
                     self.gramasLabel.font = UIFont.init(name: "Kailasa-Bold", size: 15.0)
                     self.kilogramasLabel.font = UIFont.init(name: "Kailasa", size: 14.0)
                 }
@@ -182,6 +199,26 @@ extension CreatePetView {
             })
             .disposed(by: disposeBag)
         
+        // MARK: - Age and Weight treatment
+        
+        ageTextField.rx.text.asObservable()
+            .subscribe(onNext: { value in
+                if value != "" {
+                    self.ageToConvert = Float(value!) as! Float
+                    self.ageToSend.onNext( self.ageTypeSelected ? "\(self.ageToConvert)" : "\(self.ageToConvert / 12)" )
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        weigthTextField.rx.text.asObservable()
+            .subscribe(onNext: { value in
+                if value != "" {
+                    self.weightToConvert = Float(value!) as! Float
+                    self.weigthToSend.onNext( self.weightTypeSelexted ? "\(self.weightToConvert)" : "\(self.weightToConvert / 1000)")
+                }
+            })
+            .disposed(by: disposeBag)
+        
         // MARK: - Add Photos
         
         addPhotosButton.rx
@@ -205,10 +242,18 @@ extension CreatePetView {
         .disposed(by: disposeBag)
         
         self.viewModel.createdPet
+            .asObservable()
             .subscribe(onNext: { value in
                 if value {
                     self.delegate?.handle(.showFeed)
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        self.viewModel.startLoading
+            .asObservable()
+            .subscribe(onNext: { start in
+                self.loadingAnimation(start)
             })
             .disposed(by: disposeBag)
         
@@ -238,5 +283,11 @@ extension CreatePetView {
             }
             .disposed(by: disposeBag)
         
+    }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
     }
 }

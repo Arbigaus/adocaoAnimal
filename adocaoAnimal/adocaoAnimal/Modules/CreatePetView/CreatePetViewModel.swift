@@ -13,6 +13,11 @@ import Photos
 class CreatePetViewModel {
     fileprivate let disposeBag = DisposeBag()
     fileprivate let petsService = PetsServiceImpl()
+    fileprivate let accountService = AccountServiceImpl()
+    
+    var startLoading = PublishSubject<Bool>()
+    
+    var userDetails : Observable<Profile>
     
     var createdPet = PublishSubject<Bool>()
     
@@ -21,12 +26,14 @@ class CreatePetViewModel {
     //let input: Driver<Void>
     
     init() {
+        userDetails = accountService.getLoggedUser()
+        self.startLoading.onNext(false)
         
     }
     
     func setupBindings(
         petName         : Driver<String>,
-        petSize         : Driver<String>,
+        petAge          : Driver<String>,
         petColor        : Driver<String>,
         petGender       : Driver<String>,
         petType         : Driver<String>,
@@ -35,16 +42,22 @@ class CreatePetViewModel {
         createTap       : Signal<Void>
         ){
                 
-        let petData = Driver.combineLatest(petName, petSize, petColor, petGender, petType, petWeight, petDescription)
+        let petData = Driver.combineLatest(petName, petAge, petColor, petGender, petType, petWeight, petDescription)
                         .asObservable()
         
         let createResult = createTap
             .asObservable()
             .withLatestFrom(petData)
-            .flatMapLatest { namePet, sizePet, colorPet, genderPet, typePet, weightPet, descriptionPet in
-
-                self.petsService.createPet(petName: namePet, petSize: sizePet, petColor: colorPet, petGender: genderPet, petType: typePet, petWeight: weightPet, petDescription: descriptionPet, petImages: self.petPhotos)
+            .flatMapLatest { namePet, sizeAge, colorPet, genderPet, typePet, weightPet, descriptionPet in
+                self.petsService.createPet(petName: namePet, petAge: sizeAge, petColor: colorPet, petGender: genderPet, petType: typePet, petWeight: weightPet, petDescription: descriptionPet, petImages: self.petPhotos)
         }.share()
+        
+//        createTap
+//            .asObservable()
+//            .subscribe(onNext: { _ in
+//                self.startLoading.onNext(true)
+//            })
+//            .disposed(by: disposeBag)
         
         createResult
             .subscribe(onNext: { response in
@@ -53,7 +66,11 @@ class CreatePetViewModel {
             })
             .disposed(by: disposeBag)
         
-        
+        userDetails.asObservable()
+            .subscribe(onNext: { user in
+                self.petsService.userDetails = user
+            })
+            .disposed(by: disposeBag)
         
     }
 }

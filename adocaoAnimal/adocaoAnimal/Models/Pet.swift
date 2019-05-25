@@ -15,7 +15,7 @@ struct PetList: Codable {
 
 struct Pet {
     let petName: String
-    let petSize: String
+    let petAge: String
     let petColor: String
     let petGender: String
     let petType: String

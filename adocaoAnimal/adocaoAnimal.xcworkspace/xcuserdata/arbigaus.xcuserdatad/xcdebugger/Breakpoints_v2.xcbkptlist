@@ -26,7 +26,7 @@
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/CreateAccountView/CreateAccountViewModel.swift"
-                  timestampString = "580357422.831261"
+                  timestampString = "580511814.835664"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -41,7 +41,7 @@
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Modules/CreateAccountView/CreateAccountViewModel.swift"
-                  timestampString = "580357422.83277"
+                  timestampString = "580511814.837298"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -57,44 +57,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-            timestampString = "580357422.483703"
+            filePath = "adocaoAnimal/Services/AccountService/AccountServiceImpl.swift"
+            timestampString = "580511814.435318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "uploadImages(_:_:handler:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "createUser(name:lastName:email:password:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "adocaoAnimal.PetsServiceImpl.(uploadImages in _889CB8FC8A2FE6633203B93ED6621FCE)(_: Swift.Array&lt;__C.PHAsset&gt;, _: adocaoAnimal.Pet, handler: (adocaoAnimal.Response) -&gt; ()) -&gt; ()"
+                  symbolName = "adocaoAnimal.AccountServiceImpl.createUser(name: Swift.String, lastName: Swift.String, email: Swift.String, password: Swift.String) -&gt; RxSwift.Observable&lt;adocaoAnimal.Response&gt;"
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.836594"
+                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/AccountService/AccountServiceImpl.swift"
+                  timestampString = "580511814.841586"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "2872">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "180">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.FIRStorageMetadata) -&gt; () in adocaoAnimal.PetsServiceImpl.(uploadImages in _889CB8FC8A2FE6633203B93ED6621FCE)(_: Swift.Array&lt;__C.PHAsset&gt;, _: adocaoAnimal.Pet, handler: (adocaoAnimal.Response) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (adocaoAnimal.Response) -&gt; () in adocaoAnimal.AccountServiceImpl.createUser(name: Swift.String, lastName: Swift.String, email: Swift.String, password: Swift.String) -&gt; RxSwift.Observable&lt;adocaoAnimal.Response&gt;"
                   moduleName = "adocaoAnimal"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.838148"
+                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/AccountService/AccountServiceImpl.swift"
+                  timestampString = "580511814.8431571"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "327">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -106,45 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-            timestampString = "580357422.484084"
+            timestampString = "580511814.4353909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "uploadImages(_:_:handler:)"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "createPetOnDb(_:_:handler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.FIRStorageMetadata) -&gt; () in adocaoAnimal.PetsServiceImpl.(uploadImages in _889CB8FC8A2FE6633203B93ED6621FCE)(_: Swift.Array&lt;__C.PHAsset&gt;, _: adocaoAnimal.Pet, handler: (adocaoAnimal.Response) -&gt; ()) -&gt; ()"
-                  moduleName = "adocaoAnimal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.841971"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "2865">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.Error) -&gt; () in adocaoAnimal.PetsServiceImpl.(uploadImages in _889CB8FC8A2FE6633203B93ED6621FCE)(_: Swift.Array&lt;__C.PHAsset&gt;, _: adocaoAnimal.Pet, handler: (adocaoAnimal.Response) -&gt; ()) -&gt; ()"
-                  moduleName = "adocaoAnimal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.843462"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-            timestampString = "580357422.484356"
+            timestampString = "580511814.4357539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "uploadImages(_:_:handler:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "createPet(_:_:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +138,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetViewModel.swift"
-            timestampString = "580357422.4846261"
+            timestampString = "580511601.1606719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "setupBindings(petName:petSize:petColor:petGender:petType:petWeight:petDescription:createTap:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "setupBindings(petName:petAge:petColor:petGender:petType:petWeight:petDescription:createTap:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetView.swift"
+            timestampString = "580511814.435977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetView.swift"
+            timestampString = "580511814.436028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "setupBindings()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,45 +186,93 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-            timestampString = "580357422.484706"
+            timestampString = "580511814.43607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "createPet(petName:petSize:petColor:petGender:petType:petWeight:petDescription:petImages:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "createPet(petName:petAge:petColor:petGender:petType:petWeight:petDescription:petImages:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "adocaoAnimal.PetsServiceImpl.createPet(petName: Swift.String, petSize: Swift.String, petColor: Swift.String, petGender: Swift.String, petType: Swift.String, petWeight: Swift.String, petDescription: Swift.String, petImages: Swift.Array&lt;__C.PHAsset&gt;) -&gt; RxSwift.Observable&lt;adocaoAnimal.Response&gt;"
-                  moduleName = "adocaoAnimal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.8528039"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "779">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (adocaoAnimal.Response) -&gt; () in adocaoAnimal.PetsServiceImpl.createPet(petName: Swift.String, petSize: Swift.String, petColor: Swift.String, petGender: Swift.String, petType: Swift.String, petWeight: Swift.String, petDescription: Swift.String, petImages: Swift.Array&lt;__C.PHAsset&gt;) -&gt; RxSwift.Observable&lt;adocaoAnimal.Response&gt;"
-                  moduleName = "adocaoAnimal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arbigaus/Documents/Capacitacao%20iOS/adocaoAnimal/adocaoAnimal/adocaoAnimal/Services/PetsService/PetsServiceImpl.swift"
-                  timestampString = "580357422.8543561"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetViewModel.swift"
+            timestampString = "580511601.161347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setupBindings(petName:petAge:petColor:petGender:petType:petWeight:petDescription:createTap:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetView.swift"
+            timestampString = "580511814.436276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetViewModel.swift"
+            timestampString = "580511601.161612"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setupBindings(petName:petAge:petColor:petGender:petType:petWeight:petDescription:createTap:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetView.swift"
+            timestampString = "580511814.43633"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "setupViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "adocaoAnimal/Modules/CreatePetView/CreatePetView.swift"
+            timestampString = "580511814.436368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "setupViewModel()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
