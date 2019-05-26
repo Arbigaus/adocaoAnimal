@@ -39,29 +39,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinheirinho - 2,3km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-vD-eli">
-                                <rect key="frame" x="20" y="31" width="300" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="ltM-9f-WZR"/>
-                                </constraints>
+                                <rect key="frame" x="51" y="30.5" width="269" height="13"/>
                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cM-So-BBq">
+                                <rect key="frame" x="20" y="30.5" width="26" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="bYM-MA-lNm"/>
+                                    <constraint firstAttribute="height" constant="13" id="c2m-Hl-vld"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="10"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jeE-vD-eli" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kzU-zh-A6H" secondAttribute="leading" id="2sO-Mx-ewv"/>
-                            <constraint firstAttribute="bottom" secondItem="jeE-vD-eli" secondAttribute="bottom" constant="35.5" id="HJa-je-6lf"/>
+                            <constraint firstItem="8cM-So-BBq" firstAttribute="leading" secondItem="smG-iL-Khf" secondAttribute="leading" id="6aP-9x-KvF"/>
+                            <constraint firstItem="jeE-vD-eli" firstAttribute="leading" secondItem="8cM-So-BBq" secondAttribute="trailing" constant="5" id="AZw-oO-jE8"/>
                             <constraint firstAttribute="trailing" secondItem="smG-iL-Khf" secondAttribute="trailing" id="Nn5-Wc-aKu"/>
+                            <constraint firstItem="8cM-So-BBq" firstAttribute="firstBaseline" secondItem="smG-iL-Khf" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="Yvk-Cl-kna"/>
+                            <constraint firstAttribute="trailing" secondItem="jeE-vD-eli" secondAttribute="trailing" id="dff-dO-Ewn"/>
                             <constraint firstItem="smG-iL-Khf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kzU-zh-A6H" secondAttribute="leading" id="di5-ib-Wsz"/>
-                            <constraint firstItem="jeE-vD-eli" firstAttribute="top" secondItem="smG-iL-Khf" secondAttribute="bottom" constant="3" id="gcp-5Y-xW8"/>
                             <constraint firstItem="smG-iL-Khf" firstAttribute="top" secondItem="kzU-zh-A6H" secondAttribute="top" constant="8" id="jTe-yq-gb6"/>
-                            <constraint firstAttribute="trailing" secondItem="jeE-vD-eli" secondAttribute="trailing" id="rKp-Ff-zVX"/>
-                            <constraint firstItem="jeE-vD-eli" firstAttribute="width" secondItem="smG-iL-Khf" secondAttribute="width" id="zPl-IN-ENU"/>
+                            <constraint firstItem="jeE-vD-eli" firstAttribute="centerY" secondItem="8cM-So-BBq" secondAttribute="centerY" id="wiQ-qs-1UP"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="kzU-zh-A6H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="170" id="6kT-Ad-2kg"/>
                     <constraint firstItem="LOZ-tD-Mgk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9Jj-Io-KUr"/>
                     <constraint firstAttribute="trailing" secondItem="kzU-zh-A6H" secondAttribute="trailing" id="N00-QC-gYO"/>
                     <constraint firstItem="LOZ-tD-Mgk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PNe-5i-Zg6"/>
@@ -75,8 +83,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="petImage" destination="LOZ-tD-Mgk" id="ff0-ZE-tkA"/>
-                <outlet property="petLocationLabel" destination="jeE-vD-eli" id="tbc-r0-wan"/>
                 <outlet property="petNameLabel" destination="smG-iL-Khf" id="GYf-LG-48W"/>
+                <outlet property="tutorName" destination="jeE-vD-eli" id="oYx-mc-mio"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="141.29464285714286"/>
         </tableViewCell>

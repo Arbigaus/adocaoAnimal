@@ -12,7 +12,7 @@ class PetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
-    @IBOutlet weak var petLocationLabel: UILabel!
+    @IBOutlet weak var tutorName: UILabel!
     
     override func prepareForReuse() {
         
@@ -20,8 +20,8 @@ class PetTableViewCell: UITableViewCell {
     
     func bind (_ pet : Pet) {
 //        petImage.image = UIImage(named: pet.image)
-//        petNameLabel.text = pet.name
-//        petLocationLabel.text = pet.address
+        petNameLabel.text = pet.petName
+        tutorName.text = pet.petTutorName!
     }
     
 }

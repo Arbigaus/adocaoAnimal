@@ -22,6 +22,8 @@ struct Pet {
     let petWeight: String
     let petDescription: String
     var petImages: [ String ]?
+    var petTutorID: String?
+    var petTutorName: String?
 }
 
 enum petSize {

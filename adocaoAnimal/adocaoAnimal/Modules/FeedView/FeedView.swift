@@ -16,7 +16,7 @@ class FeedView: UIViewController {
     let loadingView = LoadingView()
         
     var viewModel: FeedViewModel!
-    var petsList = [ Pet ]()
+    var petsList = PublishSubject<[Pet]>()
 //    let tapGesture = UITapGestureRecognizer()
     
     weak var delegate: AppActionable?
@@ -35,14 +35,6 @@ class FeedView: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
         
-//        let petVader = Pet(name: "Darth Vader", size: .smal, image: "dog1.png", owner: "Adriele", address: "Rua ali", neighborhood: "CIC - 5,4km")
-//        let petLeia = Pet(name: "Princesa Leia", size: .medium, image: "cat1.jpg", owner: "Gerson", address: "Rua de lá", neighborhood: "Pinheirinho - 2,3km")
-//        let petYoda = Pet(name: "Yoda", size: .smal, image: "dog1.jpg", owner: "Skywalker", address: "Rua de cima", neighborhood: "Novo Mundo - 10km")
-//    
-//        
-//        petsList.append(petVader)
-//        petsList.append(petLeia)
-//        petsList.append(petYoda)
         
     }
     
@@ -103,19 +95,8 @@ extension FeedView {
             })
             .disposed(by: disposeBag)
         
-        
-        let itemsTableView = Observable.just(
-            petsList.map { $0 }
-        )
-        
-        let filters = [ "Cachorros", "Gatos", "Coelhos", "Outros" ]
-        
-        let itemsCollecView = Observable.just(
-            filters.map { "\($0)" }
-        )
-        
         // Popular a Table View de pets
-        itemsTableView
+        petsList.asObservable()
             .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { (row , pet, cell) in
@@ -133,6 +114,12 @@ extension FeedView {
             }).disposed(by: disposeBag)
         
         // Popular a collection view de filtros
+        let filters = [ "Cachorros", "Gatos", "Coelhos", "Outros" ]
+        
+        let itemsCollecView = Observable.just(
+            filters.map { "\($0)" }
+        )
+        
         itemsCollecView
             .bind(to: filterCollectionView.rx
                 .items(cellIdentifier: R.reuseIdentifier.filterCollectionView.identifier,
@@ -156,10 +143,7 @@ extension FeedView {
         self.viewModel.petList!
             .asObservable()
             .subscribe(onNext: { pets in
-                pets.map{
-                    self.petsList.append($0)
-                    self.petsTableView.reloadData()
-                }
+                self.petsList.onNext(pets)
             })
             .disposed(by: self.disposeBag)
         

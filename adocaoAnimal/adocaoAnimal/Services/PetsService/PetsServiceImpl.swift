@@ -45,7 +45,9 @@ class PetsServiceImpl: NSObject, PetsService {
             petType: petType,
             petWeight: petWeight,
             petDescription: petDescription,
-            petImages: nil
+            petImages: nil,
+            petTutorID: nil,
+            petTutorName: nil
         )
         
         self.createPet(petImages, petToSend) { createResponse in
@@ -140,26 +142,31 @@ class PetsServiceImpl: NSObject, PetsService {
         
         db.collection("Pets")
             .rx
-            .listen()
-            .map{ $0.documents }
-            .map{ petItems in
-                petItems.map{ data in
+            .getDocuments()
+            .subscribe(onNext: { snapshot in
+                pets = snapshot.documents.map { petSnapshot -> Pet in
+                    let data = petSnapshot.data()
                     
-                    let pet = Pet(
-                        petName         : data["petName"] as! String,
-                        petAge          : data["petAge"] as! String,
-                        petColor        : data["petColor"] as! String,
-                        petGender       : data["petGender"] as! String,
-                        petType         : data["petType"] as! String,
-                        petWeight       : data["petWeight"] as! String,
-                        petDescription  : data["petDescription"] as! String,
-                        petImages       : (data["petImages"] as! [String])
-                    )
+                    let petData = Pet(
+                            petName         : data["petName"] as! String,
+                            petAge          : data["petAge"] as! String,
+                            petColor        : data["petColor"] as! String,
+                            petGender       : data["petGender"] as! String,
+                            petType         : data["petType"] as! String,
+                            petWeight       : data["petWeight"] as! String,
+                            petDescription  : data["petDescription"] as! String,
+                            petImages       : (data["petImages"] as! [String]),
+                            petTutorID      : (data["petTutorId"] as! String),
+                            petTutorName    : (data["petTutorName"] as! String)
+                        )
                     
-                    pets.append(pet)
+                    return petData
                 }
-                
-            }
+                petListToReturn.onNext(pets)
+            }, onError: { error in
+                print("Error fetching snapshots: \(error)")
+            })
+            .disposed(by: disposeBag)
         
         return petListToReturn.asObservable()
         
