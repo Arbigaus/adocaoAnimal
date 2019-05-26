@@ -56,8 +56,9 @@ class FeedView: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
         
+        self.viewModel.updatePetList()
+        
         self.configureViews()
-//        self.loadingAnimation(true)
     }
     
 }
@@ -144,6 +145,7 @@ extension FeedView {
             .asObservable()
             .subscribe(onNext: { pets in
                 self.petsList.onNext(pets)
+                self.loadingAnimation(false)
             })
             .disposed(by: self.disposeBag)
         

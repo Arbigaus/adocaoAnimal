@@ -152,6 +152,10 @@ class AccountServiceImpl: NSObject, AccountService {
                 }
     }
     
+    func getLoggedUserId() -> String {
+        return self.auth.currentUser!.uid
+    }
+    
     func userLoggout() -> Bool {
         try! self.auth.signOut()
         return true

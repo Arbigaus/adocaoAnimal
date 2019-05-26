@@ -219,7 +219,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `CreateAccountView`.
     static let createAccountView = _R.nib._CreateAccountView()
@@ -237,6 +237,8 @@ struct R: Rswift.Validatable {
     static let loginEmailView = _R.nib._LoginEmailView()
     /// Nib `LoginView`.
     static let loginView = _R.nib._LoginView()
+    /// Nib `PetDetailImageCollectionViewCell`.
+    static let petDetailImageCollectionViewCell = _R.nib._PetDetailImageCollectionViewCell()
     /// Nib `PetDetailInfoCollectionViewCell`.
     static let petDetailInfoCollectionViewCell = _R.nib._PetDetailInfoCollectionViewCell()
     /// Nib `PetDetailsView`.
@@ -292,6 +294,12 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.loginView) instead")
     static func loginView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.loginView)
+    }
+    
+    /// `UINib(name: "PetDetailImageCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.petDetailImageCollectionViewCell) instead")
+    static func petDetailImageCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.petDetailImageCollectionViewCell)
     }
     
     /// `UINib(name: "PetDetailInfoCollectionViewCell", in: bundle)`
@@ -350,6 +358,10 @@ struct R: Rswift.Validatable {
       return R.nib.loginView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
+    static func petDetailImageCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PetDetailImageCollectionViewCell? {
+      return R.nib.petDetailImageCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PetDetailImageCollectionViewCell
+    }
+    
     static func petDetailInfoCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PetDetailInfoCollectionViewCell? {
       return R.nib.petDetailInfoCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PetDetailInfoCollectionViewCell
     }
@@ -369,10 +381,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `PetDetailCollectionViewCell`.
     static let petDetailCollectionViewCell: Rswift.ReuseIdentifier<PetDetailInfoCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PetDetailCollectionViewCell")
+    /// Reuse identifier `PetDetailImageCollectionViewCell`.
+    static let petDetailImageCollectionViewCell: Rswift.ReuseIdentifier<PetDetailImageCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PetDetailImageCollectionViewCell")
     /// Reuse identifier `createPetViewImage`.
     static let createPetViewImage: Rswift.ReuseIdentifier<CreatePetImagesCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "createPetViewImage")
     /// Reuse identifier `filterCollectionView`.
@@ -553,6 +567,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _PetDetailImageCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = PetDetailImageCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "PetDetailImageCollectionViewCell"
+      let name = "PetDetailImageCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PetDetailImageCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PetDetailImageCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _PetDetailInfoCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = PetDetailInfoCollectionViewCell
       
@@ -576,7 +604,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "dog1.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
         if UIKit.UIImage(named: "perfil.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'perfil.png' is used in nib 'PetDetailsView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }

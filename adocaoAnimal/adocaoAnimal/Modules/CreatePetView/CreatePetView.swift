@@ -194,7 +194,6 @@ extension CreatePetView {
         
         genderPickerView.rx.modelSelected(String.self)
             .subscribe(onNext: { gender in
-                print(gender[0])
                 self.selectedGender.onNext(gender[0])
             })
             .disposed(by: disposeBag)
@@ -247,19 +246,30 @@ extension CreatePetView {
             .asObservable()
             .subscribe(onNext: { value in
                 if value {
+                    self.clearInputs()
                     self.loadingAnimation(false)
-                    self.delegate?.handle(.showFeed)
                 }
             })
             .disposed(by: disposeBag)
         
-        self.viewModel.startLoading
-            .asObservable()
-            .subscribe(onNext: { start in
-                self.loadingAnimation(start)
-            })
-            .disposed(by: disposeBag)
+        self.saveButton.rx
+            .tap.bind { [unowned self] _ in
+                self.loadingAnimation(true)
+        }
+    }
+    
+    fileprivate func clearInputs() {
+        self.ageTextField.text = ""
+        self.nameTextField.text = ""
+        self.gramasLabel.text = ""
+        self.weigthTextField.text = ""
+        self.descriptionTextView.text = "Descrição:"
+        self.photos.removeAll()
+        self.typePickerView.selectRow(0, inComponent: 0, animated: true)
+        self.colorPickerView.selectRow(0, inComponent: 0, animated: true)
+        self.genderPickerView.selectRow(0, inComponent: 0, animated: true)
         
+        self.updateCollectionViewOfImages()
     }
     
     fileprivate func updateCollectionViewOfImages() {

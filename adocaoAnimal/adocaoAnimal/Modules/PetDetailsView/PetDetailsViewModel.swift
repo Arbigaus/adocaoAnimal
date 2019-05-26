@@ -10,10 +10,23 @@ import RxSwift
 import RxCocoa
 
 class PetDetailsViewModel {
+    fileprivate let petService = PetsServiceImpl()
     
-    //let input: Driver<Void>
+    let petImages = PublishSubject<[UIImage]>()
     
     init() {
         
     }
+    
+    func setupBindings(petImageList: [String]){
+        var petImage = [UIImage]()
+        petImageList.map{ petImageUrl in
+            self.petService.getImage(petImageUrl, handler: { image in
+                petImage.append(image)
+                self.petImages.onNext(petImage)
+            })            
+        }
+        
+    }
+    
 }

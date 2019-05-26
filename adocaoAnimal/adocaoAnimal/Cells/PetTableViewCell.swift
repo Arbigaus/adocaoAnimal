@@ -9,19 +9,22 @@
 import UIKit
 
 class PetTableViewCell: UITableViewCell {
+    fileprivate let petService = PetsServiceImpl()
 
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var tutorName: UILabel!
     
-    override func prepareForReuse() {
-        
-    }
+    override func prepareForReuse() {}
     
     func bind (_ pet : Pet) {
-//        petImage.image = UIImage(named: pet.image)
         petNameLabel.text = pet.petName
         tutorName.text = pet.petTutorName!
+        
+        petService.getImage(pet.petImages![0]) { photo in
+            self.petImage.image = photo
+        }
+        
     }
     
 }

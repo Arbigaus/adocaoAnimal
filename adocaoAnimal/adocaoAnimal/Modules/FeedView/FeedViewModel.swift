@@ -20,7 +20,8 @@ class FeedViewModel {
     
     var petList     : Observable<[Pet]>?
     var userDetails : Observable<Profile>
-    var loggedUser   = PublishSubject<LoggedUser>()
+    var loggedUser  = PublishSubject<LoggedUser>()
+    var petImage    = PublishSubject<UIImage>()
     
     init() {        
         userDetails = accountService.getLoggedUser()
@@ -33,7 +34,15 @@ class FeedViewModel {
             .asDriver()
     }
     
-    func setupBindings(){
-
+    func setupBindings(){ }
+    
+    func getImage(_ url: String) {
+        petService.getImage(url) { photo in
+            self.petImage.onNext(photo)
+        }
+    }
+    
+    func updatePetList() {
+        petList = petService.getAllPets()
     }
 }

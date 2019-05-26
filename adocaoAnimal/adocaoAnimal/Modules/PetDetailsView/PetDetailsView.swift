@@ -17,24 +17,24 @@ protocol PetDetailsViewDelegate: class {
 class PetDetailsView: UIViewController {
     var viewModel: PetDetailsViewModel!
     weak var delegate: AppActionable?
+    let loadingView = LoadingView()
     
-    var pet: Pet
+    var petDetailsToShow = PublishSubject<[ String ]>()
+    
+    var petDetails: Pet
     let disposeBag = DisposeBag()
     
-    @IBOutlet weak var petImage: UIImageView!
+    @IBOutlet weak var petImageCollectionView: UICollectionView!
     @IBOutlet weak var ownerImage: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petDescriptionLabel: UILabel!
     @IBOutlet weak var ownerName: UILabel!
-    @IBOutlet weak var petDescriptionText: UITextView!
-    
     @IBOutlet weak var petDetailsCollection: UICollectionView!
     
     @IBOutlet weak var adoptButtom: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     
     init(pet: Pet) {
-        self.pet = pet
+        self.petDetails = pet
         
         super.init(nibName: String(describing: PetDetailsView.self), bundle: nil)
         
@@ -44,15 +44,36 @@ class PetDetailsView: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        self.loadingAnimation(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureViews()
         self.setupViewModel()
         self.setupBindings()
         
-//        self.petImage?.image = UIImage(named: self.pet.image)
-//        self.petNameLabel?.text = self.pet.name
-//        self.ownerName?.text = self.pet.owner
+        self.title = self.petDetails.petName
+        
+        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(title: "< Voltar", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.back(sender:)))
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        self.petNameLabel.text = self.petDetails.petName
+        self.ownerName.text = self.petDetails.petTutorName
+        self.petDescriptionLabel.text = self.petDetails.petDescription
+        
+        var petDetailsToAppend = [String]()
+        
+        petDetailsToAppend.append("\(self.petDetails.petAge) Anos")
+        petDetailsToAppend.append("\(self.petDetails.petWeight) Kg")
+        petDetailsToAppend.append("\(self.petDetails.petColor)")
+        petDetailsToAppend.append("\(self.petDetails.petGender)")
+        
+        self.petDetailsToShow.onNext(petDetailsToAppend)
+        
         
         self.ownerImage.layer.cornerRadius = 25
         
@@ -62,42 +83,56 @@ class PetDetailsView: UIViewController {
         self.adoptButtom.layer.borderColor = UIColor(red:255/255, green:255/255, blue:255/255, alpha: 0.8).cgColor
         
     }
-
-    
 }
 
 extension PetDetailsView {
     
     func setupViewModel() {
-        self.viewModel = PetDetailsViewModel(
-           
-        )
+        self.viewModel = PetDetailsViewModel()
+        self.viewModel.setupBindings(petImageList: self.petDetails.petImages!)
     }
     
     func configureViews() {
         petDetailsCollection.register(R.nib.petDetailInfoCollectionViewCell)
+        petImageCollectionView.register(R.nib.petDetailImageCollectionViewCell)
+        
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
     }
     
     func setupBindings() {
         
-        let details = [ "1 Ano", "2,5 kg", "Branco", "Fêmea" ]
+        self.viewModel.petImages
+            .asObservable()
+            .bind(to: petImageCollectionView.rx
+                .items(cellIdentifier: R.reuseIdentifier.petDetailImageCollectionViewCell.identifier,
+                       cellType: PetDetailImageCollectionViewCell.self)) { (row, element, cell) in
+                        cell.bind(element)
+                        self.loadingAnimation(false)
+            }
+            .disposed(by: disposeBag)
         
-        let itemsCollecView = Observable.just(
-            details.map { "\($0)" }
-        )
-        
-        itemsCollecView
+        self.petDetailsToShow
+            .asObservable()
             .bind(to: petDetailsCollection.rx
                 .items(cellIdentifier: R.reuseIdentifier.petDetailCollectionViewCell.identifier,
                        cellType: PetDetailInfoCollectionViewCell.self)) { (row, element, cell) in
                         cell .titleLabel.text = element
-                
         }.disposed(by: disposeBag)
         
-        backButton.rx.tap.bind { [unowned self] _ in
-            self.delegate?.handle(.showFeed)
-            }.disposed(by: disposeBag)
         
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        self.delegate?.handle(.showFeed)
+    }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
     }
     
     

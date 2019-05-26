@@ -18,8 +18,9 @@ class UserProfileView: UIViewController {
     
     var viewModel: UserProfileViewModel!
     fileprivate let disposeBag = DisposeBag()
+    let loadingView = LoadingView()
     
-    fileprivate var petsList = [ Pet ]()
+    fileprivate var petsList = PublishSubject<[Pet]>()
     fileprivate var userDetails = Profile()
     
     weak var delegate: AppActionable?
@@ -44,6 +45,7 @@ class UserProfileView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+        self.loadingAnimation(true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,6 +86,12 @@ extension UserProfileView {
     
     func configureViews() {
         
+        self.view.addSubview(self.loadingView)
+        self.loadingView.prepareForConstraints()
+        self.loadingView.pinEdgesToSuperview()
+        
+        self.petsTableView.register(R.nib.petTableViewCell)        
+        
         self.perfilImage.layer.cornerRadius = 30
         self.updateButton.layer.cornerRadius = 20
         self.updateButton.layer.borderWidth = 4
@@ -103,16 +111,22 @@ extension UserProfileView {
             })
             .disposed(by: disposeBag)
         
-        let itemsTableView = Observable.just(
-            self.petsList.map { $0 }
-        )
+        // Popular a variáve de pet
+        self.viewModel.petList!
+            .asObservable()
+            .subscribe(onNext: { pets in
+                self.petsList.onNext(pets)
+                self.loadingAnimation(false)
+            })
+            .disposed(by: self.disposeBag)
         
-        itemsTableView
-            .bind(to: self.petsTableView.rx
+        // Popular a Table View de pets
+        petsList.asObservable()
+            .bind(to: petsTableView.rx
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { (row , pet, cell) in
                         cell.bind(pet)
-                }
+            }
             .disposed(by: disposeBag)
         
         // Chamar a view de Pet
@@ -143,5 +157,11 @@ extension UserProfileView {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    func loadingAnimation(_ isLoading: Bool){
+        DispatchQueue.main.async {
+            isLoading ? self.loadingView.show() : self.loadingView.hide()
+        }
     }
 }

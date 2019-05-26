@@ -172,5 +172,61 @@ class PetsServiceImpl: NSObject, PetsService {
         
     }
     
+    // MARK: - Get Pets from user
+    func getPetsFromUser(_ userUuid: String) -> Observable<[Pet]> {
+        let petListToReturn = PublishSubject<[Pet]>()
+        var pets = [ Pet ]()
+        
+        db.collection("Pets")
+            .whereField("petTutorId", isEqualTo: userUuid)
+            .rx
+            .getDocuments()
+            .subscribe(onNext: { snapshot in
+                pets = snapshot.documents.map { petSnapshot -> Pet in
+                    let data = petSnapshot.data()
+                    
+                    let petData = Pet(
+                        petName         : data["petName"] as! String,
+                        petAge          : data["petAge"] as! String,
+                        petColor        : data["petColor"] as! String,
+                        petGender       : data["petGender"] as! String,
+                        petType         : data["petType"] as! String,
+                        petWeight       : data["petWeight"] as! String,
+                        petDescription  : data["petDescription"] as! String,
+                        petImages       : (data["petImages"] as! [String]),
+                        petTutorID      : (data["petTutorId"] as! String),
+                        petTutorName    : (data["petTutorName"] as! String)
+                    )
+                    
+                    return petData
+                }
+                petListToReturn.onNext(pets)
+            }, onError: { error in
+                print("Error fetching snapshots: \(error)")
+            })
+            .disposed(by: disposeBag)
+        
+        return petListToReturn.asObservable()
+        
+    }
+    
+    
+    // MARK: - Get Photos Function
+    func getImage(_ imageAddress: String , handler: @escaping (UIImage) -> Void ) {
+        let forUrl = "gs://adocaoanimal-21d2c.appspot.com/"
+        
+        let reference = self.st
+            .reference(forURL: "\(forUrl)\(imageAddress)")
+            .rx
+        
+        reference.getData(maxSize: 4 * 1024 * 1024)
+            .subscribe(onNext: { data in
+                handler(UIImage(data: data)!)
+            })
+            .disposed(by: disposeBag)
+        
+        
+    }
+    
 }
 
