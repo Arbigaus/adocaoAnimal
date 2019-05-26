@@ -14,13 +14,17 @@ class FeedViewModel {
     
     fileprivate let disposeBag = DisposeBag()
     fileprivate let accountService = AccountServiceImpl()
+    fileprivate let petService = PetsServiceImpl()
+    
     let isLoading: Driver<Bool>
     
+    var petList     : Observable<[Pet]>?
     var userDetails : Observable<Profile>
     var loggedUser   = PublishSubject<LoggedUser>()
     
     init() {        
         userDetails = accountService.getLoggedUser()
+        petList = petService.getAllPets()
         
         let loadingIndicator = ActivityIndicator()
         

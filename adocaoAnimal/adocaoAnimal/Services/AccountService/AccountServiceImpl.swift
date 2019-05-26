@@ -137,19 +137,19 @@ class AccountServiceImpl: NSObject, AccountService {
         return self.db.collection("Users")
                 .document(uuid)
                 .rx.listen()
-            .map{$0.data()}
-            .map { data -> Profile in
-                
-                guard let data = data else { return Profile() }
-                
-                var userProfile = Profile()
-                userProfile.name     = (data["name"] as? String)!
-                userProfile.lastName = (data["lastName"] as? String) ?? ""
-                userProfile.fullName = (data["fullName"] as? String) ?? (data["name"] as? String)!  
-                userProfile.email    = (data["email"] as? String ) ?? ""
-                                
-                return userProfile
-            }
+                .map{$0.data()}
+                .map { data -> Profile in
+                    
+                    guard let data = data else { return Profile() }
+                    
+                    var userProfile = Profile()
+                    userProfile.name     = (data["name"] as? String)!
+                    userProfile.lastName = (data["lastName"] as? String) ?? ""
+                    userProfile.fullName = (data["fullName"] as? String) ?? (data["name"] as? String)!
+                    userProfile.email    = (data["email"] as? String ) ?? ""
+                    
+                    return userProfile
+                }
     }
     
     func userLoggout() -> Bool {

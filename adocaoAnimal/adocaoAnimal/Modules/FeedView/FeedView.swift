@@ -153,6 +153,16 @@ extension FeedView {
             }
             .disposed(by: disposeBag)
         
+        self.viewModel.petList!
+            .asObservable()
+            .subscribe(onNext: { pets in
+                pets.map{
+                    self.petsList.append($0)
+                    self.petsTableView.reloadData()
+                }
+            })
+            .disposed(by: self.disposeBag)
+        
     }
     
     func startAnimationView() {

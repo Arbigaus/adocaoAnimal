@@ -56,6 +56,7 @@ class PetsServiceImpl: NSObject, PetsService {
         
     }
     
+    // MARK: - Main Create Pet
     fileprivate func createPet(_ images: [PHAsset], _ petToSend: Pet, handler: @escaping ((Response) -> Void) ) {
         var urlImages = [String]()
         let countUrl = PublishSubject<String>()
@@ -112,6 +113,7 @@ class PetsServiceImpl: NSObject, PetsService {
                 "petTutorName"   : self.userDetails.name,
                 "petImages"      : petToSend.petImages as Any,
                 "petAge"         : petToSend.petAge,
+                "petGender"      : petToSend.petGender,
                 "petWeight"      : petToSend.petWeight,
                 "petType"        : petToSend.petType,
                 "petColor"       : petToSend.petColor,
@@ -131,6 +133,37 @@ class PetsServiceImpl: NSObject, PetsService {
                 }).disposed(by: self.disposeBag)
     }
     
+    // MARK: - Main Get All Pets
+    func getAllPets() -> Observable<[Pet]> {
+        let petListToReturn = PublishSubject<[Pet]>()
+        var pets = [ Pet ]()
+        
+        db.collection("Pets")
+            .rx
+            .listen()
+            .map{ $0.documents }
+            .map{ petItems in
+                petItems.map{ data in
+                    
+                    let pet = Pet(
+                        petName         : data["petName"] as! String,
+                        petAge          : data["petAge"] as! String,
+                        petColor        : data["petColor"] as! String,
+                        petGender       : data["petGender"] as! String,
+                        petType         : data["petType"] as! String,
+                        petWeight       : data["petWeight"] as! String,
+                        petDescription  : data["petDescription"] as! String,
+                        petImages       : (data["petImages"] as! [String])
+                    )
+                    
+                    pets.append(pet)
+                }
+                
+            }
+        
+        return petListToReturn.asObservable()
+        
+    }
     
 }
 
