@@ -66,4 +66,8 @@ class CreatePetViewModel {
             .disposed(by: disposeBag)
         
     }
+    
+    func getUserId() -> String? {
+        return accountService.getLoggedUserId()
+    }
 }
