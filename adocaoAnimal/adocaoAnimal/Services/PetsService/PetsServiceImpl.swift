@@ -136,8 +136,8 @@ class PetsServiceImpl: NSObject, PetsService {
     }
     
     // MARK: - Main Get All Pets
-    func getAllPets() -> Observable<[Pet]> {
-        let petListToReturn = PublishSubject<[Pet]>()
+    func getAllPets(handler: @escaping (([Pet]) -> Void) ) {
+//        let petListToReturn = PublishSubject<[Pet]>()
         var pets = [ Pet ]()
         
         db.collection("Pets")
@@ -162,13 +162,13 @@ class PetsServiceImpl: NSObject, PetsService {
                     
                     return petData
                 }
-                petListToReturn.onNext(pets)
+                handler(pets)
             }, onError: { error in
                 print("Error fetching snapshots: \(error)")
             })
             .disposed(by: disposeBag)
         
-        return petListToReturn.asObservable()
+//        return petListToReturn.asObservable()
         
     }
     
@@ -207,6 +207,43 @@ class PetsServiceImpl: NSObject, PetsService {
             .disposed(by: disposeBag)
         
         return petListToReturn.asObservable()
+        
+    }
+    
+    // MARK: - Get pets by type
+    func getPetsByType(_ type: String, handler: @escaping (([Pet]) -> Void)) {
+//        let petListToReturn = PublishSubject<[Pet]>()
+        var pets = [ Pet ] ()
+        
+        db.collection("Pets")
+            .whereField("petType", isEqualTo: type.dropLast())
+            .rx
+            .getDocuments()
+            .subscribe(onNext: { snapshot in
+                pets = snapshot.documents.map { petSnapshot -> Pet in
+                    let data = petSnapshot.data()
+                    
+                    let petData = Pet(
+                        petName         : data["petName"] as! String,
+                        petAge          : data["petAge"] as! String,
+                        petColor        : data["petColor"] as! String,
+                        petGender       : data["petGender"] as! String,
+                        petType         : data["petType"] as! String,
+                        petWeight       : data["petWeight"] as! String,
+                        petDescription  : data["petDescription"] as! String,
+                        petImages       : (data["petImages"] as! [String]),
+                        petTutorID      : (data["petTutorId"] as! String),
+                        petTutorName    : (data["petTutorName"] as! String)
+                    )
+                    
+                    return petData
+                }
+                handler(pets)
+            }, onError: { error in
+                print("Error fetching snapshots: \(error)")
+            })
+            .disposed(by: disposeBag)
+        
         
     }
     

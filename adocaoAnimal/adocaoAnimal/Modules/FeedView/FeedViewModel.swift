@@ -18,15 +18,13 @@ class FeedViewModel {
     
     let isLoading: Driver<Bool>
     
-    var petList     : Observable<[Pet]>?
+    var petList     = PublishSubject<[Pet]>()
     var userDetails : Observable<Profile>
     var loggedUser  = PublishSubject<LoggedUser>()
     var petImage    = PublishSubject<UIImage>()
     
     init() {        
         userDetails = accountService.getLoggedUser()
-        petList = petService.getAllPets()
-        
         let loadingIndicator = ActivityIndicator()
         
         self.isLoading = loadingIndicator
@@ -43,6 +41,19 @@ class FeedViewModel {
     }
     
     func updatePetList() {
-        petList = petService.getAllPets()
+        self.petService.getAllPets { pets in
+            self.petList.onNext(pets)
+        }
     }
+    
+    func getPetListByType(_ type: String) {
+        if type == "Tudo" {
+            self.updatePetList()
+        } else {
+             self.petService.getPetsByType(type) { pets in
+                self.petList.onNext(pets)
+            }
+        }
+    }
+    
 }

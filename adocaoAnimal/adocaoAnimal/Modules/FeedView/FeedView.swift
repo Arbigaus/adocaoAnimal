@@ -33,6 +33,7 @@ class FeedView: UIViewController {
     
     init( viewModel: FeedViewModel = .init() ) {
         self.viewModel = viewModel
+        self.viewModel.updatePetList()
         super.init(nibName: String(describing: FeedView.self), bundle: nil)
         
         
@@ -102,6 +103,7 @@ extension FeedView {
                 .items(cellIdentifier: R.reuseIdentifier.petTableView.identifier,
                        cellType: PetTableViewCell.self)) { (row , pet, cell) in
                             cell.bind(pet)
+                        self.loadingAnimation(false)
             }
             .disposed(by: disposeBag)
         
@@ -115,7 +117,7 @@ extension FeedView {
             }).disposed(by: disposeBag)
         
         // Popular a collection view de filtros
-        let filters = [ "Cachorros", "Gatos", "Coelhos", "Outros" ]
+        let filters = [ "Tudo", "Cachorros", "Gatos", "Coelhos", "Outros" ]
         
         let itemsCollecView = Observable.just(
             filters.map { "\($0)" }
@@ -127,6 +129,14 @@ extension FeedView {
                        cellType: HomeFilterCollectionViewCell.self)) { (row, element, cell) in
                             cell.homeFilterLabel.text = element
             }
+            .disposed(by: disposeBag)
+        
+        // Call function to get filtered pets
+        self.filterCollectionView.rx
+            .modelSelected(String.self)
+            .subscribe(onNext: { type in
+                self.viewModel.getPetListByType(type)
+            })
             .disposed(by: disposeBag)
         
         // Ação do botão de perfil
@@ -141,11 +151,11 @@ extension FeedView {
             }
             .disposed(by: disposeBag)
         
-        self.viewModel.petList!
+        self.viewModel.petList
             .asObservable()
             .subscribe(onNext: { pets in
                 self.petsList.onNext(pets)
-                self.loadingAnimation(false)
+                self.loadingAnimation(true)
             })
             .disposed(by: self.disposeBag)
         
