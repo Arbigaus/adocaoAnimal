@@ -35,4 +35,6 @@ Utiliza o Firebase para autenticação, banco de dados e upload de imagens.
 ## Agradecimento:
 * **Adriele**, minha esposa pelo incentivo e paciência durante meu aprendizado.
 * **Binder**, por ensinar a todos este mundo de swift.
-* **Alexandre**, pela paciência e dicas na programação de iOS e Constraints.
+* [**Alexandre**], pela paciência e dicas na programação de iOS com Rx e Constraints.
+
+[**Alexandre**]: <https://github.com/alexvassini>
