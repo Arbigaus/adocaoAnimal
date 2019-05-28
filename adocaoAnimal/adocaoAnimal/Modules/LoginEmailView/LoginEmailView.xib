@@ -40,7 +40,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-Af-Irw" userLabel="Logo View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CbT-eO-bGw">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_transparente.png" translatesAutoresizingMaskIntoConstraints="NO" id="CbT-eO-bGw">
                                             <rect key="frame" x="132" y="75" width="150" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="Dg4-gN-rU5"/>
@@ -182,6 +182,6 @@
     </objects>
     <resources>
         <image name="dog1.jpg" width="7360" height="4912"/>
-        <image name="logo.png" width="250" height="251"/>
+        <image name="logo_transparente.png" width="250" height="251"/>
     </resources>
 </document>

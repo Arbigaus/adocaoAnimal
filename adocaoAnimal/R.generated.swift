@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 16 files.
+  /// This `R.file` struct is generated, and contains static references to 18 files.
   struct file {
     /// Resource file `3864-fat-cat.json`.
     static let fatCatJson = Rswift.FileResource(bundle: R.hostingBundle, name: "3864-fat-cat", pathExtension: "json")
@@ -40,10 +40,14 @@ struct R: Rswift.Validatable {
     static let dog1Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog1", pathExtension: "png")
     /// Resource file `dog2.png`.
     static let dog2Png = Rswift.FileResource(bundle: R.hostingBundle, name: "dog2", pathExtension: "png")
+    /// Resource file `loading.jpg`.
+    static let loadingJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "loading", pathExtension: "jpg")
     /// Resource file `location.json`.
     static let locationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "location", pathExtension: "json")
     /// Resource file `logo.png`.
     static let logoPng = Rswift.FileResource(bundle: R.hostingBundle, name: "logo", pathExtension: "png")
+    /// Resource file `logo_transparente.png`.
+    static let logo_transparentePng = Rswift.FileResource(bundle: R.hostingBundle, name: "logo_transparente", pathExtension: "png")
     /// Resource file `perfil.png`.
     static let perfilPng = Rswift.FileResource(bundle: R.hostingBundle, name: "perfil", pathExtension: "png")
     /// Resource file `perfilDefault.png`.
@@ -117,6 +121,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
     
+    /// `bundle.url(forResource: "loading", withExtension: "jpg")`
+    static func loadingJpg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.loadingJpg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     /// `bundle.url(forResource: "location", withExtension: "json")`
     static func locationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.locationJson
@@ -126,6 +136,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "logo", withExtension: "png")`
     static func logoPng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.logoPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "logo_transparente", withExtension: "png")`
+    static func logo_transparentePng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.logo_transparentePng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -150,7 +166,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `animalPrints`.
     static let animalPrints = Rswift.ImageResource(bundle: R.hostingBundle, name: "animalPrints")
@@ -166,6 +182,12 @@ struct R: Rswift.Validatable {
     static let dog1Jpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "dog1.jpg")
     /// Image `heart`.
     static let heart = Rswift.ImageResource(bundle: R.hostingBundle, name: "heart")
+    /// Image `loading.jpg`.
+    static let loadingJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "loading.jpg")
+    /// Image `logo-1`.
+    static let logo1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo-1")
+    /// Image `logo_transparente`.
+    static let logo_transparente = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo_transparente")
     /// Image `pets`.
     static let pets = Rswift.ImageResource(bundle: R.hostingBundle, name: "pets")
     /// Image `send`.
@@ -204,6 +226,21 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "heart", bundle: ..., traitCollection: ...)`
     static func heart(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.heart, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "loading.jpg", bundle: ..., traitCollection: ...)`
+    static func loadingJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.loadingJpg, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "logo-1", bundle: ..., traitCollection: ...)`
+    static func logo1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logo1, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "logo_transparente", bundle: ..., traitCollection: ...)`
+    static func logo_transparente(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logo_transparente, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "pets", bundle: ..., traitCollection: ...)`
@@ -451,7 +488,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "cat1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cat1.jpg' is used in nib 'CreateAccountView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'CreateAccountView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo_transparente.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo_transparente.png' is used in nib 'CreateAccountView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -542,7 +579,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "dog1.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.jpg' is used in nib 'LoginEmailView', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "logo.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo.png' is used in nib 'LoginEmailView', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo_transparente.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo_transparente.png' is used in nib 'LoginEmailView', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
@@ -624,7 +661,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "dog1.png", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'dog1.png' is used in nib 'PetTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "loading.jpg", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loading.jpg' is used in nib 'PetTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }

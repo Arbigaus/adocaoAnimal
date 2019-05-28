@@ -41,7 +41,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7D-zc-ge3" userLabel="Logo View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VPD-2t-Edm">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_transparente.png" translatesAutoresizingMaskIntoConstraints="NO" id="VPD-2t-Edm">
                                             <rect key="frame" x="132" y="25" width="150" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="Qyq-fr-aJD"/>
@@ -191,6 +191,6 @@
     </objects>
     <resources>
         <image name="cat1.jpg" width="6000" height="4000"/>
-        <image name="logo.png" width="250" height="251"/>
+        <image name="logo_transparente.png" width="250" height="251"/>
     </resources>
 </document>
